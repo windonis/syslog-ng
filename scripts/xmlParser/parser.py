@@ -1,7 +1,8 @@
 import xml.etree.ElementTree as syslog
+import networkx as nx
+import matplotlib.pyplot as plt
 
-filePath = input('Please specify file path. (Full path) :')
-tree = syslog.parse(filePath)
+tree = syslog.parse("gsoc.xml")
 root = tree.getroot()
 
 
@@ -18,23 +19,52 @@ def lhsfinder(nameoflhs):
 
 
 def xmlparser():
+    rules = []
     for rule in root.iter('rule'):
+        d_rule = {}
+
         number = rule.get('number')
-        print("\nnumber:{}".format(number))
+        d_rule.update({'number' : number})
+
         usefulness = rule.get('usefulness')
-        print("usefulness:{}".format(usefulness))
+        d_rule.update({'usefulness' : usefulness })
+
         lhs = rule.find('lhs').text
-        print("lhs:{}".format(lhs))
+        d_rule.update({'lhs' : lhs})
+
         for rhs in rule.iter('rhs'):
             symbol = rhs.findall('symbol')
-            print("rhs:")
+            d_symbol = {}
             for i in symbol:
                 if i is not None:
                     returnable = lhsfinder(i.text)
                     if len(returnable) != 0:
-                        print("{}:{}".format(returnable, i.text))
+                        for z in returnable:
+                            d_symbol.update({ z : i.text})
                     else:
-                        print("[x] {}".format(i.text))
+                        d_symbol.update( {'[x]' : i.text } )
+            d_rule.update( { 'symbol' : d_symbol } )
+            del d_symbol
+        rules.append(d_rule)
+        del d_rule
+        #print(rules)
+    return rules
 
+rules = xmlparser()
 
-xmlparser()
+#for x in rules:
+#    print(x['number'])
+
+G = nx.DiGraph()
+for x in rules:
+    G.add_node(x["number"])
+    G.add_edge(x["number"], x["usefulness"])
+    G.add_edge(x["number"], x["lhs"])
+    for q in x["symbol"].keys():
+        G.add_edge(x["number"], x["symbol"][q] )
+
+print(G.edges)
+
+#nx.draw(G, node_size=400, font_size=10, with_labels=True, font_color="red", node_color="black", edge_color="purple")
+#plt.show()
+
