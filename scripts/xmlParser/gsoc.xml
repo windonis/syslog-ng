@@ -1,0 +1,5185 @@
+<?xml version="1.0"?>
+
+<bison-xml-report version="3.0.4" bug-report="bug-bison@gnu.org" url="http://www.gnu.org/software/bison/">
+
+  <filename>http-grammar.y</filename>
+
+  <grammar>
+    <rules>
+      <rule number="0" usefulness="useful">
+        <lhs>$accept</lhs>
+        <rhs>
+          <symbol>start</symbol>
+          <symbol>$end</symbol>
+        </rhs>
+      </rule>
+      <rule number="1" usefulness="useful">
+        <lhs>start</lhs>
+        <rhs>
+          <symbol>driver</symbol>
+        </rhs>
+      </rule>
+      <rule number="2" usefulness="useful">
+        <lhs>driver</lhs>
+        <rhs>
+          <symbol>LL_CONTEXT_DESTINATION</symbol>
+          <symbol>http_destination</symbol>
+        </rhs>
+      </rule>
+      <rule number="3" usefulness="useful">
+        <lhs>$@1</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="4" usefulness="useful">
+        <lhs>http_destination</lhs>
+        <rhs>
+          <symbol>KW_HTTP</symbol>
+          <symbol>$@1</symbol>
+          <symbol>'('</symbol>
+          <symbol>http_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="5" usefulness="useful">
+        <lhs>http_options</lhs>
+        <rhs>
+          <symbol>http_option</symbol>
+          <symbol>http_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="6" usefulness="useful">
+        <lhs>http_options</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="7" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_URL</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="8" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_USER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="9" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_PASSWORD</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="10" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_USER_AGENT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="11" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_HEADERS</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="12" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_AUTH_HEADER</symbol>
+          <symbol>'('</symbol>
+          <symbol>http_auth_header_plugin</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="13" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_METHOD</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="14" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BODY_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="15" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BODY_SUFFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="16" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_DELIMITER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="17" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BODY</symbol>
+          <symbol>'('</symbol>
+          <symbol>template_content</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="18" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_ACCEPT_REDIRECTS</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="19" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_TIMEOUT</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="20" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BATCH_BYTES</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="21" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_WORKERS</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="22" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>threaded_dest_driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="23" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>http_tls_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="24" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_TLS</symbol>
+          <symbol>'('</symbol>
+          <symbol>http_tls_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="25" usefulness="useful">
+        <lhs>$@2</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="26" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>$@2</symbol>
+          <symbol>template_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="27" usefulness="useful">
+        <lhs>http_tls_options</lhs>
+        <rhs>
+          <symbol>http_tls_option</symbol>
+          <symbol>http_tls_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="28" usefulness="useful">
+        <lhs>http_tls_options</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="29" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CA_DIR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="30" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CA_FILE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="31" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CERT_FILE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="32" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_KEY_FILE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="33" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CIPHER_SUITE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="34" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_USE_SYSTEM_CERT_STORE</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="35" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_SSL_VERSION</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="36" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_PEER_VERIFY</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="37" usefulness="useful">
+        <lhs>http_auth_header_plugin</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="38" usefulness="useful">
+        <lhs>template_content_inner</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="39" usefulness="useful">
+        <lhs>template_content_inner</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="40" usefulness="useful">
+        <lhs>$@8</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="41" usefulness="useful">
+        <lhs>template_content</lhs>
+        <rhs>
+          <symbol>$@8</symbol>
+          <symbol>template_content_inner</symbol>
+        </rhs>
+      </rule>
+      <rule number="42" usefulness="useful">
+        <lhs>string</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="43" usefulness="useful">
+        <lhs>string</lhs>
+        <rhs>
+          <symbol>LL_STRING</symbol>
+        </rhs>
+      </rule>
+      <rule number="44" usefulness="useful">
+        <lhs>yesno</lhs>
+        <rhs>
+          <symbol>KW_YES</symbol>
+        </rhs>
+      </rule>
+      <rule number="45" usefulness="useful">
+        <lhs>yesno</lhs>
+        <rhs>
+          <symbol>KW_NO</symbol>
+        </rhs>
+      </rule>
+      <rule number="46" usefulness="useful">
+        <lhs>yesno</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="47" usefulness="useful">
+        <lhs>nonnegative_integer64</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="48" usefulness="useful">
+        <lhs>nonnegative_integer</lhs>
+        <rhs>
+          <symbol>nonnegative_integer64</symbol>
+        </rhs>
+      </rule>
+      <rule number="49" usefulness="useful">
+        <lhs>positive_integer64</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="50" usefulness="useful">
+        <lhs>positive_integer</lhs>
+        <rhs>
+          <symbol>positive_integer64</symbol>
+        </rhs>
+      </rule>
+      <rule number="51" usefulness="useful">
+        <lhs>string_list</lhs>
+        <rhs>
+          <symbol>string_list_build</symbol>
+        </rhs>
+      </rule>
+      <rule number="52" usefulness="useful">
+        <lhs>string_list_build</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>string_list_build</symbol>
+        </rhs>
+      </rule>
+      <rule number="53" usefulness="useful">
+        <lhs>string_list_build</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="54" usefulness="useful">
+        <lhs>driver_option</lhs>
+        <rhs>
+          <symbol>KW_PERSIST_NAME</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="55" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_FIFO_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="56" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_THROTTLE</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="57" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="58" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="59" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_RETRIES</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="60" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_BATCH_LINES</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="61" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_BATCH_TIMEOUT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="62" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>dest_driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="63" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_TS_FORMAT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="64" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_FRAC_DIGITS</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="65" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="66" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_SEND_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="67" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_LOCAL_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="68" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_ON_ERROR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="69" usefulness="useless-in-grammar">
+        <lhs>$@3</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="70" usefulness="useless-in-grammar">
+        <lhs>$@4</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="71" usefulness="useless-in-grammar">
+        <lhs>source_content</lhs>
+        <rhs>
+          <symbol>$@3</symbol>
+          <symbol>source_items</symbol>
+          <symbol>$@4</symbol>
+        </rhs>
+      </rule>
+      <rule number="72" usefulness="useless-in-grammar">
+        <lhs>source_items</lhs>
+        <rhs>
+          <symbol>source_item</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>source_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="73" usefulness="useless-in-grammar">
+        <lhs>source_items</lhs>
+        <rhs>
+          <symbol>log_fork</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>source_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="74" usefulness="useless-in-grammar">
+        <lhs>source_items</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="75" usefulness="useless-in-grammar">
+        <lhs>source_item</lhs>
+        <rhs>
+          <symbol>source_afinter</symbol>
+        </rhs>
+      </rule>
+      <rule number="76" usefulness="useless-in-grammar">
+        <lhs>source_item</lhs>
+        <rhs>
+          <symbol>source_plugin</symbol>
+        </rhs>
+      </rule>
+      <rule number="77" usefulness="useless-in-grammar">
+        <lhs>source_plugin</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="78" usefulness="useless-in-grammar">
+        <lhs>source_afinter</lhs>
+        <rhs>
+          <symbol>KW_INTERNAL</symbol>
+          <symbol>'('</symbol>
+          <symbol>source_afinter_params</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="79" usefulness="useless-in-grammar">
+        <lhs>$@5</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="80" usefulness="useless-in-grammar">
+        <lhs>source_afinter_params</lhs>
+        <rhs>
+          <symbol>$@5</symbol>
+          <symbol>source_afinter_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="81" usefulness="useless-in-grammar">
+        <lhs>source_afinter_options</lhs>
+        <rhs>
+          <symbol>source_afinter_option</symbol>
+          <symbol>source_afinter_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="82" usefulness="useless-in-grammar">
+        <lhs>source_afinter_options</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="83" usefulness="useless-in-grammar">
+        <lhs>source_afinter_option</lhs>
+        <rhs>
+          <symbol>source_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="84" usefulness="useless-in-grammar">
+        <lhs>filter_content</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="85" usefulness="useless-in-grammar">
+        <lhs>parser_content</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="86" usefulness="useless-in-grammar">
+        <lhs>rewrite_content</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="87" usefulness="useless-in-grammar">
+        <lhs>$@6</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="88" usefulness="useless-in-grammar">
+        <lhs>$@7</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="89" usefulness="useless-in-grammar">
+        <lhs>dest_content</lhs>
+        <rhs>
+          <symbol>$@6</symbol>
+          <symbol>dest_items</symbol>
+          <symbol>$@7</symbol>
+        </rhs>
+      </rule>
+      <rule number="90" usefulness="useless-in-grammar">
+        <lhs>dest_items</lhs>
+        <rhs>
+          <symbol>dest_item</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>dest_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="91" usefulness="useless-in-grammar">
+        <lhs>dest_items</lhs>
+        <rhs>
+          <symbol>log_fork</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>dest_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="92" usefulness="useless-in-grammar">
+        <lhs>dest_items</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="93" usefulness="useless-in-grammar">
+        <lhs>dest_item</lhs>
+        <rhs>
+          <symbol>dest_plugin</symbol>
+        </rhs>
+      </rule>
+      <rule number="94" usefulness="useless-in-grammar">
+        <lhs>dest_plugin</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="95" usefulness="useless-in-grammar">
+        <lhs>log_items</lhs>
+        <rhs>
+          <symbol>log_item</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>log_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="96" usefulness="useless-in-grammar">
+        <lhs>log_items</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="97" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_SOURCE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="98" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_SOURCE</symbol>
+          <symbol>'{'</symbol>
+          <symbol>source_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="99" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_FILTER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="100" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_FILTER</symbol>
+          <symbol>'{'</symbol>
+          <symbol>filter_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="101" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_PARSER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="102" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_PARSER</symbol>
+          <symbol>'{'</symbol>
+          <symbol>parser_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="103" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_REWRITE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="104" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_REWRITE</symbol>
+          <symbol>'{'</symbol>
+          <symbol>rewrite_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="105" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_DESTINATION</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="106" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_DESTINATION</symbol>
+          <symbol>'{'</symbol>
+          <symbol>dest_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="107" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>log_conditional</symbol>
+        </rhs>
+      </rule>
+      <rule number="108" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>log_junction</symbol>
+        </rhs>
+      </rule>
+      <rule number="109" usefulness="useless-in-grammar">
+        <lhs>log_junction</lhs>
+        <rhs>
+          <symbol>KW_JUNCTION</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_forks</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="110" usefulness="useless-in-grammar">
+        <lhs>log_last_junction</lhs>
+        <rhs>
+          <symbol>log_forks</symbol>
+        </rhs>
+      </rule>
+      <rule number="111" usefulness="useless-in-grammar">
+        <lhs>log_forks</lhs>
+        <rhs>
+          <symbol>log_fork</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>log_forks</symbol>
+        </rhs>
+      </rule>
+      <rule number="112" usefulness="useless-in-grammar">
+        <lhs>log_forks</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="113" usefulness="useless-in-grammar">
+        <lhs>log_fork</lhs>
+        <rhs>
+          <symbol>KW_LOG</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="114" usefulness="useless-in-grammar">
+        <lhs>log_fork</lhs>
+        <rhs>
+          <symbol>KW_CHANNEL</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="115" usefulness="useless-in-grammar">
+        <lhs>log_conditional</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+        </rhs>
+      </rule>
+      <rule number="116" usefulness="useless-in-grammar">
+        <lhs>log_conditional</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+          <symbol>KW_ELSE</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="117" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>KW_IF</symbol>
+          <symbol>'('</symbol>
+          <symbol>filter_content</symbol>
+          <symbol>')'</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="118" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>KW_IF</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="119" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+          <symbol>KW_ELIF</symbol>
+          <symbol>'('</symbol>
+          <symbol>filter_content</symbol>
+          <symbol>')'</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="120" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+          <symbol>KW_ELIF</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="121" usefulness="useless-in-grammar">
+        <lhs>log_content</lhs>
+        <rhs>
+          <symbol>log_items</symbol>
+          <symbol>log_last_junction</symbol>
+          <symbol>log_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="122" usefulness="useless-in-grammar">
+        <lhs>log_flags</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>log_flags_items</symbol>
+          <symbol>')'</symbol>
+          <symbol>semicolons</symbol>
+        </rhs>
+      </rule>
+      <rule number="123" usefulness="useless-in-grammar">
+        <lhs>log_flags</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="124" usefulness="useless-in-grammar">
+        <lhs>log_flags_items</lhs>
+        <rhs>
+          <symbol>normalized_flag</symbol>
+          <symbol>log_flags_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="125" usefulness="useless-in-grammar">
+        <lhs>log_flags_items</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="126" usefulness="useless-in-grammar">
+        <lhs>dnsmode</lhs>
+        <rhs>
+          <symbol>yesno</symbol>
+        </rhs>
+      </rule>
+      <rule number="127" usefulness="useless-in-grammar">
+        <lhs>dnsmode</lhs>
+        <rhs>
+          <symbol>KW_PERSIST_ONLY</symbol>
+        </rhs>
+      </rule>
+      <rule number="128" usefulness="useless-in-grammar">
+        <lhs>string_or_number</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="129" usefulness="useless-in-grammar">
+        <lhs>string_or_number</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="130" usefulness="useless-in-grammar">
+        <lhs>string_or_number</lhs>
+        <rhs>
+          <symbol>LL_FLOAT</symbol>
+        </rhs>
+      </rule>
+      <rule number="131" usefulness="useless-in-grammar">
+        <lhs>normalized_flag</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="132" usefulness="useless-in-grammar">
+        <lhs>semicolons</lhs>
+        <rhs>
+          <symbol>';'</symbol>
+        </rhs>
+      </rule>
+      <rule number="133" usefulness="useless-in-grammar">
+        <lhs>semicolons</lhs>
+        <rhs>
+          <symbol>';'</symbol>
+          <symbol>semicolons</symbol>
+        </rhs>
+      </rule>
+      <rule number="134" usefulness="useless-in-grammar">
+        <lhs>level_string</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="135" usefulness="useless-in-grammar">
+        <lhs>facility_string</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="136" usefulness="useless-in-grammar">
+        <lhs>facility_string</lhs>
+        <rhs>
+          <symbol>KW_SYSLOG</symbol>
+        </rhs>
+      </rule>
+      <rule number="137" usefulness="useless-in-grammar">
+        <lhs>parser_opt</lhs>
+        <rhs>
+          <symbol>KW_TEMPLATE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="138" usefulness="useless-in-grammar">
+        <lhs>source_driver_option</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="139" usefulness="useless-in-grammar">
+        <lhs>source_driver_option</lhs>
+        <rhs>
+          <symbol>driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="140" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>KW_FORMAT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="141" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>threaded_source_driver_option_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="142" usefulness="useless-in-grammar">
+        <lhs>$@9</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="143" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>$@9</symbol>
+          <symbol>msg_format_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="144" usefulness="useless-in-grammar">
+        <lhs>$@10</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="145" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>$@10</symbol>
+          <symbol>source_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="146" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>source_driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="147" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option_flags</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>threaded_source_driver_option_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="148" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option_flags</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="149" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_IW_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="150" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_CHAIN_HOSTNAMES</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="151" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_KEEP_HOSTNAME</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="152" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_PROGRAM_OVERRIDE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="153" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_HOST_OVERRIDE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="154" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="155" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_KEEP_TIMESTAMP</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="156" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_READ_OLD_RECORDS</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="157" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_TAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="158" usefulness="useless-in-grammar">
+        <lhs>$@11</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="159" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>$@11</symbol>
+          <symbol>host_resolve_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="160" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_CHECK_HOSTNAME</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="161" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>source_reader_option_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="162" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_FETCH_LIMIT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="163" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_FORMAT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="164" usefulness="useless-in-grammar">
+        <lhs>$@12</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="165" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>$@12</symbol>
+          <symbol>source_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="166" usefulness="useless-in-grammar">
+        <lhs>$@13</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="167" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>$@13</symbol>
+          <symbol>source_proto_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="168" usefulness="useless-in-grammar">
+        <lhs>$@14</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="169" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>$@14</symbol>
+          <symbol>msg_format_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="170" usefulness="useless-in-grammar">
+        <lhs>source_reader_option_flags</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>source_reader_option_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="171" usefulness="useless-in-grammar">
+        <lhs>source_reader_option_flags</lhs>
+        <rhs>
+          <symbol>KW_CHECK_HOSTNAME</symbol>
+          <symbol>source_reader_option_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="172" usefulness="useless-in-grammar">
+        <lhs>source_reader_option_flags</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="173" usefulness="useless-in-grammar">
+        <lhs>source_proto_option</lhs>
+        <rhs>
+          <symbol>KW_ENCODING</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="174" usefulness="useless-in-grammar">
+        <lhs>source_proto_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_MSG_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="175" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_USE_FQDN</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="176" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_USE_DNS</symbol>
+          <symbol>'('</symbol>
+          <symbol>dnsmode</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="177" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_DNS_CACHE</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="178" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_NORMALIZE_HOSTNAMES</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="179" usefulness="useless-in-grammar">
+        <lhs>msg_format_option</lhs>
+        <rhs>
+          <symbol>KW_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="180" usefulness="useless-in-grammar">
+        <lhs>msg_format_option</lhs>
+        <rhs>
+          <symbol>KW_DEFAULT_LEVEL</symbol>
+          <symbol>'('</symbol>
+          <symbol>level_string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="181" usefulness="useless-in-grammar">
+        <lhs>msg_format_option</lhs>
+        <rhs>
+          <symbol>KW_DEFAULT_FACILITY</symbol>
+          <symbol>'('</symbol>
+          <symbol>facility_string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="182" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options</lhs>
+        <rhs>
+          <symbol>dest_writer_option</symbol>
+          <symbol>dest_writer_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="183" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="184" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>dest_writer_options_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="185" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_FLUSH_LINES</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="186" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_FLUSH_TIMEOUT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="187" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_SUPPRESS</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="188" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_TEMPLATE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="189" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_TEMPLATE_ESCAPE</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="190" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_PAD_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="191" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_MARK_FREQ</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="192" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_MARK_MODE</symbol>
+          <symbol>'('</symbol>
+          <symbol>KW_INTERNAL</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="193" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_MARK_MODE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="194" usefulness="useless-in-grammar">
+        <lhs>$@15</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="195" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>$@15</symbol>
+          <symbol>template_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="196" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options_flags</lhs>
+        <rhs>
+          <symbol>normalized_flag</symbol>
+          <symbol>dest_writer_options_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="197" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options_flags</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="198" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="199" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="200" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="201" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="202" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>LL_NUMBER</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="203" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="204" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="205" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="206" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="207" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="208" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>LL_NUMBER</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="209" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="210" usefulness="useless-in-grammar">
+        <lhs>matcher_option</lhs>
+        <rhs>
+          <symbol>KW_TYPE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="211" usefulness="useless-in-grammar">
+        <lhs>matcher_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>matcher_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="212" usefulness="useless-in-grammar">
+        <lhs>matcher_flags</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>matcher_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="213" usefulness="useless-in-grammar">
+        <lhs>matcher_flags</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="214" usefulness="useless-in-grammar">
+        <lhs>$@16</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="215" usefulness="useless-in-grammar">
+        <lhs>value_pair_option</lhs>
+        <rhs>
+          <symbol>KW_VALUE_PAIRS</symbol>
+          <symbol>$@16</symbol>
+          <symbol>'('</symbol>
+          <symbol>vp_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="216" usefulness="useless-in-grammar">
+        <lhs>vp_options</lhs>
+        <rhs>
+          <symbol>vp_option</symbol>
+          <symbol>vp_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="217" usefulness="useless-in-grammar">
+        <lhs>vp_options</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="218" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_PAIR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>':'</symbol>
+          <symbol>template_content</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="219" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_PAIR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>template_content</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="220" usefulness="useless-in-grammar">
+        <lhs>$@17</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="221" usefulness="useless-in-grammar">
+        <lhs>$@18</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="222" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_KEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>KW_REKEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>$@17</symbol>
+          <symbol>vp_rekey_options</symbol>
+          <symbol>')'</symbol>
+          <symbol>$@18</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="223" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_KEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="224" usefulness="useless-in-grammar">
+        <lhs>$@19</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="225" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_REKEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>$@19</symbol>
+          <symbol>vp_rekey_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="226" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_EXCLUDE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="227" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_SCOPE</symbol>
+          <symbol>'('</symbol>
+          <symbol>vp_scope_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="228" usefulness="useless-in-grammar">
+        <lhs>vp_scope_list</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>vp_scope_list</symbol>
+        </rhs>
+      </rule>
+      <rule number="229" usefulness="useless-in-grammar">
+        <lhs>vp_scope_list</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="230" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_options</lhs>
+        <rhs>
+          <symbol>vp_rekey_option</symbol>
+          <symbol>vp_rekey_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="231" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_options</lhs>
+        <rhs>
+          <empty/>
+        </rhs>
+      </rule>
+      <rule number="232" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_SHIFT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="233" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_SHIFT_LEVELS</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="234" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_ADD_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="235" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_REPLACE_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+    </rules>
+    <terminals>
+      <terminal symbol-number="0" token-number="0" name="$end" usefulness="useful"/>
+      <terminal symbol-number="28" token-number="1" name="LL_CONTEXT_ROOT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="29" token-number="2" name="LL_CONTEXT_DESTINATION" usefulness="useful"/>
+      <terminal symbol-number="30" token-number="3" name="LL_CONTEXT_SOURCE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="31" token-number="4" name="LL_CONTEXT_PARSER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="32" token-number="5" name="LL_CONTEXT_REWRITE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="33" token-number="6" name="LL_CONTEXT_FILTER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="34" token-number="7" name="LL_CONTEXT_LOG" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="35" token-number="8" name="LL_CONTEXT_BLOCK_DEF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="36" token-number="9" name="LL_CONTEXT_BLOCK_REF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="37" token-number="10" name="LL_CONTEXT_BLOCK_CONTENT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="38" token-number="11" name="LL_CONTEXT_BLOCK_ARG" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="39" token-number="12" name="LL_CONTEXT_PRAGMA" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="40" token-number="13" name="LL_CONTEXT_FORMAT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="41" token-number="14" name="LL_CONTEXT_TEMPLATE_FUNC" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="42" token-number="15" name="LL_CONTEXT_INNER_DEST" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="43" token-number="16" name="LL_CONTEXT_INNER_SRC" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="44" token-number="17" name="LL_CONTEXT_CLIENT_PROTO" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="45" token-number="18" name="LL_CONTEXT_SERVER_PROTO" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="46" token-number="19" name="LL_CONTEXT_OPTIONS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="47" token-number="20" name="LL_CONTEXT_HTTP_AUTH_HEADER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="173" token-number="40" name="'('" usefulness="useful"/>
+      <terminal symbol-number="174" token-number="41" name="')'" usefulness="useful"/>
+      <terminal symbol-number="178" token-number="58" name="':'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="177" token-number="59" name="';'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="175" token-number="123" name="'{'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="176" token-number="125" name="'}'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="1" token-number="256" name="error" usefulness="useful"/>
+      <terminal symbol-number="48" token-number="10000" name="KW_SOURCE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="49" token-number="10001" name="KW_FILTER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="50" token-number="10002" name="KW_PARSER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="51" token-number="10003" name="KW_DESTINATION" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="52" token-number="10004" name="KW_LOG" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="53" token-number="10005" name="KW_OPTIONS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="54" token-number="10006" name="KW_INCLUDE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="55" token-number="10007" name="KW_BLOCK" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="56" token-number="10008" name="KW_JUNCTION" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="57" token-number="10009" name="KW_CHANNEL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="58" token-number="10010" name="KW_IF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="59" token-number="10011" name="KW_ELSE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="60" token-number="10012" name="KW_ELIF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="61" token-number="10020" name="KW_INTERNAL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="62" token-number="10060" name="KW_SYSLOG" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="63" token-number="10071" name="KW_MARK_FREQ" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="64" token-number="10072" name="KW_STATS_FREQ" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="65" token-number="10073" name="KW_STATS_LEVEL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="66" token-number="10074" name="KW_STATS_LIFETIME" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="67" token-number="10075" name="KW_FLUSH_LINES" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="68" token-number="10076" name="KW_SUPPRESS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="69" token-number="10077" name="KW_FLUSH_TIMEOUT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="70" token-number="10078" name="KW_LOG_MSG_SIZE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="71" token-number="10079" name="KW_FILE_TEMPLATE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="72" token-number="10080" name="KW_PROTO_TEMPLATE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="73" token-number="10081" name="KW_MARK_MODE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="74" token-number="10082" name="KW_ENCODING" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="75" token-number="10083" name="KW_TYPE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="76" token-number="10084" name="KW_STATS_MAX_DYNAMIC" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="77" token-number="10085" name="KW_MIN_IW_SIZE_PER_READER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="78" token-number="10087" name="KW_BATCH_LINES" usefulness="useful"/>
+      <terminal symbol-number="79" token-number="10088" name="KW_BATCH_TIMEOUT" usefulness="useful"/>
+      <terminal symbol-number="80" token-number="10090" name="KW_CHAIN_HOSTNAMES" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="81" token-number="10091" name="KW_NORMALIZE_HOSTNAMES" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="82" token-number="10092" name="KW_KEEP_HOSTNAME" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="83" token-number="10093" name="KW_CHECK_HOSTNAME" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="84" token-number="10094" name="KW_BAD_HOSTNAME" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="85" token-number="10100" name="KW_KEEP_TIMESTAMP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="86" token-number="10110" name="KW_USE_DNS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="87" token-number="10111" name="KW_USE_FQDN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="88" token-number="10112" name="KW_CUSTOM_DOMAIN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="89" token-number="10120" name="KW_DNS_CACHE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="90" token-number="10121" name="KW_DNS_CACHE_SIZE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="91" token-number="10130" name="KW_DNS_CACHE_EXPIRE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="92" token-number="10131" name="KW_DNS_CACHE_EXPIRE_FAILED" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="93" token-number="10132" name="KW_DNS_CACHE_HOSTS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="94" token-number="10140" name="KW_PERSIST_ONLY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="95" token-number="10141" name="KW_USE_RCPTID" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="96" token-number="10142" name="KW_USE_UNIQID" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="97" token-number="10150" name="KW_TZ_CONVERT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="98" token-number="10151" name="KW_TS_FORMAT" usefulness="useful"/>
+      <terminal symbol-number="99" token-number="10152" name="KW_FRAC_DIGITS" usefulness="useful"/>
+      <terminal symbol-number="100" token-number="10160" name="KW_LOG_FIFO_SIZE" usefulness="useful"/>
+      <terminal symbol-number="101" token-number="10162" name="KW_LOG_FETCH_LIMIT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="102" token-number="10163" name="KW_LOG_IW_SIZE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="103" token-number="10164" name="KW_LOG_PREFIX" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="104" token-number="10165" name="KW_PROGRAM_OVERRIDE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="105" token-number="10166" name="KW_HOST_OVERRIDE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="106" token-number="10170" name="KW_THROTTLE" usefulness="useful"/>
+      <terminal symbol-number="107" token-number="10171" name="KW_THREADED" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="111" token-number="10190" name="KW_FLAGS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="112" token-number="10200" name="KW_PAD_SIZE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="113" token-number="10201" name="KW_TIME_ZONE" usefulness="useful"/>
+      <terminal symbol-number="114" token-number="10202" name="KW_RECV_TIME_ZONE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="115" token-number="10203" name="KW_SEND_TIME_ZONE" usefulness="useful"/>
+      <terminal symbol-number="116" token-number="10204" name="KW_LOCAL_TIME_ZONE" usefulness="useful"/>
+      <terminal symbol-number="117" token-number="10205" name="KW_FORMAT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="118" token-number="10210" name="KW_TIME_REOPEN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="119" token-number="10211" name="KW_TIME_REAP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="120" token-number="10212" name="KW_TIME_SLEEP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="121" token-number="10220" name="KW_TMPL_ESCAPE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="122" token-number="10230" name="KW_OPTIONAL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="108" token-number="10231" name="KW_PASS_UNIX_CREDENTIALS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="123" token-number="10240" name="KW_CREATE_DIRS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="124" token-number="10250" name="KW_OWNER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="125" token-number="10251" name="KW_GROUP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="126" token-number="10252" name="KW_PERM" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="127" token-number="10260" name="KW_DIR_OWNER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="128" token-number="10261" name="KW_DIR_GROUP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="129" token-number="10262" name="KW_DIR_PERM" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="130" token-number="10270" name="KW_TEMPLATE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="131" token-number="10271" name="KW_TEMPLATE_ESCAPE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="132" token-number="10272" name="KW_TEMPLATE_FUNCTION" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="133" token-number="10300" name="KW_DEFAULT_FACILITY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="134" token-number="10301" name="KW_DEFAULT_LEVEL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="109" token-number="10302" name="KW_PERSIST_NAME" usefulness="useful"/>
+      <terminal symbol-number="110" token-number="10304" name="KW_READ_OLD_RECORDS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="135" token-number="10323" name="KW_PORT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="136" token-number="10340" name="KW_USE_TIME_RECVD" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="137" token-number="10350" name="KW_FACILITY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="138" token-number="10351" name="KW_LEVEL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="139" token-number="10352" name="KW_HOST" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="140" token-number="10353" name="KW_MATCH" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="141" token-number="10354" name="KW_MESSAGE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="142" token-number="10355" name="KW_NETMASK" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="143" token-number="10356" name="KW_TAGS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="144" token-number="10357" name="KW_NETMASK6" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="145" token-number="10370" name="KW_REWRITE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="146" token-number="10380" name="KW_YES" usefulness="useful"/>
+      <terminal symbol-number="147" token-number="10381" name="KW_NO" usefulness="useful"/>
+      <terminal symbol-number="148" token-number="10410" name="KW_IFDEF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="149" token-number="10411" name="KW_ENDIF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="150" token-number="10420" name="LL_DOTDOT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="151" token-number="10421" name="LL_DOTDOTDOT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="152" token-number="10422" name="LL_IDENTIFIER" usefulness="useful"/>
+      <terminal symbol-number="153" token-number="10423" name="LL_NUMBER" usefulness="useful"/>
+      <terminal symbol-number="154" token-number="10424" name="LL_FLOAT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="155" token-number="10425" name="LL_STRING" usefulness="useful"/>
+      <terminal symbol-number="156" token-number="10426" name="LL_TOKEN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="157" token-number="10427" name="LL_BLOCK" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="158" token-number="10428" name="LL_PRAGMA" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="159" token-number="10429" name="LL_EOL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="160" token-number="10430" name="LL_ERROR" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="161" token-number="10500" name="KW_VALUE_PAIRS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="162" token-number="10502" name="KW_EXCLUDE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="163" token-number="10503" name="KW_PAIR" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="164" token-number="10504" name="KW_KEY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="165" token-number="10505" name="KW_SCOPE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="166" token-number="10506" name="KW_SHIFT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="167" token-number="10507" name="KW_SHIFT_LEVELS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="168" token-number="10508" name="KW_REKEY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="169" token-number="10509" name="KW_ADD_PREFIX" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="170" token-number="10510" name="KW_REPLACE_PREFIX" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="171" token-number="10511" name="KW_ON_ERROR" usefulness="useful"/>
+      <terminal symbol-number="172" token-number="10512" name="KW_RETRIES" usefulness="useful"/>
+      <terminal symbol-number="3" token-number="10514" name="KW_HTTP" usefulness="useful"/>
+      <terminal symbol-number="4" token-number="10515" name="KW_URL" usefulness="useful"/>
+      <terminal symbol-number="5" token-number="10516" name="KW_USER" usefulness="useful"/>
+      <terminal symbol-number="6" token-number="10517" name="KW_PASSWORD" usefulness="useful"/>
+      <terminal symbol-number="7" token-number="10518" name="KW_USER_AGENT" usefulness="useful"/>
+      <terminal symbol-number="8" token-number="10519" name="KW_METHOD" usefulness="useful"/>
+      <terminal symbol-number="9" token-number="10520" name="KW_HEADERS" usefulness="useful"/>
+      <terminal symbol-number="10" token-number="10521" name="KW_BODY" usefulness="useful"/>
+      <terminal symbol-number="11" token-number="10522" name="KW_CA_DIR" usefulness="useful"/>
+      <terminal symbol-number="12" token-number="10523" name="KW_CA_FILE" usefulness="useful"/>
+      <terminal symbol-number="13" token-number="10524" name="KW_CERT_FILE" usefulness="useful"/>
+      <terminal symbol-number="14" token-number="10525" name="KW_KEY_FILE" usefulness="useful"/>
+      <terminal symbol-number="15" token-number="10526" name="KW_CIPHER_SUITE" usefulness="useful"/>
+      <terminal symbol-number="16" token-number="10527" name="KW_USE_SYSTEM_CERT_STORE" usefulness="useful"/>
+      <terminal symbol-number="17" token-number="10528" name="KW_SSL_VERSION" usefulness="useful"/>
+      <terminal symbol-number="18" token-number="10529" name="KW_PEER_VERIFY" usefulness="useful"/>
+      <terminal symbol-number="19" token-number="10530" name="KW_TIMEOUT" usefulness="useful"/>
+      <terminal symbol-number="20" token-number="10531" name="KW_TLS" usefulness="useful"/>
+      <terminal symbol-number="21" token-number="10532" name="KW_BATCH_BYTES" usefulness="useful"/>
+      <terminal symbol-number="22" token-number="10533" name="KW_BODY_PREFIX" usefulness="useful"/>
+      <terminal symbol-number="23" token-number="10534" name="KW_BODY_SUFFIX" usefulness="useful"/>
+      <terminal symbol-number="24" token-number="10535" name="KW_DELIMITER" usefulness="useful"/>
+      <terminal symbol-number="25" token-number="10536" name="KW_WORKERS" usefulness="useful"/>
+      <terminal symbol-number="26" token-number="10537" name="KW_ACCEPT_REDIRECTS" usefulness="useful"/>
+      <terminal symbol-number="27" token-number="10538" name="KW_AUTH_HEADER" usefulness="useful"/>
+    </terminals>
+    <nonterminals>
+      <nonterminal symbol-number="179" name="$accept" usefulness="useful"/>
+      <nonterminal symbol-number="180" name="start" usefulness="useful"/>
+      <nonterminal symbol-number="181" name="driver" usefulness="useful"/>
+      <nonterminal symbol-number="182" name="http_destination" usefulness="useful"/>
+      <nonterminal symbol-number="183" name="$@1" usefulness="useful"/>
+      <nonterminal symbol-number="184" name="http_options" usefulness="useful"/>
+      <nonterminal symbol-number="185" name="http_option" usefulness="useful"/>
+      <nonterminal symbol-number="186" name="$@2" usefulness="useful"/>
+      <nonterminal symbol-number="187" name="http_tls_options" usefulness="useful"/>
+      <nonterminal symbol-number="188" name="http_tls_option" usefulness="useful"/>
+      <nonterminal symbol-number="189" name="http_auth_header_plugin" usefulness="useful"/>
+      <nonterminal symbol-number="190" name="template_content_inner" usefulness="useful"/>
+      <nonterminal symbol-number="191" name="template_content" usefulness="useful"/>
+      <nonterminal symbol-number="192" name="$@8" usefulness="useful"/>
+      <nonterminal symbol-number="193" name="string" usefulness="useful"/>
+      <nonterminal symbol-number="194" name="yesno" usefulness="useful"/>
+      <nonterminal symbol-number="195" name="nonnegative_integer64" usefulness="useful"/>
+      <nonterminal symbol-number="196" name="nonnegative_integer" usefulness="useful"/>
+      <nonterminal symbol-number="197" name="positive_integer64" usefulness="useful"/>
+      <nonterminal symbol-number="198" name="positive_integer" usefulness="useful"/>
+      <nonterminal symbol-number="199" name="string_list" usefulness="useful"/>
+      <nonterminal symbol-number="200" name="string_list_build" usefulness="useful"/>
+      <nonterminal symbol-number="201" name="driver_option" usefulness="useful"/>
+      <nonterminal symbol-number="202" name="dest_driver_option" usefulness="useful"/>
+      <nonterminal symbol-number="203" name="threaded_dest_driver_option" usefulness="useful"/>
+      <nonterminal symbol-number="204" name="template_option" usefulness="useful"/>
+      <nonterminal symbol-number="205" name="source_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="206" name="$@3" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="207" name="$@4" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="208" name="source_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="209" name="source_item" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="210" name="source_plugin" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="211" name="source_afinter" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="212" name="source_afinter_params" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="213" name="$@5" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="214" name="source_afinter_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="215" name="source_afinter_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="216" name="filter_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="217" name="parser_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="218" name="rewrite_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="219" name="dest_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="220" name="$@6" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="221" name="$@7" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="222" name="dest_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="223" name="dest_item" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="224" name="dest_plugin" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="225" name="log_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="226" name="log_item" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="227" name="log_junction" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="228" name="log_last_junction" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="229" name="log_forks" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="230" name="log_fork" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="231" name="log_conditional" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="232" name="log_if" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="233" name="log_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="234" name="log_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="235" name="log_flags_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="236" name="dnsmode" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="237" name="string_or_number" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="238" name="normalized_flag" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="239" name="semicolons" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="240" name="level_string" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="241" name="facility_string" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="242" name="parser_opt" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="243" name="source_driver_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="244" name="threaded_source_driver_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="245" name="$@9" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="246" name="$@10" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="247" name="threaded_source_driver_option_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="248" name="source_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="249" name="$@11" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="250" name="source_reader_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="251" name="$@12" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="252" name="$@13" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="253" name="$@14" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="254" name="source_reader_option_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="255" name="source_proto_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="256" name="host_resolve_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="257" name="msg_format_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="258" name="dest_writer_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="259" name="dest_writer_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="260" name="$@15" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="261" name="dest_writer_options_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="262" name="file_perm_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="263" name="matcher_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="264" name="matcher_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="265" name="value_pair_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="266" name="$@16" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="267" name="vp_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="268" name="vp_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="269" name="$@17" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="270" name="$@18" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="271" name="$@19" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="272" name="vp_scope_list" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="273" name="vp_rekey_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="274" name="vp_rekey_option" usefulness="useless-in-grammar"/>
+    </nonterminals>
+  </grammar>
+
+  <automaton>
+
+    <state number="0">
+      <itemset>
+        <item rule-number="0" point="0"/>
+        <item rule-number="1" point="0"/>
+        <item rule-number="2" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_CONTEXT_DESTINATION" state="1"/>
+          <transition type="goto" symbol="start" state="2"/>
+          <transition type="goto" symbol="driver" state="3"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="1">
+      <itemset>
+        <item rule-number="2" point="1"/>
+        <item rule-number="4" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_HTTP" state="4"/>
+          <transition type="goto" symbol="http_destination" state="5"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="2">
+      <itemset>
+        <item rule-number="0" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="$end" state="6"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="3">
+      <itemset>
+        <item rule-number="1" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="1" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="4">
+      <itemset>
+        <item rule-number="3" point="0"/>
+        <item rule-number="4" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="goto" symbol="$@1" state="7"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="3" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="5">
+      <itemset>
+        <item rule-number="2" point="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="2" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="6">
+      <itemset>
+        <item rule-number="0" point="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="accept" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="7">
+      <itemset>
+        <item rule-number="4" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="8"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="8">
+      <itemset>
+        <item rule-number="4" point="3"/>
+        <item rule-number="5" point="0"/>
+        <item rule-number="6" point="0">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="7" point="0"/>
+        <item rule-number="8" point="0"/>
+        <item rule-number="9" point="0"/>
+        <item rule-number="10" point="0"/>
+        <item rule-number="11" point="0"/>
+        <item rule-number="12" point="0"/>
+        <item rule-number="13" point="0"/>
+        <item rule-number="14" point="0"/>
+        <item rule-number="15" point="0"/>
+        <item rule-number="16" point="0"/>
+        <item rule-number="17" point="0"/>
+        <item rule-number="18" point="0"/>
+        <item rule-number="19" point="0"/>
+        <item rule-number="20" point="0"/>
+        <item rule-number="21" point="0"/>
+        <item rule-number="22" point="0"/>
+        <item rule-number="23" point="0"/>
+        <item rule-number="24" point="0"/>
+        <item rule-number="25" point="0">
+          <lookaheads>
+            <symbol>KW_TS_FORMAT</symbol>
+            <symbol>KW_FRAC_DIGITS</symbol>
+            <symbol>KW_TIME_ZONE</symbol>
+            <symbol>KW_SEND_TIME_ZONE</symbol>
+            <symbol>KW_LOCAL_TIME_ZONE</symbol>
+            <symbol>KW_ON_ERROR</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="26" point="0"/>
+        <item rule-number="29" point="0"/>
+        <item rule-number="30" point="0"/>
+        <item rule-number="31" point="0"/>
+        <item rule-number="32" point="0"/>
+        <item rule-number="33" point="0"/>
+        <item rule-number="34" point="0"/>
+        <item rule-number="35" point="0"/>
+        <item rule-number="36" point="0"/>
+        <item rule-number="54" point="0"/>
+        <item rule-number="55" point="0"/>
+        <item rule-number="56" point="0"/>
+        <item rule-number="57" point="0"/>
+        <item rule-number="58" point="0"/>
+        <item rule-number="59" point="0"/>
+        <item rule-number="60" point="0"/>
+        <item rule-number="61" point="0"/>
+        <item rule-number="62" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_URL" state="9"/>
+          <transition type="shift" symbol="KW_USER" state="10"/>
+          <transition type="shift" symbol="KW_PASSWORD" state="11"/>
+          <transition type="shift" symbol="KW_USER_AGENT" state="12"/>
+          <transition type="shift" symbol="KW_METHOD" state="13"/>
+          <transition type="shift" symbol="KW_HEADERS" state="14"/>
+          <transition type="shift" symbol="KW_BODY" state="15"/>
+          <transition type="shift" symbol="KW_CA_DIR" state="16"/>
+          <transition type="shift" symbol="KW_CA_FILE" state="17"/>
+          <transition type="shift" symbol="KW_CERT_FILE" state="18"/>
+          <transition type="shift" symbol="KW_KEY_FILE" state="19"/>
+          <transition type="shift" symbol="KW_CIPHER_SUITE" state="20"/>
+          <transition type="shift" symbol="KW_USE_SYSTEM_CERT_STORE" state="21"/>
+          <transition type="shift" symbol="KW_SSL_VERSION" state="22"/>
+          <transition type="shift" symbol="KW_PEER_VERIFY" state="23"/>
+          <transition type="shift" symbol="KW_TIMEOUT" state="24"/>
+          <transition type="shift" symbol="KW_TLS" state="25"/>
+          <transition type="shift" symbol="KW_BATCH_BYTES" state="26"/>
+          <transition type="shift" symbol="KW_BODY_PREFIX" state="27"/>
+          <transition type="shift" symbol="KW_BODY_SUFFIX" state="28"/>
+          <transition type="shift" symbol="KW_DELIMITER" state="29"/>
+          <transition type="shift" symbol="KW_WORKERS" state="30"/>
+          <transition type="shift" symbol="KW_ACCEPT_REDIRECTS" state="31"/>
+          <transition type="shift" symbol="KW_AUTH_HEADER" state="32"/>
+          <transition type="shift" symbol="KW_BATCH_LINES" state="33"/>
+          <transition type="shift" symbol="KW_BATCH_TIMEOUT" state="34"/>
+          <transition type="shift" symbol="KW_LOG_FIFO_SIZE" state="35"/>
+          <transition type="shift" symbol="KW_THROTTLE" state="36"/>
+          <transition type="shift" symbol="KW_PERSIST_NAME" state="37"/>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="38"/>
+          <transition type="shift" symbol="KW_RETRIES" state="39"/>
+          <transition type="goto" symbol="http_options" state="40"/>
+          <transition type="goto" symbol="http_option" state="41"/>
+          <transition type="goto" symbol="$@2" state="42"/>
+          <transition type="goto" symbol="http_tls_option" state="43"/>
+          <transition type="goto" symbol="driver_option" state="44"/>
+          <transition type="goto" symbol="dest_driver_option" state="45"/>
+          <transition type="goto" symbol="threaded_dest_driver_option" state="46"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="')'" rule="6" enabled="true"/>
+          <reduction symbol="$default" rule="25" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="9">
+      <itemset>
+        <item rule-number="7" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="47"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="10">
+      <itemset>
+        <item rule-number="8" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="48"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="11">
+      <itemset>
+        <item rule-number="9" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="49"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="12">
+      <itemset>
+        <item rule-number="10" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="50"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="13">
+      <itemset>
+        <item rule-number="13" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="51"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="14">
+      <itemset>
+        <item rule-number="11" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="52"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="15">
+      <itemset>
+        <item rule-number="17" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="53"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="16">
+      <itemset>
+        <item rule-number="29" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="54"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="17">
+      <itemset>
+        <item rule-number="30" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="55"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="18">
+      <itemset>
+        <item rule-number="31" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="56"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="19">
+      <itemset>
+        <item rule-number="32" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="57"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="20">
+      <itemset>
+        <item rule-number="33" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="58"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="21">
+      <itemset>
+        <item rule-number="34" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="59"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="22">
+      <itemset>
+        <item rule-number="35" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="60"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="23">
+      <itemset>
+        <item rule-number="36" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="61"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="24">
+      <itemset>
+        <item rule-number="19" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="62"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="25">
+      <itemset>
+        <item rule-number="24" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="63"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="26">
+      <itemset>
+        <item rule-number="20" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="64"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="27">
+      <itemset>
+        <item rule-number="14" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="65"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="28">
+      <itemset>
+        <item rule-number="15" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="66"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="29">
+      <itemset>
+        <item rule-number="16" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="67"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="30">
+      <itemset>
+        <item rule-number="21" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="68"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="31">
+      <itemset>
+        <item rule-number="18" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="69"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="32">
+      <itemset>
+        <item rule-number="12" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="70"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="33">
+      <itemset>
+        <item rule-number="60" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="71"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="34">
+      <itemset>
+        <item rule-number="61" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="72"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="35">
+      <itemset>
+        <item rule-number="55" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="73"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="36">
+      <itemset>
+        <item rule-number="56" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="74"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="37">
+      <itemset>
+        <item rule-number="54" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="75"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="38">
+      <itemset>
+        <item rule-number="57" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="57" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="39">
+      <itemset>
+        <item rule-number="59" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="76"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="40">
+      <itemset>
+        <item rule-number="4" point="4"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="77"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="41">
+      <itemset>
+        <item rule-number="5" point="0"/>
+        <item rule-number="5" point="1"/>
+        <item rule-number="6" point="0">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="7" point="0"/>
+        <item rule-number="8" point="0"/>
+        <item rule-number="9" point="0"/>
+        <item rule-number="10" point="0"/>
+        <item rule-number="11" point="0"/>
+        <item rule-number="12" point="0"/>
+        <item rule-number="13" point="0"/>
+        <item rule-number="14" point="0"/>
+        <item rule-number="15" point="0"/>
+        <item rule-number="16" point="0"/>
+        <item rule-number="17" point="0"/>
+        <item rule-number="18" point="0"/>
+        <item rule-number="19" point="0"/>
+        <item rule-number="20" point="0"/>
+        <item rule-number="21" point="0"/>
+        <item rule-number="22" point="0"/>
+        <item rule-number="23" point="0"/>
+        <item rule-number="24" point="0"/>
+        <item rule-number="25" point="0">
+          <lookaheads>
+            <symbol>KW_TS_FORMAT</symbol>
+            <symbol>KW_FRAC_DIGITS</symbol>
+            <symbol>KW_TIME_ZONE</symbol>
+            <symbol>KW_SEND_TIME_ZONE</symbol>
+            <symbol>KW_LOCAL_TIME_ZONE</symbol>
+            <symbol>KW_ON_ERROR</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="26" point="0"/>
+        <item rule-number="29" point="0"/>
+        <item rule-number="30" point="0"/>
+        <item rule-number="31" point="0"/>
+        <item rule-number="32" point="0"/>
+        <item rule-number="33" point="0"/>
+        <item rule-number="34" point="0"/>
+        <item rule-number="35" point="0"/>
+        <item rule-number="36" point="0"/>
+        <item rule-number="54" point="0"/>
+        <item rule-number="55" point="0"/>
+        <item rule-number="56" point="0"/>
+        <item rule-number="57" point="0"/>
+        <item rule-number="58" point="0"/>
+        <item rule-number="59" point="0"/>
+        <item rule-number="60" point="0"/>
+        <item rule-number="61" point="0"/>
+        <item rule-number="62" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_URL" state="9"/>
+          <transition type="shift" symbol="KW_USER" state="10"/>
+          <transition type="shift" symbol="KW_PASSWORD" state="11"/>
+          <transition type="shift" symbol="KW_USER_AGENT" state="12"/>
+          <transition type="shift" symbol="KW_METHOD" state="13"/>
+          <transition type="shift" symbol="KW_HEADERS" state="14"/>
+          <transition type="shift" symbol="KW_BODY" state="15"/>
+          <transition type="shift" symbol="KW_CA_DIR" state="16"/>
+          <transition type="shift" symbol="KW_CA_FILE" state="17"/>
+          <transition type="shift" symbol="KW_CERT_FILE" state="18"/>
+          <transition type="shift" symbol="KW_KEY_FILE" state="19"/>
+          <transition type="shift" symbol="KW_CIPHER_SUITE" state="20"/>
+          <transition type="shift" symbol="KW_USE_SYSTEM_CERT_STORE" state="21"/>
+          <transition type="shift" symbol="KW_SSL_VERSION" state="22"/>
+          <transition type="shift" symbol="KW_PEER_VERIFY" state="23"/>
+          <transition type="shift" symbol="KW_TIMEOUT" state="24"/>
+          <transition type="shift" symbol="KW_TLS" state="25"/>
+          <transition type="shift" symbol="KW_BATCH_BYTES" state="26"/>
+          <transition type="shift" symbol="KW_BODY_PREFIX" state="27"/>
+          <transition type="shift" symbol="KW_BODY_SUFFIX" state="28"/>
+          <transition type="shift" symbol="KW_DELIMITER" state="29"/>
+          <transition type="shift" symbol="KW_WORKERS" state="30"/>
+          <transition type="shift" symbol="KW_ACCEPT_REDIRECTS" state="31"/>
+          <transition type="shift" symbol="KW_AUTH_HEADER" state="32"/>
+          <transition type="shift" symbol="KW_BATCH_LINES" state="33"/>
+          <transition type="shift" symbol="KW_BATCH_TIMEOUT" state="34"/>
+          <transition type="shift" symbol="KW_LOG_FIFO_SIZE" state="35"/>
+          <transition type="shift" symbol="KW_THROTTLE" state="36"/>
+          <transition type="shift" symbol="KW_PERSIST_NAME" state="37"/>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="38"/>
+          <transition type="shift" symbol="KW_RETRIES" state="39"/>
+          <transition type="goto" symbol="http_options" state="78"/>
+          <transition type="goto" symbol="http_option" state="41"/>
+          <transition type="goto" symbol="$@2" state="42"/>
+          <transition type="goto" symbol="http_tls_option" state="43"/>
+          <transition type="goto" symbol="driver_option" state="44"/>
+          <transition type="goto" symbol="dest_driver_option" state="45"/>
+          <transition type="goto" symbol="threaded_dest_driver_option" state="46"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="')'" rule="6" enabled="true"/>
+          <reduction symbol="$default" rule="25" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="42">
+      <itemset>
+        <item rule-number="26" point="1"/>
+        <item rule-number="63" point="0"/>
+        <item rule-number="64" point="0"/>
+        <item rule-number="65" point="0"/>
+        <item rule-number="66" point="0"/>
+        <item rule-number="67" point="0"/>
+        <item rule-number="68" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_TS_FORMAT" state="79"/>
+          <transition type="shift" symbol="KW_FRAC_DIGITS" state="80"/>
+          <transition type="shift" symbol="KW_TIME_ZONE" state="81"/>
+          <transition type="shift" symbol="KW_SEND_TIME_ZONE" state="82"/>
+          <transition type="shift" symbol="KW_LOCAL_TIME_ZONE" state="83"/>
+          <transition type="shift" symbol="KW_ON_ERROR" state="84"/>
+          <transition type="goto" symbol="template_option" state="85"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="43">
+      <itemset>
+        <item rule-number="23" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="23" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="44">
+      <itemset>
+        <item rule-number="58" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="58" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="45">
+      <itemset>
+        <item rule-number="62" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="62" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="46">
+      <itemset>
+        <item rule-number="22" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="22" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="47">
+      <itemset>
+        <item rule-number="7" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="51" point="0"/>
+        <item rule-number="52" point="0"/>
+        <item rule-number="53" point="0">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="88"/>
+          <transition type="goto" symbol="string_list" state="89"/>
+          <transition type="goto" symbol="string_list_build" state="90"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="53" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="48">
+      <itemset>
+        <item rule-number="8" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="91"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="49">
+      <itemset>
+        <item rule-number="9" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="92"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="50">
+      <itemset>
+        <item rule-number="10" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="93"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="51">
+      <itemset>
+        <item rule-number="13" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="94"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="52">
+      <itemset>
+        <item rule-number="11" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="51" point="0"/>
+        <item rule-number="52" point="0"/>
+        <item rule-number="53" point="0">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="88"/>
+          <transition type="goto" symbol="string_list" state="95"/>
+          <transition type="goto" symbol="string_list_build" state="90"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="53" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="53">
+      <itemset>
+        <item rule-number="17" point="2"/>
+        <item rule-number="40" point="0"/>
+        <item rule-number="41" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="goto" symbol="template_content" state="96"/>
+          <transition type="goto" symbol="$@8" state="97"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="40" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="54">
+      <itemset>
+        <item rule-number="29" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="98"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="55">
+      <itemset>
+        <item rule-number="30" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="99"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="56">
+      <itemset>
+        <item rule-number="31" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="100"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="57">
+      <itemset>
+        <item rule-number="32" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="101"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="58">
+      <itemset>
+        <item rule-number="33" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="102"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="59">
+      <itemset>
+        <item rule-number="34" point="2"/>
+        <item rule-number="44" point="0"/>
+        <item rule-number="45" point="0"/>
+        <item rule-number="46" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_YES" state="103"/>
+          <transition type="shift" symbol="KW_NO" state="104"/>
+          <transition type="shift" symbol="LL_NUMBER" state="105"/>
+          <transition type="goto" symbol="yesno" state="106"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="60">
+      <itemset>
+        <item rule-number="35" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="107"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="61">
+      <itemset>
+        <item rule-number="36" point="2"/>
+        <item rule-number="44" point="0"/>
+        <item rule-number="45" point="0"/>
+        <item rule-number="46" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_YES" state="103"/>
+          <transition type="shift" symbol="KW_NO" state="104"/>
+          <transition type="shift" symbol="LL_NUMBER" state="105"/>
+          <transition type="goto" symbol="yesno" state="108"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="62">
+      <itemset>
+        <item rule-number="19" point="2"/>
+        <item rule-number="47" point="0"/>
+        <item rule-number="48" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="109"/>
+          <transition type="goto" symbol="nonnegative_integer64" state="110"/>
+          <transition type="goto" symbol="nonnegative_integer" state="111"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="63">
+      <itemset>
+        <item rule-number="24" point="2"/>
+        <item rule-number="27" point="0"/>
+        <item rule-number="28" point="0">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="29" point="0"/>
+        <item rule-number="30" point="0"/>
+        <item rule-number="31" point="0"/>
+        <item rule-number="32" point="0"/>
+        <item rule-number="33" point="0"/>
+        <item rule-number="34" point="0"/>
+        <item rule-number="35" point="0"/>
+        <item rule-number="36" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_CA_DIR" state="16"/>
+          <transition type="shift" symbol="KW_CA_FILE" state="17"/>
+          <transition type="shift" symbol="KW_CERT_FILE" state="18"/>
+          <transition type="shift" symbol="KW_KEY_FILE" state="19"/>
+          <transition type="shift" symbol="KW_CIPHER_SUITE" state="20"/>
+          <transition type="shift" symbol="KW_USE_SYSTEM_CERT_STORE" state="21"/>
+          <transition type="shift" symbol="KW_SSL_VERSION" state="22"/>
+          <transition type="shift" symbol="KW_PEER_VERIFY" state="23"/>
+          <transition type="goto" symbol="http_tls_options" state="112"/>
+          <transition type="goto" symbol="http_tls_option" state="113"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="28" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="64">
+      <itemset>
+        <item rule-number="20" point="2"/>
+        <item rule-number="47" point="0"/>
+        <item rule-number="48" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="109"/>
+          <transition type="goto" symbol="nonnegative_integer64" state="110"/>
+          <transition type="goto" symbol="nonnegative_integer" state="114"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="65">
+      <itemset>
+        <item rule-number="14" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="115"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="66">
+      <itemset>
+        <item rule-number="15" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="116"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="67">
+      <itemset>
+        <item rule-number="16" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="117"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="68">
+      <itemset>
+        <item rule-number="21" point="2"/>
+        <item rule-number="47" point="0"/>
+        <item rule-number="48" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="109"/>
+          <transition type="goto" symbol="nonnegative_integer64" state="110"/>
+          <transition type="goto" symbol="nonnegative_integer" state="118"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="69">
+      <itemset>
+        <item rule-number="18" point="2"/>
+        <item rule-number="44" point="0"/>
+        <item rule-number="45" point="0"/>
+        <item rule-number="46" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_YES" state="103"/>
+          <transition type="shift" symbol="KW_NO" state="104"/>
+          <transition type="shift" symbol="LL_NUMBER" state="105"/>
+          <transition type="goto" symbol="yesno" state="119"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="70">
+      <itemset>
+        <item rule-number="12" point="2"/>
+        <item rule-number="37" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="120"/>
+          <transition type="goto" symbol="http_auth_header_plugin" state="121"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="71">
+      <itemset>
+        <item rule-number="47" point="0"/>
+        <item rule-number="48" point="0"/>
+        <item rule-number="60" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="109"/>
+          <transition type="goto" symbol="nonnegative_integer64" state="110"/>
+          <transition type="goto" symbol="nonnegative_integer" state="122"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="72">
+      <itemset>
+        <item rule-number="49" point="0"/>
+        <item rule-number="50" point="0"/>
+        <item rule-number="61" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="123"/>
+          <transition type="goto" symbol="positive_integer64" state="124"/>
+          <transition type="goto" symbol="positive_integer" state="125"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="73">
+      <itemset>
+        <item rule-number="49" point="0"/>
+        <item rule-number="50" point="0"/>
+        <item rule-number="55" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="123"/>
+          <transition type="goto" symbol="positive_integer64" state="124"/>
+          <transition type="goto" symbol="positive_integer" state="126"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="74">
+      <itemset>
+        <item rule-number="47" point="0"/>
+        <item rule-number="48" point="0"/>
+        <item rule-number="56" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="109"/>
+          <transition type="goto" symbol="nonnegative_integer64" state="110"/>
+          <transition type="goto" symbol="nonnegative_integer" state="127"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="75">
+      <itemset>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="54" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="128"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="76">
+      <itemset>
+        <item rule-number="49" point="0"/>
+        <item rule-number="50" point="0"/>
+        <item rule-number="59" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="123"/>
+          <transition type="goto" symbol="positive_integer64" state="124"/>
+          <transition type="goto" symbol="positive_integer" state="129"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="77">
+      <itemset>
+        <item rule-number="4" point="5"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="4" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="78">
+      <itemset>
+        <item rule-number="5" point="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="5" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="79">
+      <itemset>
+        <item rule-number="63" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="130"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="80">
+      <itemset>
+        <item rule-number="64" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="131"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="81">
+      <itemset>
+        <item rule-number="65" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="132"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="82">
+      <itemset>
+        <item rule-number="66" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="133"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="83">
+      <itemset>
+        <item rule-number="67" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="134"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="84">
+      <itemset>
+        <item rule-number="68" point="1"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="135"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="85">
+      <itemset>
+        <item rule-number="26" point="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="26" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="86">
+      <itemset>
+        <item rule-number="42" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="42" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="87">
+      <itemset>
+        <item rule-number="43" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="43" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="88">
+      <itemset>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="52" point="0"/>
+        <item rule-number="52" point="1"/>
+        <item rule-number="53" point="0">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="88"/>
+          <transition type="goto" symbol="string_list_build" state="136"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="53" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="89">
+      <itemset>
+        <item rule-number="7" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="137"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="90">
+      <itemset>
+        <item rule-number="51" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="51" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="91">
+      <itemset>
+        <item rule-number="8" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="138"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="92">
+      <itemset>
+        <item rule-number="9" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="139"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="93">
+      <itemset>
+        <item rule-number="10" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="140"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="94">
+      <itemset>
+        <item rule-number="13" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="141"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="95">
+      <itemset>
+        <item rule-number="11" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="142"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="96">
+      <itemset>
+        <item rule-number="17" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="143"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="97">
+      <itemset>
+        <item rule-number="38" point="0"/>
+        <item rule-number="39" point="0"/>
+        <item rule-number="41" point="1"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="144"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="template_content_inner" state="145"/>
+          <transition type="goto" symbol="string" state="146"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="98">
+      <itemset>
+        <item rule-number="29" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="147"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="99">
+      <itemset>
+        <item rule-number="30" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="148"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="100">
+      <itemset>
+        <item rule-number="31" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="149"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="101">
+      <itemset>
+        <item rule-number="32" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="150"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="102">
+      <itemset>
+        <item rule-number="33" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="151"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="103">
+      <itemset>
+        <item rule-number="44" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="44" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="104">
+      <itemset>
+        <item rule-number="45" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="45" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="105">
+      <itemset>
+        <item rule-number="46" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="46" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="106">
+      <itemset>
+        <item rule-number="34" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="152"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="107">
+      <itemset>
+        <item rule-number="35" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="153"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="108">
+      <itemset>
+        <item rule-number="36" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="154"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="109">
+      <itemset>
+        <item rule-number="47" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="47" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="110">
+      <itemset>
+        <item rule-number="48" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="48" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="111">
+      <itemset>
+        <item rule-number="19" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="155"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="112">
+      <itemset>
+        <item rule-number="24" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="156"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="113">
+      <itemset>
+        <item rule-number="27" point="0"/>
+        <item rule-number="27" point="1"/>
+        <item rule-number="28" point="0">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+        <item rule-number="29" point="0"/>
+        <item rule-number="30" point="0"/>
+        <item rule-number="31" point="0"/>
+        <item rule-number="32" point="0"/>
+        <item rule-number="33" point="0"/>
+        <item rule-number="34" point="0"/>
+        <item rule-number="35" point="0"/>
+        <item rule-number="36" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="KW_CA_DIR" state="16"/>
+          <transition type="shift" symbol="KW_CA_FILE" state="17"/>
+          <transition type="shift" symbol="KW_CERT_FILE" state="18"/>
+          <transition type="shift" symbol="KW_KEY_FILE" state="19"/>
+          <transition type="shift" symbol="KW_CIPHER_SUITE" state="20"/>
+          <transition type="shift" symbol="KW_USE_SYSTEM_CERT_STORE" state="21"/>
+          <transition type="shift" symbol="KW_SSL_VERSION" state="22"/>
+          <transition type="shift" symbol="KW_PEER_VERIFY" state="23"/>
+          <transition type="goto" symbol="http_tls_options" state="157"/>
+          <transition type="goto" symbol="http_tls_option" state="113"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="28" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="114">
+      <itemset>
+        <item rule-number="20" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="158"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="115">
+      <itemset>
+        <item rule-number="14" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="159"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="116">
+      <itemset>
+        <item rule-number="15" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="160"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="117">
+      <itemset>
+        <item rule-number="16" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="161"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="118">
+      <itemset>
+        <item rule-number="21" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="162"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="119">
+      <itemset>
+        <item rule-number="18" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="163"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="120">
+      <itemset>
+        <item rule-number="37" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="37" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="121">
+      <itemset>
+        <item rule-number="12" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="164"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="122">
+      <itemset>
+        <item rule-number="60" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="165"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="123">
+      <itemset>
+        <item rule-number="49" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="49" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="124">
+      <itemset>
+        <item rule-number="50" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="50" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="125">
+      <itemset>
+        <item rule-number="61" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="166"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="126">
+      <itemset>
+        <item rule-number="55" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="167"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="127">
+      <itemset>
+        <item rule-number="56" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="168"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="128">
+      <itemset>
+        <item rule-number="54" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="169"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="129">
+      <itemset>
+        <item rule-number="59" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="170"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="130">
+      <itemset>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="63" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="171"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="131">
+      <itemset>
+        <item rule-number="47" point="0"/>
+        <item rule-number="48" point="0"/>
+        <item rule-number="64" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_NUMBER" state="109"/>
+          <transition type="goto" symbol="nonnegative_integer64" state="110"/>
+          <transition type="goto" symbol="nonnegative_integer" state="172"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="132">
+      <itemset>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="65" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="173"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="133">
+      <itemset>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="66" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="174"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="134">
+      <itemset>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="67" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="175"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="135">
+      <itemset>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+        <item rule-number="68" point="2"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="176"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="136">
+      <itemset>
+        <item rule-number="52" point="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="52" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="137">
+      <itemset>
+        <item rule-number="7" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="7" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="138">
+      <itemset>
+        <item rule-number="8" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="8" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="139">
+      <itemset>
+        <item rule-number="9" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="9" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="140">
+      <itemset>
+        <item rule-number="10" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="10" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="141">
+      <itemset>
+        <item rule-number="13" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="13" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="142">
+      <itemset>
+        <item rule-number="11" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="11" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="143">
+      <itemset>
+        <item rule-number="17" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="17" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="144">
+      <itemset>
+        <item rule-number="39" point="1"/>
+        <item rule-number="42" point="1">
+          <lookaheads>
+            <symbol>')'</symbol>
+          </lookaheads>
+        </item>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="'('" state="177"/>
+        </transitions>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="42" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="145">
+      <itemset>
+        <item rule-number="41" point="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="41" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="146">
+      <itemset>
+        <item rule-number="38" point="1"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="38" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="147">
+      <itemset>
+        <item rule-number="29" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="29" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="148">
+      <itemset>
+        <item rule-number="30" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="30" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="149">
+      <itemset>
+        <item rule-number="31" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="31" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="150">
+      <itemset>
+        <item rule-number="32" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="32" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="151">
+      <itemset>
+        <item rule-number="33" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="33" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="152">
+      <itemset>
+        <item rule-number="34" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="34" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="153">
+      <itemset>
+        <item rule-number="35" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="35" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="154">
+      <itemset>
+        <item rule-number="36" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="36" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="155">
+      <itemset>
+        <item rule-number="19" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="19" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="156">
+      <itemset>
+        <item rule-number="24" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="24" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="157">
+      <itemset>
+        <item rule-number="27" point="2"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="27" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="158">
+      <itemset>
+        <item rule-number="20" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="20" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="159">
+      <itemset>
+        <item rule-number="14" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="14" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="160">
+      <itemset>
+        <item rule-number="15" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="15" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="161">
+      <itemset>
+        <item rule-number="16" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="16" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="162">
+      <itemset>
+        <item rule-number="21" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="21" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="163">
+      <itemset>
+        <item rule-number="18" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="18" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="164">
+      <itemset>
+        <item rule-number="12" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="12" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="165">
+      <itemset>
+        <item rule-number="60" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="60" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="166">
+      <itemset>
+        <item rule-number="61" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="61" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="167">
+      <itemset>
+        <item rule-number="55" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="55" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="168">
+      <itemset>
+        <item rule-number="56" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="56" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="169">
+      <itemset>
+        <item rule-number="54" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="54" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="170">
+      <itemset>
+        <item rule-number="59" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="59" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="171">
+      <itemset>
+        <item rule-number="63" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="178"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="172">
+      <itemset>
+        <item rule-number="64" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="179"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="173">
+      <itemset>
+        <item rule-number="65" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="180"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="174">
+      <itemset>
+        <item rule-number="66" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="181"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="175">
+      <itemset>
+        <item rule-number="67" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="182"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="176">
+      <itemset>
+        <item rule-number="68" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="183"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="177">
+      <itemset>
+        <item rule-number="39" point="2"/>
+        <item rule-number="42" point="0"/>
+        <item rule-number="43" point="0"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="LL_IDENTIFIER" state="86"/>
+          <transition type="shift" symbol="LL_STRING" state="87"/>
+          <transition type="goto" symbol="string" state="184"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="178">
+      <itemset>
+        <item rule-number="63" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="63" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="179">
+      <itemset>
+        <item rule-number="64" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="64" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="180">
+      <itemset>
+        <item rule-number="65" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="65" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="181">
+      <itemset>
+        <item rule-number="66" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="66" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="182">
+      <itemset>
+        <item rule-number="67" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="67" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="183">
+      <itemset>
+        <item rule-number="68" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="68" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="184">
+      <itemset>
+        <item rule-number="39" point="3"/>
+      </itemset>
+      <actions>
+        <transitions>
+          <transition type="shift" symbol="')'" state="185"/>
+        </transitions>
+        <errors/>
+        <reductions/>
+      </actions>
+      <solved-conflicts/>
+    </state>
+
+    <state number="185">
+      <itemset>
+        <item rule-number="39" point="4"/>
+      </itemset>
+      <actions>
+        <transitions/>
+        <errors/>
+        <reductions>
+          <reduction symbol="$default" rule="39" enabled="true"/>
+        </reductions>
+      </actions>
+      <solved-conflicts/>
+    </state>
+  </automaton>
+</bison-xml-report>
