@@ -5,27 +5,13 @@ import matplotlib.pyplot as plt
 
 graph.EdgeAdder()
 
-### PREVIOS VERSION ###
-print(parser.G.edges(61))  #stdout --> [(61, 'KW_BATCH_TIMEOUT'), (61, "'('"), (61, 50), (61, "')'")]
+
+print(parser.G.nodes[61])
+
 
 T = nx.dfs_edges(parser.G, source=61)
-print(list(T))  ##stdout --> [(61, 'KW_BATCH_TIMEOUT'), (61, "'('"), (61, 50), (50, 49), (49, 'LL_NUMBER'), (61, "')'")]
+print(list(T))
 
-### NEW VERSION ###
-print(parser.G.edges(61))  #stdout --> []
-T = nx.dfs_edges(parser.G, source=61)
-print(list(T))  ##stdout --> []
+nx.draw(parser.G, node_size=400, font_size=10, with_labels=True, font_color="red", node_color="black", edge_color="purple")
+plt.show()
 
-
-### __STR__ FUNCTION OUTPUT ###
-tester = list(parser.G.nodes())
-print(tester[1])
-'''
- number: 0
- usefulness: useful
- lhs: $accept
- rhs:
-    1 : start
-    2 : $end
-'''
-    

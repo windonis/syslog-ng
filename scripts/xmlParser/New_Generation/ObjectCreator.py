@@ -1,4 +1,3 @@
-#XML to Python Array
 import xml.etree.ElementTree as syslog
 import networkx as nx
 G = nx.DiGraph()
@@ -36,12 +35,12 @@ class RULE:
 
     def add_terminal(self):
         for i in self.rhs:
-            terminalControl = lhsfinder(i)
-            if len(terminalControl) == 0:
+            terminalcontrol = lhsfinder(i)
+            if len(terminalcontrol) == 0:
                 G.add_node(i)
 
     def add_node(self):
-        G.add_node(self)
+        G.add_node(self.number, lhs=self.lhs)
     
 
 def xmltoobject():
@@ -49,9 +48,8 @@ def xmltoobject():
     for rule in root.iter('rule'):
         number = rule.get('number')
         usefulness = rule.get('usefulness')
-        #print(type(usefulness))
         lhs = rule.find('lhs').text
-        g_rule = RULE(int (number),usefulness,lhs)
+        g_rule = RULE(int(number), usefulness, lhs)
         for rhs in rule.iter('rhs'):
             symbol = rhs.findall('symbol')
             for x in symbol:
@@ -60,3 +58,9 @@ def xmltoobject():
         g_rule.add_terminal()
         g_rule.add_node()
     return collector
+
+'''
+data = xmltoobject()
+for i in data:
+    print(i)
+'''
