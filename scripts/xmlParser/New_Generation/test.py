@@ -36,7 +36,7 @@ def childxmltoobject(xmltoobject,getNumber):
             return i
 
 
-def test_array():
+def Testing():
     print("\n")
     for x in range(10):
         selectedValue = random.randrange(0,235)
@@ -45,6 +45,3 @@ def test_array():
         assert parserXML(selectedValue).lhs == data.lhs
         assert parserXML(selectedValue).usefulness == data.usefulness
         assert parserXML(selectedValue).rhs == data.rhs
-   
-
-## pytest test.py -s
