@@ -1,0 +1,1857 @@
+<rules>
+      <rule number="0" usefulness="useful">
+        <lhs>$accept</lhs>
+        <rhs>
+          <symbol>start</symbol>
+          <symbol>$end</symbol>
+        </rhs>
+      </rule>
+      <rule number="1" usefulness="useful">
+        <lhs>start</lhs>
+        <rhs>
+          <symbol>driver</symbol>
+        </rhs>
+      </rule>
+      <rule number="2" usefulness="useful">
+        <lhs>driver</lhs>
+        <rhs>
+          <symbol>LL_CONTEXT_DESTINATION</symbol>
+          <symbol>http_destination</symbol>
+        </rhs>
+      </rule>
+      <rule number="3" usefulness="useful">
+        <lhs>$@1</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="4" usefulness="useful">
+        <lhs>http_destination</lhs>
+        <rhs>
+          <symbol>KW_HTTP</symbol>
+          <symbol>$@1</symbol>
+          <symbol>'('</symbol>
+          <symbol>http_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="5" usefulness="useful">
+        <lhs>http_options</lhs>
+        <rhs>
+          <symbol>http_option</symbol>
+          <symbol>http_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="6" usefulness="useful">
+        <lhs>http_options</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="7" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_URL</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="8" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_USER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="9" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_PASSWORD</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="10" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_USER_AGENT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="11" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_HEADERS</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="12" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_AUTH_HEADER</symbol>
+          <symbol>'('</symbol>
+          <symbol>http_auth_header_plugin</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="13" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_METHOD</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="14" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BODY_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="15" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BODY_SUFFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="16" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_DELIMITER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="17" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BODY</symbol>
+          <symbol>'('</symbol>
+          <symbol>template_content</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="18" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_ACCEPT_REDIRECTS</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="19" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_TIMEOUT</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="20" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_BATCH_BYTES</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="21" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_WORKERS</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="22" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>threaded_dest_driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="23" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>http_tls_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="24" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>KW_TLS</symbol>
+          <symbol>'('</symbol>
+          <symbol>http_tls_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="25" usefulness="useful">
+        <lhs>$@2</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="26" usefulness="useful">
+        <lhs>http_option</lhs>
+        <rhs>
+          <symbol>$@2</symbol>
+          <symbol>template_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="27" usefulness="useful">
+        <lhs>http_tls_options</lhs>
+        <rhs>
+          <symbol>http_tls_option</symbol>
+          <symbol>http_tls_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="28" usefulness="useful">
+        <lhs>http_tls_options</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="29" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CA_DIR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="30" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CA_FILE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="31" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CERT_FILE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="32" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_KEY_FILE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="33" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_CIPHER_SUITE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="34" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_USE_SYSTEM_CERT_STORE</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="35" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_SSL_VERSION</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="36" usefulness="useful">
+        <lhs>http_tls_option</lhs>
+        <rhs>
+          <symbol>KW_PEER_VERIFY</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="37" usefulness="useful">
+        <lhs>http_auth_header_plugin</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="38" usefulness="useful">
+        <lhs>template_content_inner</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="39" usefulness="useful">
+        <lhs>template_content_inner</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="40" usefulness="useful">
+        <lhs>$@8</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="41" usefulness="useful">
+        <lhs>template_content</lhs>
+        <rhs>
+          <symbol>$@8</symbol>
+          <symbol>template_content_inner</symbol>
+        </rhs>
+      </rule>
+      <rule number="42" usefulness="useful">
+        <lhs>string</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="43" usefulness="useful">
+        <lhs>string</lhs>
+        <rhs>
+          <symbol>LL_STRING</symbol>
+        </rhs>
+      </rule>
+      <rule number="44" usefulness="useful">
+        <lhs>yesno</lhs>
+        <rhs>
+          <symbol>KW_YES</symbol>
+        </rhs>
+      </rule>
+      <rule number="45" usefulness="useful">
+        <lhs>yesno</lhs>
+        <rhs>
+          <symbol>KW_NO</symbol>
+        </rhs>
+      </rule>
+      <rule number="46" usefulness="useful">
+        <lhs>yesno</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="47" usefulness="useful">
+        <lhs>nonnegative_integer64</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="48" usefulness="useful">
+        <lhs>nonnegative_integer</lhs>
+        <rhs>
+          <symbol>nonnegative_integer64</symbol>
+        </rhs>
+      </rule>
+      <rule number="49" usefulness="useful">
+        <lhs>positive_integer64</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="50" usefulness="useful">
+        <lhs>positive_integer</lhs>
+        <rhs>
+          <symbol>positive_integer64</symbol>
+        </rhs>
+      </rule>
+      <rule number="51" usefulness="useful">
+        <lhs>string_list</lhs>
+        <rhs>
+          <symbol>string_list_build</symbol>
+        </rhs>
+      </rule>
+      <rule number="52" usefulness="useful">
+        <lhs>string_list_build</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>string_list_build</symbol>
+        </rhs>
+      </rule>
+      <rule number="53" usefulness="useful">
+        <lhs>string_list_build</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="54" usefulness="useful">
+        <lhs>driver_option</lhs>
+        <rhs>
+          <symbol>KW_PERSIST_NAME</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="55" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_FIFO_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="56" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_THROTTLE</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="57" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="58" usefulness="useful">
+        <lhs>dest_driver_option</lhs>
+        <rhs>
+          <symbol>driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="59" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_RETRIES</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="60" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_BATCH_LINES</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="61" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>KW_BATCH_TIMEOUT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="62" usefulness="useful">
+        <lhs>threaded_dest_driver_option</lhs>
+        <rhs>
+          <symbol>dest_driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="63" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_TS_FORMAT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="64" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_FRAC_DIGITS</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="65" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="66" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_SEND_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="67" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_LOCAL_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="68" usefulness="useful">
+        <lhs>template_option</lhs>
+        <rhs>
+          <symbol>KW_ON_ERROR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="69" usefulness="useless-in-grammar">
+        <lhs>$@3</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="70" usefulness="useless-in-grammar">
+        <lhs>$@4</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="71" usefulness="useless-in-grammar">
+        <lhs>source_content</lhs>
+        <rhs>
+          <symbol>$@3</symbol>
+          <symbol>source_items</symbol>
+          <symbol>$@4</symbol>
+        </rhs>
+      </rule>
+      <rule number="72" usefulness="useless-in-grammar">
+        <lhs>source_items</lhs>
+        <rhs>
+          <symbol>source_item</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>source_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="73" usefulness="useless-in-grammar">
+        <lhs>source_items</lhs>
+        <rhs>
+          <symbol>log_fork</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>source_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="74" usefulness="useless-in-grammar">
+        <lhs>source_items</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="75" usefulness="useless-in-grammar">
+        <lhs>source_item</lhs>
+        <rhs>
+          <symbol>source_afinter</symbol>
+        </rhs>
+      </rule>
+      <rule number="76" usefulness="useless-in-grammar">
+        <lhs>source_item</lhs>
+        <rhs>
+          <symbol>source_plugin</symbol>
+        </rhs>
+      </rule>
+      <rule number="77" usefulness="useless-in-grammar">
+        <lhs>source_plugin</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="78" usefulness="useless-in-grammar">
+        <lhs>source_afinter</lhs>
+        <rhs>
+          <symbol>KW_INTERNAL</symbol>
+          <symbol>'('</symbol>
+          <symbol>source_afinter_params</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="79" usefulness="useless-in-grammar">
+        <lhs>$@5</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="80" usefulness="useless-in-grammar">
+        <lhs>source_afinter_params</lhs>
+        <rhs>
+          <symbol>$@5</symbol>
+          <symbol>source_afinter_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="81" usefulness="useless-in-grammar">
+        <lhs>source_afinter_options</lhs>
+        <rhs>
+          <symbol>source_afinter_option</symbol>
+          <symbol>source_afinter_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="82" usefulness="useless-in-grammar">
+        <lhs>source_afinter_options</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="83" usefulness="useless-in-grammar">
+        <lhs>source_afinter_option</lhs>
+        <rhs>
+          <symbol>source_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="84" usefulness="useless-in-grammar">
+        <lhs>filter_content</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="85" usefulness="useless-in-grammar">
+        <lhs>parser_content</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="86" usefulness="useless-in-grammar">
+        <lhs>rewrite_content</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="87" usefulness="useless-in-grammar">
+        <lhs>$@6</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="88" usefulness="useless-in-grammar">
+        <lhs>$@7</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="89" usefulness="useless-in-grammar">
+        <lhs>dest_content</lhs>
+        <rhs>
+          <symbol>$@6</symbol>
+          <symbol>dest_items</symbol>
+          <symbol>$@7</symbol>
+        </rhs>
+      </rule>
+      <rule number="90" usefulness="useless-in-grammar">
+        <lhs>dest_items</lhs>
+        <rhs>
+          <symbol>dest_item</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>dest_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="91" usefulness="useless-in-grammar">
+        <lhs>dest_items</lhs>
+        <rhs>
+          <symbol>log_fork</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>dest_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="92" usefulness="useless-in-grammar">
+        <lhs>dest_items</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="93" usefulness="useless-in-grammar">
+        <lhs>dest_item</lhs>
+        <rhs>
+          <symbol>dest_plugin</symbol>
+        </rhs>
+      </rule>
+      <rule number="94" usefulness="useless-in-grammar">
+        <lhs>dest_plugin</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="95" usefulness="useless-in-grammar">
+        <lhs>log_items</lhs>
+        <rhs>
+          <symbol>log_item</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>log_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="96" usefulness="useless-in-grammar">
+        <lhs>log_items</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="97" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_SOURCE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="98" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_SOURCE</symbol>
+          <symbol>'{'</symbol>
+          <symbol>source_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="99" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_FILTER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="100" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_FILTER</symbol>
+          <symbol>'{'</symbol>
+          <symbol>filter_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="101" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_PARSER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="102" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_PARSER</symbol>
+          <symbol>'{'</symbol>
+          <symbol>parser_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="103" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_REWRITE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="104" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_REWRITE</symbol>
+          <symbol>'{'</symbol>
+          <symbol>rewrite_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="105" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_DESTINATION</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="106" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>KW_DESTINATION</symbol>
+          <symbol>'{'</symbol>
+          <symbol>dest_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="107" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>log_conditional</symbol>
+        </rhs>
+      </rule>
+      <rule number="108" usefulness="useless-in-grammar">
+        <lhs>log_item</lhs>
+        <rhs>
+          <symbol>log_junction</symbol>
+        </rhs>
+      </rule>
+      <rule number="109" usefulness="useless-in-grammar">
+        <lhs>log_junction</lhs>
+        <rhs>
+          <symbol>KW_JUNCTION</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_forks</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="110" usefulness="useless-in-grammar">
+        <lhs>log_last_junction</lhs>
+        <rhs>
+          <symbol>log_forks</symbol>
+        </rhs>
+      </rule>
+      <rule number="111" usefulness="useless-in-grammar">
+        <lhs>log_forks</lhs>
+        <rhs>
+          <symbol>log_fork</symbol>
+          <symbol>semicolons</symbol>
+          <symbol>log_forks</symbol>
+        </rhs>
+      </rule>
+      <rule number="112" usefulness="useless-in-grammar">
+        <lhs>log_forks</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="113" usefulness="useless-in-grammar">
+        <lhs>log_fork</lhs>
+        <rhs>
+          <symbol>KW_LOG</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="114" usefulness="useless-in-grammar">
+        <lhs>log_fork</lhs>
+        <rhs>
+          <symbol>KW_CHANNEL</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="115" usefulness="useless-in-grammar">
+        <lhs>log_conditional</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+        </rhs>
+      </rule>
+      <rule number="116" usefulness="useless-in-grammar">
+        <lhs>log_conditional</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+          <symbol>KW_ELSE</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="117" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>KW_IF</symbol>
+          <symbol>'('</symbol>
+          <symbol>filter_content</symbol>
+          <symbol>')'</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="118" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>KW_IF</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="119" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+          <symbol>KW_ELIF</symbol>
+          <symbol>'('</symbol>
+          <symbol>filter_content</symbol>
+          <symbol>')'</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="120" usefulness="useless-in-grammar">
+        <lhs>log_if</lhs>
+        <rhs>
+          <symbol>log_if</symbol>
+          <symbol>KW_ELIF</symbol>
+          <symbol>'{'</symbol>
+          <symbol>log_content</symbol>
+          <symbol>'}'</symbol>
+        </rhs>
+      </rule>
+      <rule number="121" usefulness="useless-in-grammar">
+        <lhs>log_content</lhs>
+        <rhs>
+          <symbol>log_items</symbol>
+          <symbol>log_last_junction</symbol>
+          <symbol>log_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="122" usefulness="useless-in-grammar">
+        <lhs>log_flags</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>log_flags_items</symbol>
+          <symbol>')'</symbol>
+          <symbol>semicolons</symbol>
+        </rhs>
+      </rule>
+      <rule number="123" usefulness="useless-in-grammar">
+        <lhs>log_flags</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="124" usefulness="useless-in-grammar">
+        <lhs>log_flags_items</lhs>
+        <rhs>
+          <symbol>normalized_flag</symbol>
+          <symbol>log_flags_items</symbol>
+        </rhs>
+      </rule>
+      <rule number="125" usefulness="useless-in-grammar">
+        <lhs>log_flags_items</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="126" usefulness="useless-in-grammar">
+        <lhs>dnsmode</lhs>
+        <rhs>
+          <symbol>yesno</symbol>
+        </rhs>
+      </rule>
+      <rule number="127" usefulness="useless-in-grammar">
+        <lhs>dnsmode</lhs>
+        <rhs>
+          <symbol>KW_PERSIST_ONLY</symbol>
+        </rhs>
+      </rule>
+      <rule number="128" usefulness="useless-in-grammar">
+        <lhs>string_or_number</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="129" usefulness="useless-in-grammar">
+        <lhs>string_or_number</lhs>
+        <rhs>
+          <symbol>LL_NUMBER</symbol>
+        </rhs>
+      </rule>
+      <rule number="130" usefulness="useless-in-grammar">
+        <lhs>string_or_number</lhs>
+        <rhs>
+          <symbol>LL_FLOAT</symbol>
+        </rhs>
+      </rule>
+      <rule number="131" usefulness="useless-in-grammar">
+        <lhs>normalized_flag</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="132" usefulness="useless-in-grammar">
+        <lhs>semicolons</lhs>
+        <rhs>
+          <symbol>';'</symbol>
+        </rhs>
+      </rule>
+      <rule number="133" usefulness="useless-in-grammar">
+        <lhs>semicolons</lhs>
+        <rhs>
+          <symbol>';'</symbol>
+          <symbol>semicolons</symbol>
+        </rhs>
+      </rule>
+      <rule number="134" usefulness="useless-in-grammar">
+        <lhs>level_string</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="135" usefulness="useless-in-grammar">
+        <lhs>facility_string</lhs>
+        <rhs>
+          <symbol>string</symbol>
+        </rhs>
+      </rule>
+      <rule number="136" usefulness="useless-in-grammar">
+        <lhs>facility_string</lhs>
+        <rhs>
+          <symbol>KW_SYSLOG</symbol>
+        </rhs>
+      </rule>
+      <rule number="137" usefulness="useless-in-grammar">
+        <lhs>parser_opt</lhs>
+        <rhs>
+          <symbol>KW_TEMPLATE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="138" usefulness="useless-in-grammar">
+        <lhs>source_driver_option</lhs>
+        <rhs>
+          <symbol>LL_IDENTIFIER</symbol>
+        </rhs>
+      </rule>
+      <rule number="139" usefulness="useless-in-grammar">
+        <lhs>source_driver_option</lhs>
+        <rhs>
+          <symbol>driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="140" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>KW_FORMAT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="141" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>threaded_source_driver_option_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="142" usefulness="useless-in-grammar">
+        <lhs>$@9</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="143" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>$@9</symbol>
+          <symbol>msg_format_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="144" usefulness="useless-in-grammar">
+        <lhs>$@10</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="145" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>$@10</symbol>
+          <symbol>source_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="146" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option</lhs>
+        <rhs>
+          <symbol>source_driver_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="147" usefulness="useless-in-grammar">
+        <lhs>threaded_fetcher_driver_option</lhs>
+        <rhs>
+          <symbol>KW_FETCH_NO_DATA_DELAY</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="148" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option_flags</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>threaded_source_driver_option_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="149" usefulness="useless-in-grammar">
+        <lhs>threaded_source_driver_option_flags</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="150" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_IW_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="151" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_CHAIN_HOSTNAMES</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="152" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_KEEP_HOSTNAME</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="153" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_PROGRAM_OVERRIDE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="154" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_HOST_OVERRIDE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="155" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="156" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_KEEP_TIMESTAMP</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="157" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_READ_OLD_RECORDS</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="158" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>KW_TAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="159" usefulness="useless-in-grammar">
+        <lhs>$@11</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="160" usefulness="useless-in-grammar">
+        <lhs>source_option</lhs>
+        <rhs>
+          <symbol>$@11</symbol>
+          <symbol>host_resolve_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="161" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_CHECK_HOSTNAME</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="162" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>source_reader_option_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="163" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_FETCH_LIMIT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="164" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>KW_FORMAT</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="165" usefulness="useless-in-grammar">
+        <lhs>$@12</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="166" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>$@12</symbol>
+          <symbol>source_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="167" usefulness="useless-in-grammar">
+        <lhs>$@13</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="168" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>$@13</symbol>
+          <symbol>source_proto_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="169" usefulness="useless-in-grammar">
+        <lhs>$@14</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="170" usefulness="useless-in-grammar">
+        <lhs>source_reader_option</lhs>
+        <rhs>
+          <symbol>$@14</symbol>
+          <symbol>msg_format_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="171" usefulness="useless-in-grammar">
+        <lhs>source_reader_option_flags</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>source_reader_option_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="172" usefulness="useless-in-grammar">
+        <lhs>source_reader_option_flags</lhs>
+        <rhs>
+          <symbol>KW_CHECK_HOSTNAME</symbol>
+          <symbol>source_reader_option_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="173" usefulness="useless-in-grammar">
+        <lhs>source_reader_option_flags</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="174" usefulness="useless-in-grammar">
+        <lhs>source_proto_option</lhs>
+        <rhs>
+          <symbol>KW_ENCODING</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="175" usefulness="useless-in-grammar">
+        <lhs>source_proto_option</lhs>
+        <rhs>
+          <symbol>KW_LOG_MSG_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="176" usefulness="useless-in-grammar">
+        <lhs>source_proto_option</lhs>
+        <rhs>
+          <symbol>KW_TRIM_LARGE_MESSAGES</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="177" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_USE_FQDN</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="178" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_USE_DNS</symbol>
+          <symbol>'('</symbol>
+          <symbol>dnsmode</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="179" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_DNS_CACHE</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="180" usefulness="useless-in-grammar">
+        <lhs>host_resolve_option</lhs>
+        <rhs>
+          <symbol>KW_NORMALIZE_HOSTNAMES</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="181" usefulness="useless-in-grammar">
+        <lhs>msg_format_option</lhs>
+        <rhs>
+          <symbol>KW_TIME_ZONE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="182" usefulness="useless-in-grammar">
+        <lhs>msg_format_option</lhs>
+        <rhs>
+          <symbol>KW_DEFAULT_LEVEL</symbol>
+          <symbol>'('</symbol>
+          <symbol>level_string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="183" usefulness="useless-in-grammar">
+        <lhs>msg_format_option</lhs>
+        <rhs>
+          <symbol>KW_DEFAULT_FACILITY</symbol>
+          <symbol>'('</symbol>
+          <symbol>facility_string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="184" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options</lhs>
+        <rhs>
+          <symbol>dest_writer_option</symbol>
+          <symbol>dest_writer_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="185" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="186" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>dest_writer_options_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="187" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_FLUSH_LINES</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="188" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_FLUSH_TIMEOUT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="189" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_SUPPRESS</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="190" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_TEMPLATE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="191" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_TEMPLATE_ESCAPE</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="192" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_PAD_SIZE</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="193" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_MARK_FREQ</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="194" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_MARK_MODE</symbol>
+          <symbol>'('</symbol>
+          <symbol>KW_INTERNAL</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="195" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>KW_MARK_MODE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="196" usefulness="useless-in-grammar">
+        <lhs>$@15</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="197" usefulness="useless-in-grammar">
+        <lhs>dest_writer_option</lhs>
+        <rhs>
+          <symbol>$@15</symbol>
+          <symbol>template_option</symbol>
+        </rhs>
+      </rule>
+      <rule number="198" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options_flags</lhs>
+        <rhs>
+          <symbol>normalized_flag</symbol>
+          <symbol>dest_writer_options_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="199" usefulness="useless-in-grammar">
+        <lhs>dest_writer_options_flags</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="200" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="201" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="202" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="203" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="204" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>LL_NUMBER</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="205" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="206" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="207" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_OWNER</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="208" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="209" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="210" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>LL_NUMBER</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="211" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_PERM</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="212" usefulness="useless-in-grammar">
+        <lhs>matcher_option</lhs>
+        <rhs>
+          <symbol>KW_TYPE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="213" usefulness="useless-in-grammar">
+        <lhs>matcher_option</lhs>
+        <rhs>
+          <symbol>KW_FLAGS</symbol>
+          <symbol>'('</symbol>
+          <symbol>matcher_flags</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="214" usefulness="useless-in-grammar">
+        <lhs>matcher_flags</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>matcher_flags</symbol>
+        </rhs>
+      </rule>
+      <rule number="215" usefulness="useless-in-grammar">
+        <lhs>matcher_flags</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="216" usefulness="useless-in-grammar">
+        <lhs>$@16</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="217" usefulness="useless-in-grammar">
+        <lhs>value_pair_option</lhs>
+        <rhs>
+          <symbol>KW_VALUE_PAIRS</symbol>
+          <symbol>$@16</symbol>
+          <symbol>'('</symbol>
+          <symbol>vp_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="218" usefulness="useless-in-grammar">
+        <lhs>vp_options</lhs>
+        <rhs>
+          <symbol>vp_option</symbol>
+          <symbol>vp_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="219" usefulness="useless-in-grammar">
+        <lhs>vp_options</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="220" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_PAIR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>':'</symbol>
+          <symbol>template_content</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="221" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_PAIR</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>template_content</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="222" usefulness="useless-in-grammar">
+        <lhs>$@17</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="223" usefulness="useless-in-grammar">
+        <lhs>$@18</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="224" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_KEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>KW_REKEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>$@17</symbol>
+          <symbol>vp_rekey_options</symbol>
+          <symbol>')'</symbol>
+          <symbol>$@18</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="225" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_KEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="226" usefulness="useless-in-grammar">
+        <lhs>$@19</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="227" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_REKEY</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>$@19</symbol>
+          <symbol>vp_rekey_options</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="228" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_EXCLUDE</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="229" usefulness="useless-in-grammar">
+        <lhs>vp_option</lhs>
+        <rhs>
+          <symbol>KW_SCOPE</symbol>
+          <symbol>'('</symbol>
+          <symbol>vp_scope_list</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="230" usefulness="useless-in-grammar">
+        <lhs>vp_scope_list</lhs>
+        <rhs>
+          <symbol>string</symbol>
+          <symbol>vp_scope_list</symbol>
+        </rhs>
+      </rule>
+      <rule number="231" usefulness="useless-in-grammar">
+        <lhs>vp_scope_list</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="232" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_options</lhs>
+        <rhs>
+          <symbol>vp_rekey_option</symbol>
+          <symbol>vp_rekey_options</symbol>
+        </rhs>
+      </rule>
+      <rule number="233" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_options</lhs>
+        <rhs>
+          <empty />
+        </rhs>
+      </rule>
+      <rule number="234" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_SHIFT</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="235" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_SHIFT_LEVELS</symbol>
+          <symbol>'('</symbol>
+          <symbol>positive_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="236" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_ADD_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="237" usefulness="useless-in-grammar">
+        <lhs>vp_rekey_option</lhs>
+        <rhs>
+          <symbol>KW_REPLACE_PREFIX</symbol>
+          <symbol>'('</symbol>
+          <symbol>string</symbol>
+          <symbol>string</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+    </rules>
+    

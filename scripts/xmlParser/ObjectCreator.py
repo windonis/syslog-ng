@@ -1,9 +1,9 @@
 import xml.etree.ElementTree as syslog
 import networkx as nx
+import os
 G = nx.DiGraph()
 
-
-tree = syslog.parse("gsoc.xml")
+tree = syslog.parse("http-grammar.xml")
 root = tree.getroot()
 
 def lhsfinder(symbolName):

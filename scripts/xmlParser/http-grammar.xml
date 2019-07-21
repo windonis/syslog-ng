@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 
-<bison-xml-report version="3.0.4" bug-report="bug-bison@gnu.org" url="http://www.gnu.org/software/bison/">
+<bison-xml-report version="3.3.2" bug-report="bug-bison@gnu.org" url="http://www.gnu.org/software/bison/">
 
-  <filename>http-grammar.y</filename>
+  <filename>/var/syslog-ng/modules/http/http-grammar.y</filename>
 
   <grammar>
     <rules>
@@ -1114,19 +1114,28 @@
         </rhs>
       </rule>
       <rule number="147" usefulness="useless-in-grammar">
+        <lhs>threaded_fetcher_driver_option</lhs>
+        <rhs>
+          <symbol>KW_FETCH_NO_DATA_DELAY</symbol>
+          <symbol>'('</symbol>
+          <symbol>nonnegative_integer</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="148" usefulness="useless-in-grammar">
         <lhs>threaded_source_driver_option_flags</lhs>
         <rhs>
           <symbol>string</symbol>
           <symbol>threaded_source_driver_option_flags</symbol>
         </rhs>
       </rule>
-      <rule number="148" usefulness="useless-in-grammar">
+      <rule number="149" usefulness="useless-in-grammar">
         <lhs>threaded_source_driver_option_flags</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="149" usefulness="useless-in-grammar">
+      <rule number="150" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_LOG_IW_SIZE</symbol>
@@ -1135,7 +1144,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="150" usefulness="useless-in-grammar">
+      <rule number="151" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_CHAIN_HOSTNAMES</symbol>
@@ -1144,7 +1153,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="151" usefulness="useless-in-grammar">
+      <rule number="152" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_KEEP_HOSTNAME</symbol>
@@ -1153,7 +1162,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="152" usefulness="useless-in-grammar">
+      <rule number="153" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_PROGRAM_OVERRIDE</symbol>
@@ -1162,7 +1171,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="153" usefulness="useless-in-grammar">
+      <rule number="154" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_HOST_OVERRIDE</symbol>
@@ -1171,7 +1180,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="154" usefulness="useless-in-grammar">
+      <rule number="155" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_LOG_PREFIX</symbol>
@@ -1180,7 +1189,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="155" usefulness="useless-in-grammar">
+      <rule number="156" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_KEEP_TIMESTAMP</symbol>
@@ -1189,7 +1198,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="156" usefulness="useless-in-grammar">
+      <rule number="157" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_READ_OLD_RECORDS</symbol>
@@ -1198,7 +1207,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="157" usefulness="useless-in-grammar">
+      <rule number="158" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>KW_TAGS</symbol>
@@ -1207,20 +1216,20 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="158" usefulness="useless-in-grammar">
+      <rule number="159" usefulness="useless-in-grammar">
         <lhs>$@11</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="159" usefulness="useless-in-grammar">
+      <rule number="160" usefulness="useless-in-grammar">
         <lhs>source_option</lhs>
         <rhs>
           <symbol>$@11</symbol>
           <symbol>host_resolve_option</symbol>
         </rhs>
       </rule>
-      <rule number="160" usefulness="useless-in-grammar">
+      <rule number="161" usefulness="useless-in-grammar">
         <lhs>source_reader_option</lhs>
         <rhs>
           <symbol>KW_CHECK_HOSTNAME</symbol>
@@ -1229,7 +1238,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="161" usefulness="useless-in-grammar">
+      <rule number="162" usefulness="useless-in-grammar">
         <lhs>source_reader_option</lhs>
         <rhs>
           <symbol>KW_FLAGS</symbol>
@@ -1238,7 +1247,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="162" usefulness="useless-in-grammar">
+      <rule number="163" usefulness="useless-in-grammar">
         <lhs>source_reader_option</lhs>
         <rhs>
           <symbol>KW_LOG_FETCH_LIMIT</symbol>
@@ -1247,7 +1256,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="163" usefulness="useless-in-grammar">
+      <rule number="164" usefulness="useless-in-grammar">
         <lhs>source_reader_option</lhs>
         <rhs>
           <symbol>KW_FORMAT</symbol>
@@ -1256,66 +1265,66 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="164" usefulness="useless-in-grammar">
+      <rule number="165" usefulness="useless-in-grammar">
         <lhs>$@12</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="165" usefulness="useless-in-grammar">
+      <rule number="166" usefulness="useless-in-grammar">
         <lhs>source_reader_option</lhs>
         <rhs>
           <symbol>$@12</symbol>
           <symbol>source_option</symbol>
         </rhs>
       </rule>
-      <rule number="166" usefulness="useless-in-grammar">
+      <rule number="167" usefulness="useless-in-grammar">
         <lhs>$@13</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="167" usefulness="useless-in-grammar">
+      <rule number="168" usefulness="useless-in-grammar">
         <lhs>source_reader_option</lhs>
         <rhs>
           <symbol>$@13</symbol>
           <symbol>source_proto_option</symbol>
         </rhs>
       </rule>
-      <rule number="168" usefulness="useless-in-grammar">
+      <rule number="169" usefulness="useless-in-grammar">
         <lhs>$@14</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="169" usefulness="useless-in-grammar">
+      <rule number="170" usefulness="useless-in-grammar">
         <lhs>source_reader_option</lhs>
         <rhs>
           <symbol>$@14</symbol>
           <symbol>msg_format_option</symbol>
         </rhs>
       </rule>
-      <rule number="170" usefulness="useless-in-grammar">
+      <rule number="171" usefulness="useless-in-grammar">
         <lhs>source_reader_option_flags</lhs>
         <rhs>
           <symbol>string</symbol>
           <symbol>source_reader_option_flags</symbol>
         </rhs>
       </rule>
-      <rule number="171" usefulness="useless-in-grammar">
+      <rule number="172" usefulness="useless-in-grammar">
         <lhs>source_reader_option_flags</lhs>
         <rhs>
           <symbol>KW_CHECK_HOSTNAME</symbol>
           <symbol>source_reader_option_flags</symbol>
         </rhs>
       </rule>
-      <rule number="172" usefulness="useless-in-grammar">
+      <rule number="173" usefulness="useless-in-grammar">
         <lhs>source_reader_option_flags</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="173" usefulness="useless-in-grammar">
+      <rule number="174" usefulness="useless-in-grammar">
         <lhs>source_proto_option</lhs>
         <rhs>
           <symbol>KW_ENCODING</symbol>
@@ -1324,7 +1333,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="174" usefulness="useless-in-grammar">
+      <rule number="175" usefulness="useless-in-grammar">
         <lhs>source_proto_option</lhs>
         <rhs>
           <symbol>KW_LOG_MSG_SIZE</symbol>
@@ -1333,7 +1342,16 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="175" usefulness="useless-in-grammar">
+      <rule number="176" usefulness="useless-in-grammar">
+        <lhs>source_proto_option</lhs>
+        <rhs>
+          <symbol>KW_TRIM_LARGE_MESSAGES</symbol>
+          <symbol>'('</symbol>
+          <symbol>yesno</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="177" usefulness="useless-in-grammar">
         <lhs>host_resolve_option</lhs>
         <rhs>
           <symbol>KW_USE_FQDN</symbol>
@@ -1342,7 +1360,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="176" usefulness="useless-in-grammar">
+      <rule number="178" usefulness="useless-in-grammar">
         <lhs>host_resolve_option</lhs>
         <rhs>
           <symbol>KW_USE_DNS</symbol>
@@ -1351,7 +1369,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="177" usefulness="useless-in-grammar">
+      <rule number="179" usefulness="useless-in-grammar">
         <lhs>host_resolve_option</lhs>
         <rhs>
           <symbol>KW_DNS_CACHE</symbol>
@@ -1360,7 +1378,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="178" usefulness="useless-in-grammar">
+      <rule number="180" usefulness="useless-in-grammar">
         <lhs>host_resolve_option</lhs>
         <rhs>
           <symbol>KW_NORMALIZE_HOSTNAMES</symbol>
@@ -1369,7 +1387,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="179" usefulness="useless-in-grammar">
+      <rule number="181" usefulness="useless-in-grammar">
         <lhs>msg_format_option</lhs>
         <rhs>
           <symbol>KW_TIME_ZONE</symbol>
@@ -1378,7 +1396,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="180" usefulness="useless-in-grammar">
+      <rule number="182" usefulness="useless-in-grammar">
         <lhs>msg_format_option</lhs>
         <rhs>
           <symbol>KW_DEFAULT_LEVEL</symbol>
@@ -1387,7 +1405,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="181" usefulness="useless-in-grammar">
+      <rule number="183" usefulness="useless-in-grammar">
         <lhs>msg_format_option</lhs>
         <rhs>
           <symbol>KW_DEFAULT_FACILITY</symbol>
@@ -1396,20 +1414,20 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="182" usefulness="useless-in-grammar">
+      <rule number="184" usefulness="useless-in-grammar">
         <lhs>dest_writer_options</lhs>
         <rhs>
           <symbol>dest_writer_option</symbol>
           <symbol>dest_writer_options</symbol>
         </rhs>
       </rule>
-      <rule number="183" usefulness="useless-in-grammar">
+      <rule number="185" usefulness="useless-in-grammar">
         <lhs>dest_writer_options</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="184" usefulness="useless-in-grammar">
+      <rule number="186" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_FLAGS</symbol>
@@ -1418,7 +1436,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="185" usefulness="useless-in-grammar">
+      <rule number="187" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_FLUSH_LINES</symbol>
@@ -1427,7 +1445,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="186" usefulness="useless-in-grammar">
+      <rule number="188" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_FLUSH_TIMEOUT</symbol>
@@ -1436,7 +1454,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="187" usefulness="useless-in-grammar">
+      <rule number="189" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_SUPPRESS</symbol>
@@ -1445,7 +1463,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="188" usefulness="useless-in-grammar">
+      <rule number="190" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_TEMPLATE</symbol>
@@ -1454,7 +1472,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="189" usefulness="useless-in-grammar">
+      <rule number="191" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_TEMPLATE_ESCAPE</symbol>
@@ -1463,7 +1481,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="190" usefulness="useless-in-grammar">
+      <rule number="192" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_PAD_SIZE</symbol>
@@ -1472,7 +1490,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="191" usefulness="useless-in-grammar">
+      <rule number="193" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_MARK_FREQ</symbol>
@@ -1481,7 +1499,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="192" usefulness="useless-in-grammar">
+      <rule number="194" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_MARK_MODE</symbol>
@@ -1490,7 +1508,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="193" usefulness="useless-in-grammar">
+      <rule number="195" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>KW_MARK_MODE</symbol>
@@ -1499,53 +1517,36 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="194" usefulness="useless-in-grammar">
+      <rule number="196" usefulness="useless-in-grammar">
         <lhs>$@15</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="195" usefulness="useless-in-grammar">
+      <rule number="197" usefulness="useless-in-grammar">
         <lhs>dest_writer_option</lhs>
         <rhs>
           <symbol>$@15</symbol>
           <symbol>template_option</symbol>
         </rhs>
       </rule>
-      <rule number="196" usefulness="useless-in-grammar">
+      <rule number="198" usefulness="useless-in-grammar">
         <lhs>dest_writer_options_flags</lhs>
         <rhs>
           <symbol>normalized_flag</symbol>
           <symbol>dest_writer_options_flags</symbol>
         </rhs>
       </rule>
-      <rule number="197" usefulness="useless-in-grammar">
+      <rule number="199" usefulness="useless-in-grammar">
         <lhs>dest_writer_options_flags</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="198" usefulness="useless-in-grammar">
-        <lhs>file_perm_option</lhs>
-        <rhs>
-          <symbol>KW_OWNER</symbol>
-          <symbol>'('</symbol>
-          <symbol>string_or_number</symbol>
-          <symbol>')'</symbol>
-        </rhs>
-      </rule>
-      <rule number="199" usefulness="useless-in-grammar">
-        <lhs>file_perm_option</lhs>
-        <rhs>
-          <symbol>KW_OWNER</symbol>
-          <symbol>'('</symbol>
-          <symbol>')'</symbol>
-        </rhs>
-      </rule>
       <rule number="200" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
-          <symbol>KW_GROUP</symbol>
+          <symbol>KW_OWNER</symbol>
           <symbol>'('</symbol>
           <symbol>string_or_number</symbol>
           <symbol>')'</symbol>
@@ -1554,12 +1555,29 @@
       <rule number="201" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
-          <symbol>KW_GROUP</symbol>
+          <symbol>KW_OWNER</symbol>
           <symbol>'('</symbol>
           <symbol>')'</symbol>
         </rhs>
       </rule>
       <rule number="202" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="203" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="204" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
           <symbol>KW_PERM</symbol>
@@ -1568,7 +1586,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="203" usefulness="useless-in-grammar">
+      <rule number="205" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
           <symbol>KW_PERM</symbol>
@@ -1576,27 +1594,10 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="204" usefulness="useless-in-grammar">
-        <lhs>file_perm_option</lhs>
-        <rhs>
-          <symbol>KW_DIR_OWNER</symbol>
-          <symbol>'('</symbol>
-          <symbol>string_or_number</symbol>
-          <symbol>')'</symbol>
-        </rhs>
-      </rule>
-      <rule number="205" usefulness="useless-in-grammar">
-        <lhs>file_perm_option</lhs>
-        <rhs>
-          <symbol>KW_DIR_OWNER</symbol>
-          <symbol>'('</symbol>
-          <symbol>')'</symbol>
-        </rhs>
-      </rule>
       <rule number="206" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
-          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>KW_DIR_OWNER</symbol>
           <symbol>'('</symbol>
           <symbol>string_or_number</symbol>
           <symbol>')'</symbol>
@@ -1605,12 +1606,29 @@
       <rule number="207" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
-          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>KW_DIR_OWNER</symbol>
           <symbol>'('</symbol>
           <symbol>')'</symbol>
         </rhs>
       </rule>
       <rule number="208" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>string_or_number</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="209" usefulness="useless-in-grammar">
+        <lhs>file_perm_option</lhs>
+        <rhs>
+          <symbol>KW_DIR_GROUP</symbol>
+          <symbol>'('</symbol>
+          <symbol>')'</symbol>
+        </rhs>
+      </rule>
+      <rule number="210" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
           <symbol>KW_DIR_PERM</symbol>
@@ -1619,7 +1637,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="209" usefulness="useless-in-grammar">
+      <rule number="211" usefulness="useless-in-grammar">
         <lhs>file_perm_option</lhs>
         <rhs>
           <symbol>KW_DIR_PERM</symbol>
@@ -1627,7 +1645,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="210" usefulness="useless-in-grammar">
+      <rule number="212" usefulness="useless-in-grammar">
         <lhs>matcher_option</lhs>
         <rhs>
           <symbol>KW_TYPE</symbol>
@@ -1636,7 +1654,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="211" usefulness="useless-in-grammar">
+      <rule number="213" usefulness="useless-in-grammar">
         <lhs>matcher_option</lhs>
         <rhs>
           <symbol>KW_FLAGS</symbol>
@@ -1645,26 +1663,26 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="212" usefulness="useless-in-grammar">
+      <rule number="214" usefulness="useless-in-grammar">
         <lhs>matcher_flags</lhs>
         <rhs>
           <symbol>string</symbol>
           <symbol>matcher_flags</symbol>
         </rhs>
       </rule>
-      <rule number="213" usefulness="useless-in-grammar">
+      <rule number="215" usefulness="useless-in-grammar">
         <lhs>matcher_flags</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="214" usefulness="useless-in-grammar">
+      <rule number="216" usefulness="useless-in-grammar">
         <lhs>$@16</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="215" usefulness="useless-in-grammar">
+      <rule number="217" usefulness="useless-in-grammar">
         <lhs>value_pair_option</lhs>
         <rhs>
           <symbol>KW_VALUE_PAIRS</symbol>
@@ -1674,20 +1692,20 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="216" usefulness="useless-in-grammar">
+      <rule number="218" usefulness="useless-in-grammar">
         <lhs>vp_options</lhs>
         <rhs>
           <symbol>vp_option</symbol>
           <symbol>vp_options</symbol>
         </rhs>
       </rule>
-      <rule number="217" usefulness="useless-in-grammar">
+      <rule number="219" usefulness="useless-in-grammar">
         <lhs>vp_options</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="218" usefulness="useless-in-grammar">
+      <rule number="220" usefulness="useless-in-grammar">
         <lhs>vp_option</lhs>
         <rhs>
           <symbol>KW_PAIR</symbol>
@@ -1698,7 +1716,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="219" usefulness="useless-in-grammar">
+      <rule number="221" usefulness="useless-in-grammar">
         <lhs>vp_option</lhs>
         <rhs>
           <symbol>KW_PAIR</symbol>
@@ -1708,19 +1726,19 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="220" usefulness="useless-in-grammar">
+      <rule number="222" usefulness="useless-in-grammar">
         <lhs>$@17</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="221" usefulness="useless-in-grammar">
+      <rule number="223" usefulness="useless-in-grammar">
         <lhs>$@18</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="222" usefulness="useless-in-grammar">
+      <rule number="224" usefulness="useless-in-grammar">
         <lhs>vp_option</lhs>
         <rhs>
           <symbol>KW_KEY</symbol>
@@ -1735,7 +1753,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="223" usefulness="useless-in-grammar">
+      <rule number="225" usefulness="useless-in-grammar">
         <lhs>vp_option</lhs>
         <rhs>
           <symbol>KW_KEY</symbol>
@@ -1744,13 +1762,13 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="224" usefulness="useless-in-grammar">
+      <rule number="226" usefulness="useless-in-grammar">
         <lhs>$@19</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="225" usefulness="useless-in-grammar">
+      <rule number="227" usefulness="useless-in-grammar">
         <lhs>vp_option</lhs>
         <rhs>
           <symbol>KW_REKEY</symbol>
@@ -1761,7 +1779,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="226" usefulness="useless-in-grammar">
+      <rule number="228" usefulness="useless-in-grammar">
         <lhs>vp_option</lhs>
         <rhs>
           <symbol>KW_EXCLUDE</symbol>
@@ -1770,7 +1788,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="227" usefulness="useless-in-grammar">
+      <rule number="229" usefulness="useless-in-grammar">
         <lhs>vp_option</lhs>
         <rhs>
           <symbol>KW_SCOPE</symbol>
@@ -1779,33 +1797,33 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="228" usefulness="useless-in-grammar">
+      <rule number="230" usefulness="useless-in-grammar">
         <lhs>vp_scope_list</lhs>
         <rhs>
           <symbol>string</symbol>
           <symbol>vp_scope_list</symbol>
         </rhs>
       </rule>
-      <rule number="229" usefulness="useless-in-grammar">
+      <rule number="231" usefulness="useless-in-grammar">
         <lhs>vp_scope_list</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="230" usefulness="useless-in-grammar">
+      <rule number="232" usefulness="useless-in-grammar">
         <lhs>vp_rekey_options</lhs>
         <rhs>
           <symbol>vp_rekey_option</symbol>
           <symbol>vp_rekey_options</symbol>
         </rhs>
       </rule>
-      <rule number="231" usefulness="useless-in-grammar">
+      <rule number="233" usefulness="useless-in-grammar">
         <lhs>vp_rekey_options</lhs>
         <rhs>
           <empty/>
         </rhs>
       </rule>
-      <rule number="232" usefulness="useless-in-grammar">
+      <rule number="234" usefulness="useless-in-grammar">
         <lhs>vp_rekey_option</lhs>
         <rhs>
           <symbol>KW_SHIFT</symbol>
@@ -1814,7 +1832,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="233" usefulness="useless-in-grammar">
+      <rule number="235" usefulness="useless-in-grammar">
         <lhs>vp_rekey_option</lhs>
         <rhs>
           <symbol>KW_SHIFT_LEVELS</symbol>
@@ -1823,7 +1841,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="234" usefulness="useless-in-grammar">
+      <rule number="236" usefulness="useless-in-grammar">
         <lhs>vp_rekey_option</lhs>
         <rhs>
           <symbol>KW_ADD_PREFIX</symbol>
@@ -1832,7 +1850,7 @@
           <symbol>')'</symbol>
         </rhs>
       </rule>
-      <rule number="235" usefulness="useless-in-grammar">
+      <rule number="237" usefulness="useless-in-grammar">
         <lhs>vp_rekey_option</lhs>
         <rhs>
           <symbol>KW_REPLACE_PREFIX</symbol>
@@ -1865,12 +1883,12 @@
       <terminal symbol-number="45" token-number="18" name="LL_CONTEXT_SERVER_PROTO" usefulness="unused-in-grammar"/>
       <terminal symbol-number="46" token-number="19" name="LL_CONTEXT_OPTIONS" usefulness="unused-in-grammar"/>
       <terminal symbol-number="47" token-number="20" name="LL_CONTEXT_HTTP_AUTH_HEADER" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="173" token-number="40" name="'('" usefulness="useful"/>
-      <terminal symbol-number="174" token-number="41" name="')'" usefulness="useful"/>
-      <terminal symbol-number="178" token-number="58" name="':'" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="177" token-number="59" name="';'" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="175" token-number="123" name="'{'" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="176" token-number="125" name="'}'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="176" token-number="40" name="'('" usefulness="useful"/>
+      <terminal symbol-number="177" token-number="41" name="')'" usefulness="useful"/>
+      <terminal symbol-number="181" token-number="58" name="':'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="180" token-number="59" name="';'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="178" token-number="123" name="'{'" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="179" token-number="125" name="'}'" usefulness="unused-in-grammar"/>
       <terminal symbol-number="1" token-number="256" name="error" usefulness="useful"/>
       <terminal symbol-number="48" token-number="10000" name="KW_SOURCE" usefulness="unused-in-grammar"/>
       <terminal symbol-number="49" token-number="10001" name="KW_FILTER" usefulness="unused-in-grammar"/>
@@ -1904,222 +1922,226 @@
       <terminal symbol-number="77" token-number="10085" name="KW_MIN_IW_SIZE_PER_READER" usefulness="unused-in-grammar"/>
       <terminal symbol-number="78" token-number="10087" name="KW_BATCH_LINES" usefulness="useful"/>
       <terminal symbol-number="79" token-number="10088" name="KW_BATCH_TIMEOUT" usefulness="useful"/>
-      <terminal symbol-number="80" token-number="10090" name="KW_CHAIN_HOSTNAMES" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="81" token-number="10091" name="KW_NORMALIZE_HOSTNAMES" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="82" token-number="10092" name="KW_KEEP_HOSTNAME" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="83" token-number="10093" name="KW_CHECK_HOSTNAME" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="84" token-number="10094" name="KW_BAD_HOSTNAME" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="85" token-number="10100" name="KW_KEEP_TIMESTAMP" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="86" token-number="10110" name="KW_USE_DNS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="87" token-number="10111" name="KW_USE_FQDN" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="88" token-number="10112" name="KW_CUSTOM_DOMAIN" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="89" token-number="10120" name="KW_DNS_CACHE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="90" token-number="10121" name="KW_DNS_CACHE_SIZE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="91" token-number="10130" name="KW_DNS_CACHE_EXPIRE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="92" token-number="10131" name="KW_DNS_CACHE_EXPIRE_FAILED" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="93" token-number="10132" name="KW_DNS_CACHE_HOSTS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="94" token-number="10140" name="KW_PERSIST_ONLY" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="95" token-number="10141" name="KW_USE_RCPTID" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="96" token-number="10142" name="KW_USE_UNIQID" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="97" token-number="10150" name="KW_TZ_CONVERT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="98" token-number="10151" name="KW_TS_FORMAT" usefulness="useful"/>
-      <terminal symbol-number="99" token-number="10152" name="KW_FRAC_DIGITS" usefulness="useful"/>
-      <terminal symbol-number="100" token-number="10160" name="KW_LOG_FIFO_SIZE" usefulness="useful"/>
-      <terminal symbol-number="101" token-number="10162" name="KW_LOG_FETCH_LIMIT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="102" token-number="10163" name="KW_LOG_IW_SIZE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="103" token-number="10164" name="KW_LOG_PREFIX" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="104" token-number="10165" name="KW_PROGRAM_OVERRIDE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="105" token-number="10166" name="KW_HOST_OVERRIDE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="106" token-number="10170" name="KW_THROTTLE" usefulness="useful"/>
-      <terminal symbol-number="107" token-number="10171" name="KW_THREADED" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="111" token-number="10190" name="KW_FLAGS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="112" token-number="10200" name="KW_PAD_SIZE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="113" token-number="10201" name="KW_TIME_ZONE" usefulness="useful"/>
-      <terminal symbol-number="114" token-number="10202" name="KW_RECV_TIME_ZONE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="115" token-number="10203" name="KW_SEND_TIME_ZONE" usefulness="useful"/>
-      <terminal symbol-number="116" token-number="10204" name="KW_LOCAL_TIME_ZONE" usefulness="useful"/>
-      <terminal symbol-number="117" token-number="10205" name="KW_FORMAT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="118" token-number="10210" name="KW_TIME_REOPEN" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="119" token-number="10211" name="KW_TIME_REAP" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="120" token-number="10212" name="KW_TIME_SLEEP" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="121" token-number="10220" name="KW_TMPL_ESCAPE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="122" token-number="10230" name="KW_OPTIONAL" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="108" token-number="10231" name="KW_PASS_UNIX_CREDENTIALS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="123" token-number="10240" name="KW_CREATE_DIRS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="124" token-number="10250" name="KW_OWNER" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="125" token-number="10251" name="KW_GROUP" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="126" token-number="10252" name="KW_PERM" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="127" token-number="10260" name="KW_DIR_OWNER" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="128" token-number="10261" name="KW_DIR_GROUP" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="129" token-number="10262" name="KW_DIR_PERM" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="130" token-number="10270" name="KW_TEMPLATE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="131" token-number="10271" name="KW_TEMPLATE_ESCAPE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="132" token-number="10272" name="KW_TEMPLATE_FUNCTION" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="133" token-number="10300" name="KW_DEFAULT_FACILITY" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="134" token-number="10301" name="KW_DEFAULT_LEVEL" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="109" token-number="10302" name="KW_PERSIST_NAME" usefulness="useful"/>
-      <terminal symbol-number="110" token-number="10304" name="KW_READ_OLD_RECORDS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="135" token-number="10323" name="KW_PORT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="136" token-number="10340" name="KW_USE_TIME_RECVD" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="137" token-number="10350" name="KW_FACILITY" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="138" token-number="10351" name="KW_LEVEL" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="139" token-number="10352" name="KW_HOST" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="140" token-number="10353" name="KW_MATCH" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="141" token-number="10354" name="KW_MESSAGE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="142" token-number="10355" name="KW_NETMASK" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="143" token-number="10356" name="KW_TAGS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="144" token-number="10357" name="KW_NETMASK6" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="145" token-number="10370" name="KW_REWRITE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="146" token-number="10380" name="KW_YES" usefulness="useful"/>
-      <terminal symbol-number="147" token-number="10381" name="KW_NO" usefulness="useful"/>
-      <terminal symbol-number="148" token-number="10410" name="KW_IFDEF" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="149" token-number="10411" name="KW_ENDIF" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="150" token-number="10420" name="LL_DOTDOT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="151" token-number="10421" name="LL_DOTDOTDOT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="152" token-number="10422" name="LL_IDENTIFIER" usefulness="useful"/>
-      <terminal symbol-number="153" token-number="10423" name="LL_NUMBER" usefulness="useful"/>
-      <terminal symbol-number="154" token-number="10424" name="LL_FLOAT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="155" token-number="10425" name="LL_STRING" usefulness="useful"/>
-      <terminal symbol-number="156" token-number="10426" name="LL_TOKEN" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="157" token-number="10427" name="LL_BLOCK" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="158" token-number="10428" name="LL_PRAGMA" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="159" token-number="10429" name="LL_EOL" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="160" token-number="10430" name="LL_ERROR" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="161" token-number="10500" name="KW_VALUE_PAIRS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="162" token-number="10502" name="KW_EXCLUDE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="163" token-number="10503" name="KW_PAIR" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="164" token-number="10504" name="KW_KEY" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="165" token-number="10505" name="KW_SCOPE" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="166" token-number="10506" name="KW_SHIFT" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="167" token-number="10507" name="KW_SHIFT_LEVELS" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="168" token-number="10508" name="KW_REKEY" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="169" token-number="10509" name="KW_ADD_PREFIX" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="170" token-number="10510" name="KW_REPLACE_PREFIX" usefulness="unused-in-grammar"/>
-      <terminal symbol-number="171" token-number="10511" name="KW_ON_ERROR" usefulness="useful"/>
-      <terminal symbol-number="172" token-number="10512" name="KW_RETRIES" usefulness="useful"/>
-      <terminal symbol-number="3" token-number="10514" name="KW_HTTP" usefulness="useful"/>
-      <terminal symbol-number="4" token-number="10515" name="KW_URL" usefulness="useful"/>
-      <terminal symbol-number="5" token-number="10516" name="KW_USER" usefulness="useful"/>
-      <terminal symbol-number="6" token-number="10517" name="KW_PASSWORD" usefulness="useful"/>
-      <terminal symbol-number="7" token-number="10518" name="KW_USER_AGENT" usefulness="useful"/>
-      <terminal symbol-number="8" token-number="10519" name="KW_METHOD" usefulness="useful"/>
-      <terminal symbol-number="9" token-number="10520" name="KW_HEADERS" usefulness="useful"/>
-      <terminal symbol-number="10" token-number="10521" name="KW_BODY" usefulness="useful"/>
-      <terminal symbol-number="11" token-number="10522" name="KW_CA_DIR" usefulness="useful"/>
-      <terminal symbol-number="12" token-number="10523" name="KW_CA_FILE" usefulness="useful"/>
-      <terminal symbol-number="13" token-number="10524" name="KW_CERT_FILE" usefulness="useful"/>
-      <terminal symbol-number="14" token-number="10525" name="KW_KEY_FILE" usefulness="useful"/>
-      <terminal symbol-number="15" token-number="10526" name="KW_CIPHER_SUITE" usefulness="useful"/>
-      <terminal symbol-number="16" token-number="10527" name="KW_USE_SYSTEM_CERT_STORE" usefulness="useful"/>
-      <terminal symbol-number="17" token-number="10528" name="KW_SSL_VERSION" usefulness="useful"/>
-      <terminal symbol-number="18" token-number="10529" name="KW_PEER_VERIFY" usefulness="useful"/>
-      <terminal symbol-number="19" token-number="10530" name="KW_TIMEOUT" usefulness="useful"/>
-      <terminal symbol-number="20" token-number="10531" name="KW_TLS" usefulness="useful"/>
-      <terminal symbol-number="21" token-number="10532" name="KW_BATCH_BYTES" usefulness="useful"/>
-      <terminal symbol-number="22" token-number="10533" name="KW_BODY_PREFIX" usefulness="useful"/>
-      <terminal symbol-number="23" token-number="10534" name="KW_BODY_SUFFIX" usefulness="useful"/>
-      <terminal symbol-number="24" token-number="10535" name="KW_DELIMITER" usefulness="useful"/>
-      <terminal symbol-number="25" token-number="10536" name="KW_WORKERS" usefulness="useful"/>
-      <terminal symbol-number="26" token-number="10537" name="KW_ACCEPT_REDIRECTS" usefulness="useful"/>
-      <terminal symbol-number="27" token-number="10538" name="KW_AUTH_HEADER" usefulness="useful"/>
+      <terminal symbol-number="80" token-number="10089" name="KW_TRIM_LARGE_MESSAGES" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="81" token-number="10090" name="KW_CHAIN_HOSTNAMES" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="82" token-number="10091" name="KW_NORMALIZE_HOSTNAMES" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="83" token-number="10092" name="KW_KEEP_HOSTNAME" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="84" token-number="10093" name="KW_CHECK_HOSTNAME" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="85" token-number="10094" name="KW_BAD_HOSTNAME" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="86" token-number="10100" name="KW_KEEP_TIMESTAMP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="87" token-number="10110" name="KW_USE_DNS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="88" token-number="10111" name="KW_USE_FQDN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="89" token-number="10112" name="KW_CUSTOM_DOMAIN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="90" token-number="10120" name="KW_DNS_CACHE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="91" token-number="10121" name="KW_DNS_CACHE_SIZE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="92" token-number="10130" name="KW_DNS_CACHE_EXPIRE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="93" token-number="10131" name="KW_DNS_CACHE_EXPIRE_FAILED" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="94" token-number="10132" name="KW_DNS_CACHE_HOSTS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="95" token-number="10140" name="KW_PERSIST_ONLY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="96" token-number="10141" name="KW_USE_RCPTID" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="97" token-number="10142" name="KW_USE_UNIQID" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="98" token-number="10150" name="KW_TZ_CONVERT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="99" token-number="10151" name="KW_TS_FORMAT" usefulness="useful"/>
+      <terminal symbol-number="100" token-number="10152" name="KW_FRAC_DIGITS" usefulness="useful"/>
+      <terminal symbol-number="101" token-number="10160" name="KW_LOG_FIFO_SIZE" usefulness="useful"/>
+      <terminal symbol-number="102" token-number="10162" name="KW_LOG_FETCH_LIMIT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="103" token-number="10163" name="KW_LOG_IW_SIZE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="104" token-number="10164" name="KW_LOG_PREFIX" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="105" token-number="10165" name="KW_PROGRAM_OVERRIDE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="106" token-number="10166" name="KW_HOST_OVERRIDE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="107" token-number="10170" name="KW_THROTTLE" usefulness="useful"/>
+      <terminal symbol-number="108" token-number="10171" name="KW_THREADED" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="112" token-number="10190" name="KW_FLAGS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="113" token-number="10200" name="KW_PAD_SIZE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="114" token-number="10201" name="KW_TIME_ZONE" usefulness="useful"/>
+      <terminal symbol-number="115" token-number="10202" name="KW_RECV_TIME_ZONE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="116" token-number="10203" name="KW_SEND_TIME_ZONE" usefulness="useful"/>
+      <terminal symbol-number="117" token-number="10204" name="KW_LOCAL_TIME_ZONE" usefulness="useful"/>
+      <terminal symbol-number="118" token-number="10205" name="KW_FORMAT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="119" token-number="10210" name="KW_TIME_REOPEN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="120" token-number="10211" name="KW_TIME_REAP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="121" token-number="10212" name="KW_TIME_SLEEP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="122" token-number="10220" name="KW_TMPL_ESCAPE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="123" token-number="10230" name="KW_OPTIONAL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="109" token-number="10231" name="KW_PASS_UNIX_CREDENTIALS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="124" token-number="10240" name="KW_CREATE_DIRS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="125" token-number="10250" name="KW_OWNER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="126" token-number="10251" name="KW_GROUP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="127" token-number="10252" name="KW_PERM" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="128" token-number="10260" name="KW_DIR_OWNER" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="129" token-number="10261" name="KW_DIR_GROUP" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="130" token-number="10262" name="KW_DIR_PERM" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="131" token-number="10270" name="KW_TEMPLATE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="132" token-number="10271" name="KW_TEMPLATE_ESCAPE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="133" token-number="10272" name="KW_TEMPLATE_FUNCTION" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="134" token-number="10300" name="KW_DEFAULT_FACILITY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="135" token-number="10301" name="KW_DEFAULT_LEVEL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="110" token-number="10302" name="KW_PERSIST_NAME" usefulness="useful"/>
+      <terminal symbol-number="111" token-number="10304" name="KW_READ_OLD_RECORDS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="136" token-number="10323" name="KW_PORT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="137" token-number="10340" name="KW_USE_TIME_RECVD" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="138" token-number="10350" name="KW_FACILITY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="139" token-number="10351" name="KW_LEVEL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="140" token-number="10352" name="KW_HOST" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="141" token-number="10353" name="KW_MATCH" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="142" token-number="10354" name="KW_MESSAGE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="143" token-number="10355" name="KW_NETMASK" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="144" token-number="10356" name="KW_TAGS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="145" token-number="10357" name="KW_NETMASK6" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="146" token-number="10370" name="KW_REWRITE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="147" token-number="10380" name="KW_YES" usefulness="useful"/>
+      <terminal symbol-number="148" token-number="10381" name="KW_NO" usefulness="useful"/>
+      <terminal symbol-number="149" token-number="10410" name="KW_IFDEF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="150" token-number="10411" name="KW_ENDIF" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="151" token-number="10420" name="LL_DOTDOT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="152" token-number="10421" name="LL_DOTDOTDOT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="153" token-number="10422" name="LL_PRAGMA" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="154" token-number="10423" name="LL_EOL" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="155" token-number="10424" name="LL_ERROR" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="156" token-number="10425" name="LL_ARROW" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="157" token-number="10430" name="LL_IDENTIFIER" usefulness="useful"/>
+      <terminal symbol-number="158" token-number="10431" name="LL_NUMBER" usefulness="useful"/>
+      <terminal symbol-number="159" token-number="10432" name="LL_FLOAT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="160" token-number="10433" name="LL_STRING" usefulness="useful"/>
+      <terminal symbol-number="161" token-number="10434" name="LL_TOKEN" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="162" token-number="10435" name="LL_BLOCK" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="163" token-number="10500" name="KW_VALUE_PAIRS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="164" token-number="10502" name="KW_EXCLUDE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="165" token-number="10503" name="KW_PAIR" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="166" token-number="10504" name="KW_KEY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="167" token-number="10505" name="KW_SCOPE" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="168" token-number="10506" name="KW_SHIFT" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="169" token-number="10507" name="KW_SHIFT_LEVELS" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="170" token-number="10508" name="KW_REKEY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="171" token-number="10509" name="KW_ADD_PREFIX" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="172" token-number="10510" name="KW_REPLACE_PREFIX" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="173" token-number="10511" name="KW_ON_ERROR" usefulness="useful"/>
+      <terminal symbol-number="174" token-number="10512" name="KW_RETRIES" usefulness="useful"/>
+      <terminal symbol-number="175" token-number="10513" name="KW_FETCH_NO_DATA_DELAY" usefulness="unused-in-grammar"/>
+      <terminal symbol-number="3" token-number="10515" name="KW_HTTP" usefulness="useful"/>
+      <terminal symbol-number="4" token-number="10516" name="KW_URL" usefulness="useful"/>
+      <terminal symbol-number="5" token-number="10517" name="KW_USER" usefulness="useful"/>
+      <terminal symbol-number="6" token-number="10518" name="KW_PASSWORD" usefulness="useful"/>
+      <terminal symbol-number="7" token-number="10519" name="KW_USER_AGENT" usefulness="useful"/>
+      <terminal symbol-number="8" token-number="10520" name="KW_METHOD" usefulness="useful"/>
+      <terminal symbol-number="9" token-number="10521" name="KW_HEADERS" usefulness="useful"/>
+      <terminal symbol-number="10" token-number="10522" name="KW_BODY" usefulness="useful"/>
+      <terminal symbol-number="11" token-number="10523" name="KW_CA_DIR" usefulness="useful"/>
+      <terminal symbol-number="12" token-number="10524" name="KW_CA_FILE" usefulness="useful"/>
+      <terminal symbol-number="13" token-number="10525" name="KW_CERT_FILE" usefulness="useful"/>
+      <terminal symbol-number="14" token-number="10526" name="KW_KEY_FILE" usefulness="useful"/>
+      <terminal symbol-number="15" token-number="10527" name="KW_CIPHER_SUITE" usefulness="useful"/>
+      <terminal symbol-number="16" token-number="10528" name="KW_USE_SYSTEM_CERT_STORE" usefulness="useful"/>
+      <terminal symbol-number="17" token-number="10529" name="KW_SSL_VERSION" usefulness="useful"/>
+      <terminal symbol-number="18" token-number="10530" name="KW_PEER_VERIFY" usefulness="useful"/>
+      <terminal symbol-number="19" token-number="10531" name="KW_TIMEOUT" usefulness="useful"/>
+      <terminal symbol-number="20" token-number="10532" name="KW_TLS" usefulness="useful"/>
+      <terminal symbol-number="21" token-number="10533" name="KW_BATCH_BYTES" usefulness="useful"/>
+      <terminal symbol-number="22" token-number="10534" name="KW_BODY_PREFIX" usefulness="useful"/>
+      <terminal symbol-number="23" token-number="10535" name="KW_BODY_SUFFIX" usefulness="useful"/>
+      <terminal symbol-number="24" token-number="10536" name="KW_DELIMITER" usefulness="useful"/>
+      <terminal symbol-number="25" token-number="10537" name="KW_WORKERS" usefulness="useful"/>
+      <terminal symbol-number="26" token-number="10538" name="KW_ACCEPT_REDIRECTS" usefulness="useful"/>
+      <terminal symbol-number="27" token-number="10539" name="KW_AUTH_HEADER" usefulness="useful"/>
     </terminals>
     <nonterminals>
-      <nonterminal symbol-number="179" name="$accept" usefulness="useful"/>
-      <nonterminal symbol-number="180" name="start" usefulness="useful"/>
-      <nonterminal symbol-number="181" name="driver" usefulness="useful"/>
-      <nonterminal symbol-number="182" name="http_destination" usefulness="useful"/>
-      <nonterminal symbol-number="183" name="$@1" usefulness="useful"/>
-      <nonterminal symbol-number="184" name="http_options" usefulness="useful"/>
-      <nonterminal symbol-number="185" name="http_option" usefulness="useful"/>
-      <nonterminal symbol-number="186" name="$@2" usefulness="useful"/>
-      <nonterminal symbol-number="187" name="http_tls_options" usefulness="useful"/>
-      <nonterminal symbol-number="188" name="http_tls_option" usefulness="useful"/>
-      <nonterminal symbol-number="189" name="http_auth_header_plugin" usefulness="useful"/>
-      <nonterminal symbol-number="190" name="template_content_inner" usefulness="useful"/>
-      <nonterminal symbol-number="191" name="template_content" usefulness="useful"/>
-      <nonterminal symbol-number="192" name="$@8" usefulness="useful"/>
-      <nonterminal symbol-number="193" name="string" usefulness="useful"/>
-      <nonterminal symbol-number="194" name="yesno" usefulness="useful"/>
-      <nonterminal symbol-number="195" name="nonnegative_integer64" usefulness="useful"/>
-      <nonterminal symbol-number="196" name="nonnegative_integer" usefulness="useful"/>
-      <nonterminal symbol-number="197" name="positive_integer64" usefulness="useful"/>
-      <nonterminal symbol-number="198" name="positive_integer" usefulness="useful"/>
-      <nonterminal symbol-number="199" name="string_list" usefulness="useful"/>
-      <nonterminal symbol-number="200" name="string_list_build" usefulness="useful"/>
-      <nonterminal symbol-number="201" name="driver_option" usefulness="useful"/>
-      <nonterminal symbol-number="202" name="dest_driver_option" usefulness="useful"/>
-      <nonterminal symbol-number="203" name="threaded_dest_driver_option" usefulness="useful"/>
-      <nonterminal symbol-number="204" name="template_option" usefulness="useful"/>
-      <nonterminal symbol-number="205" name="source_content" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="206" name="$@3" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="207" name="$@4" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="208" name="source_items" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="209" name="source_item" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="210" name="source_plugin" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="211" name="source_afinter" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="212" name="source_afinter_params" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="213" name="$@5" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="214" name="source_afinter_options" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="215" name="source_afinter_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="216" name="filter_content" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="217" name="parser_content" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="218" name="rewrite_content" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="219" name="dest_content" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="220" name="$@6" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="221" name="$@7" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="222" name="dest_items" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="223" name="dest_item" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="224" name="dest_plugin" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="225" name="log_items" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="226" name="log_item" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="227" name="log_junction" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="228" name="log_last_junction" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="229" name="log_forks" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="230" name="log_fork" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="231" name="log_conditional" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="232" name="log_if" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="233" name="log_content" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="234" name="log_flags" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="235" name="log_flags_items" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="236" name="dnsmode" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="237" name="string_or_number" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="238" name="normalized_flag" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="239" name="semicolons" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="240" name="level_string" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="241" name="facility_string" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="242" name="parser_opt" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="243" name="source_driver_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="244" name="threaded_source_driver_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="245" name="$@9" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="246" name="$@10" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="247" name="threaded_source_driver_option_flags" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="248" name="source_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="249" name="$@11" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="250" name="source_reader_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="251" name="$@12" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="252" name="$@13" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="253" name="$@14" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="254" name="source_reader_option_flags" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="255" name="source_proto_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="256" name="host_resolve_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="257" name="msg_format_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="258" name="dest_writer_options" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="259" name="dest_writer_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="260" name="$@15" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="261" name="dest_writer_options_flags" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="262" name="file_perm_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="263" name="matcher_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="264" name="matcher_flags" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="265" name="value_pair_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="266" name="$@16" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="267" name="vp_options" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="268" name="vp_option" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="269" name="$@17" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="270" name="$@18" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="271" name="$@19" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="272" name="vp_scope_list" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="273" name="vp_rekey_options" usefulness="useless-in-grammar"/>
-      <nonterminal symbol-number="274" name="vp_rekey_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="182" name="$accept" usefulness="useful"/>
+      <nonterminal symbol-number="183" name="start" usefulness="useful"/>
+      <nonterminal symbol-number="184" name="driver" usefulness="useful"/>
+      <nonterminal symbol-number="185" name="http_destination" usefulness="useful"/>
+      <nonterminal symbol-number="186" name="$@1" usefulness="useful"/>
+      <nonterminal symbol-number="187" name="http_options" usefulness="useful"/>
+      <nonterminal symbol-number="188" name="http_option" usefulness="useful"/>
+      <nonterminal symbol-number="189" name="$@2" usefulness="useful"/>
+      <nonterminal symbol-number="190" name="http_tls_options" usefulness="useful"/>
+      <nonterminal symbol-number="191" name="http_tls_option" usefulness="useful"/>
+      <nonterminal symbol-number="192" name="http_auth_header_plugin" usefulness="useful"/>
+      <nonterminal symbol-number="193" name="template_content_inner" usefulness="useful"/>
+      <nonterminal symbol-number="194" name="template_content" usefulness="useful"/>
+      <nonterminal symbol-number="195" name="$@8" usefulness="useful"/>
+      <nonterminal symbol-number="196" name="string" usefulness="useful"/>
+      <nonterminal symbol-number="197" name="yesno" usefulness="useful"/>
+      <nonterminal symbol-number="198" name="nonnegative_integer64" usefulness="useful"/>
+      <nonterminal symbol-number="199" name="nonnegative_integer" usefulness="useful"/>
+      <nonterminal symbol-number="200" name="positive_integer64" usefulness="useful"/>
+      <nonterminal symbol-number="201" name="positive_integer" usefulness="useful"/>
+      <nonterminal symbol-number="202" name="string_list" usefulness="useful"/>
+      <nonterminal symbol-number="203" name="string_list_build" usefulness="useful"/>
+      <nonterminal symbol-number="204" name="driver_option" usefulness="useful"/>
+      <nonterminal symbol-number="205" name="dest_driver_option" usefulness="useful"/>
+      <nonterminal symbol-number="206" name="threaded_dest_driver_option" usefulness="useful"/>
+      <nonterminal symbol-number="207" name="template_option" usefulness="useful"/>
+      <nonterminal symbol-number="208" name="source_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="209" name="$@3" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="210" name="$@4" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="211" name="source_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="212" name="source_item" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="213" name="source_plugin" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="214" name="source_afinter" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="215" name="source_afinter_params" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="216" name="$@5" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="217" name="source_afinter_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="218" name="source_afinter_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="219" name="filter_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="220" name="parser_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="221" name="rewrite_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="222" name="dest_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="223" name="$@6" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="224" name="$@7" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="225" name="dest_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="226" name="dest_item" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="227" name="dest_plugin" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="228" name="log_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="229" name="log_item" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="230" name="log_junction" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="231" name="log_last_junction" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="232" name="log_forks" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="233" name="log_fork" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="234" name="log_conditional" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="235" name="log_if" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="236" name="log_content" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="237" name="log_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="238" name="log_flags_items" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="239" name="dnsmode" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="240" name="string_or_number" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="241" name="normalized_flag" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="242" name="semicolons" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="243" name="level_string" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="244" name="facility_string" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="245" name="parser_opt" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="246" name="source_driver_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="247" name="threaded_source_driver_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="248" name="$@9" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="249" name="$@10" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="250" name="threaded_fetcher_driver_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="251" name="threaded_source_driver_option_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="252" name="source_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="253" name="$@11" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="254" name="source_reader_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="255" name="$@12" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="256" name="$@13" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="257" name="$@14" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="258" name="source_reader_option_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="259" name="source_proto_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="260" name="host_resolve_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="261" name="msg_format_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="262" name="dest_writer_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="263" name="dest_writer_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="264" name="$@15" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="265" name="dest_writer_options_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="266" name="file_perm_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="267" name="matcher_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="268" name="matcher_flags" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="269" name="value_pair_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="270" name="$@16" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="271" name="vp_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="272" name="vp_option" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="273" name="$@17" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="274" name="$@18" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="275" name="$@19" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="276" name="vp_scope_list" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="277" name="vp_rekey_options" usefulness="useless-in-grammar"/>
+      <nonterminal symbol-number="278" name="vp_rekey_option" usefulness="useless-in-grammar"/>
     </nonterminals>
   </grammar>
 
