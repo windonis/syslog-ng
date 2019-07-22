@@ -7,11 +7,5 @@ def EdgeAdder():
         count = 1
         for symbol in i.rhs:
             if symbol is not None:
-                terminalCheck = parser.lhsfinder(symbol)
-                if len(terminalCheck) == 0:
-                    parser.G.add_edge(i.number, symbol, weight=count )
-                    count = count + 1
-                else:
-                    for d in terminalCheck:
-                        parser.G.add_edge(i.number , d , weight=count )
-                        count = count + 1
+                parser.G.add_edge(i.lhs, symbol, weight=count )
+                count = count + 1

@@ -40,7 +40,7 @@ class RULE:
                 G.add_node(i)
 
     def add_node(self):
-        G.add_node(self.number, lhs=self.lhs)
+        G.add_node(self.lhs)
     
 
 def xmltoobject():
@@ -58,9 +58,3 @@ def xmltoobject():
         g_rule.add_terminal()
         g_rule.add_node()
     return collector
-
-'''
-data = xmltoobject()
-for i in data:
-    print(i)
-'''
