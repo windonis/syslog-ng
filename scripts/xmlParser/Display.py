@@ -5,17 +5,22 @@ import matplotlib.pyplot as plt
 
 graph.EdgeAdder()
 
-print(parser.G.edges('yesno'))
 
-data = parser.xmltoobject()
-uniqueLHS = []
-for i in data:
-    if i.lhs not in uniqueLHS:
-        uniqueLHS.append(i.lhs)
+def Nameless (ruleNumber):
+    for i in (parser.G.edges.data('Nweight')):
+        if ( i[0] == ruleNumber and i[2] is not None):
+            lst = list(i)
+            lst[0] = parser.G.node[ruleNumber]['lhs']
+            print(lst)
 
-f = open('./scripts/xmlParser/GraphOutput', 'w')
-for x in uniqueLHS:
-    f.write("\n-----Searchig for '{}'-----\n\n".format(x))
-    H = nx.dfs_edges(parser.G, source='{}'.format(x))
-    for j in H:
-        f.write("{}\n".format(j))
+Nameless(7)
+
+'''
+--- stdout ---
+
+['http_option', 'KW_URL', 1]
+['http_option', "'('", 2]
+['http_option', 'string_list', 3]
+['http_option', "')'", 4]
+
+'''

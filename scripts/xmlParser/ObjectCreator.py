@@ -37,11 +37,15 @@ class RULE:
         for i in self.rhs:
             terminalcontrol = lhsfinder(i)
             if len(terminalcontrol) == 0:
-                G.add_node(i)
+                terminalNumber = ( -1 * self.number - 1 )
+                G.add_node(terminalNumber, terminalName=i)
 
     def add_node(self):
-        G.add_node(self.lhs)
-    
+        G.add_node(self.number, lhs=self.lhs)
+        count = 1
+        for i in self.rhs:
+            G.add_edge(self.number, i, Nweight=count, rule=self.number)
+            count = count + 1
 
 def xmltoobject():
     collector = []
