@@ -15,47 +15,40 @@ def Nameless (ruleNumber):
             store.append(lst)
     return(store)
 
-def findLhstoNumber(lhsName):
-    store = []
-    for i in (parser.G.node.data('lhs')):
-        if i[1] != None and i[1] == lhsName:
-            result = Nameless(i[0])
-            store.append(result)
-    return(store)
+beginNode = []
 
-def createFormat(lhsName):
-    formatGenerator = findLhstoNumber(lhsName)
-    firstTime = True
-    for rule in formatGenerator:
-        if (firstTime is True):
-            print("driver: {}".format(rule[0][0].split("_")[0]))
-            print("type: destination")
-            print("options:")
-            firstTime = False
-        if "KW_" in rule[0][1] :
-            print("\t{} : {}".format(rule[0][1].split("_")[1],rule[2][1]))
+for i in parser.G.nodes.data('lhs'):
+    if(i[1] == 'start'):
+        count = i[0]
 
-
-createFormat("http_option")
-
+for x in list(nx.dfs_edges(parser.G, source=count)):
+    if x[1] == "LL_CONTEXT_DESTINATION":
+        for i in Nameless(x[0]):
+            if i[1] != "LL_CONTEXT_DESTINATION":
+                beginNode.append(i[1])
+    elif x[1] == "LL_CONTEXT_SOURCE":
+        for i in Nameless(x[0]):
+            if i[1] != "LL_CONTEXT_SOURCE":
+                beginNode.append(i[1])
 '''
-driver: http
-type: destination
-options:
-        URL : string_list
-        USER : string
-        PASSWORD : string
-        USER : string
-        HEADERS : string_list
-        AUTH : http_auth_header_plugin
-        METHOD : string
-        BODY : string
-        BODY : string
-        DELIMITER : string
-        BODY : template_content
-        ACCEPT : yesno
-        TIMEOUT : nonnegative_integer
-        BATCH : nonnegative_integer
-        WORKERS : nonnegative_integer
-        TLS : http_tls_options
+for i in beginNode:
+    #print(i) ---> http_destination
+    for x in parser.G.nodes.data('lhs'):
+        if x[1] == i:
+            #print(x[0]) ---> 4
+            for part in (list(nx.dfs_edges(parser.G, source=x[0], depth_limit=0))):
+                if isinstance(part[1], int) is True:
+                    if part[1] > x[0]:
+                        print(list(nx.dfs_tree(parser.G, source=part[1], depth_limit=0)))
 '''
+'''
+                            if isinstance(z[1], int) is True:
+                                returnValue = Nameless(z[1])
+                                print("{}:{}".format(returnValue[0][1],returnValue[2][1]))
+'''
+
+
+test = parser.xmltoobject()
+for i in test:
+    if i.number == 61:
+        print(i.rhs)

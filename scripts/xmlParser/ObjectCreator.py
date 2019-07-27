@@ -42,11 +42,13 @@ class RULE:
 
     def add_node(self):
         G.add_node(self.number, lhs=self.lhs)
+        '''
         count = 1
         for i in self.rhs:
             G.add_edge(self.number, i, Nweight=count, rule=self.number)
             count = count + 1
-
+        '''
+        
 def xmltoobject():
     collector = []
     for rule in root.iter('rule'):
@@ -59,6 +61,6 @@ def xmltoobject():
             for x in symbol:
                 g_rule.rhs.append(x.text)
         collector.append(g_rule)
-        g_rule.add_terminal()
         g_rule.add_node()
+        g_rule.add_terminal()
     return collector
