@@ -49,20 +49,28 @@ def solucan(nodeNumber):
                     if isinstance(x[1], int) is not True:
                         try:
                             if (getPureRule(x[0]))[1][0] not in dictt:
-                                dictt.update( {(getPureRule(x[0]))[1][0] : (getPureRule(x[0]))[1][2]} ) 
+                                for status in (getPureRule(x[0]))[1]:
+                                    returner = findNode(status)
+                                    if returner is not None:
+                                        if len(traversalLimited(returner)) != 0:
+                                            #print("{}:{}".format(  (getPureRule(x[0]))[1][0],(getPureRule(x[0]))[1][2]  ))
+                                            dictt.update( {(getPureRule(x[0]))[1][0] : status }) 
+                                            #print(dictt)
+
                         except:
                             pass
     return dictt
+
 
 def snippetOutput():
     for state in findBeginState():
         nodeNumber = findNode(state)
         return(solucan(nodeNumber))
-        
-                                    
+                                   
 dummy = snippetOutput()
 for k, v in dummy.items():
     print("{} : {}".format(k,v))
+
 
 #HTTP MODULE
 '''
@@ -106,20 +114,17 @@ KW_ON_ERROR : string
 '''
 
 #AFFILE MODULE
-
 '''
 KW_FILE : source_affile_params
-KW_FOLLOW_FREQ : LL_FLOAT
+KW_FOLLOW_FREQ : nonnegative_integer
 KW_PAD_SIZE : nonnegative_integer
 KW_MULTI_LINE_MODE : string
 KW_MULTI_LINE_PREFIX : string
 KW_MULTI_LINE_GARBAGE : string
 KW_OWNER : string_or_number
 KW_GROUP : string_or_number
-KW_PERM : LL_NUMBER
 KW_DIR_OWNER : string_or_number
 KW_DIR_GROUP : string_or_number
-KW_DIR_PERM : LL_NUMBER
 KW_CHECK_HOSTNAME : yesno
 KW_FLAGS : source_reader_option_flags
 KW_LOG_FETCH_LIMIT : positive_integer
@@ -147,10 +152,9 @@ KW_PERSIST_NAME : string
 KW_PIPE : source_afpipe_params
 KW_OPTIONAL : yesno
 KW_STDIN : source_stdin_params
-KW_WILDCARD_FILE : '('
+KW_WILDCARD_FILE : source_wildcard_params
 KW_BASE_DIR : string
 KW_FILENAME_PATTERN : string
 KW_RECURSIVE : yesno
-KW_MAX_FILES : LL_NUMBER
 KW_MONITOR_METHOD : string
 '''

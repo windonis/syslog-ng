@@ -3,8 +3,8 @@ import networkx as nx
 import os
 G = nx.DiGraph()
 
-#tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
-tree = syslog.parse("/home/kokonis/affile-grammar.xml")
+tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
+#tree = syslog.parse("/home/kokonis/affile-grammar.xml")
 root = tree.getroot()
 
 def lhsfinder(symbolName):
