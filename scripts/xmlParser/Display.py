@@ -51,11 +51,18 @@ def snippetOutput():
                             if isinstance((traversalLimited(x[1]))[0][1], int) is False:
                                 print("{} : {}".format((traversalLimited(x[1])[0][1]), (getPureRule((traversalLimited(x[1]))[0][0]))[1][2]))
                             else:
-                                print(traversalLimited((traversalLimited(x[1]))[0][0]))
-                     
+                                for p in (traversalLimited((traversalLimited(x[1]))[0][0])):
+                                    try:
+                                        print("{} : {}".format(getPureRule(p[1])[1][0], getPureRule(p[1])[1][2]))
+                                    except:
+                                        print(traversalLimited(p[1]))
+                                        pass
+                                    
+#/TODO this method must be recursive. I will give only begin node.                     
 snippetOutput()
 
 '''
+
 KW_URL : string_list
 KW_USER : string
 KW_PASSWORD : string
@@ -71,8 +78,25 @@ KW_ACCEPT_REDIRECTS : yesno
 KW_TIMEOUT : nonnegative_integer
 KW_BATCH_BYTES : nonnegative_integer
 KW_WORKERS : nonnegative_integer
-[(22, 59), (22, 60), (22, 61), (22, 62)] ---> threaded_dest_driver_option
-[(23, 29), (23, 30), (23, 31), (23, 32), (23, 33), (23, 34), (23, 35), (23, 36)] --> TLS RULES 
+KW_RETRIES : positive_integer
+KW_BATCH_LINES : nonnegative_integer
+KW_BATCH_TIMEOUT : positive_integer
+[(62, 55), (62, 56), (62, 57), (62, 58)] ---> I need Recursive search.
+KW_CA_DIR : string
+KW_CA_FILE : string
+KW_CERT_FILE : string
+KW_KEY_FILE : string
+KW_CIPHER_SUITE : string
+KW_USE_SYSTEM_CERT_STORE : yesno
+KW_SSL_VERSION : string
+KW_PEER_VERIFY : yesno
 KW_TLS : http_tls_options
-[(26, 25), (26, 63), (26, 64), (26, 65), (26, 66), (26, 67), (26, 68)] --> TEMPLATE OPTINO
+[] ---> I need control everytime to empty list.
+KW_TS_FORMAT : string
+KW_FRAC_DIGITS : nonnegative_integer
+KW_TIME_ZONE : string
+KW_SEND_TIME_ZONE : string
+KW_LOCAL_TIME_ZONE : string
+KW_ON_ERROR : string 
+
 '''
