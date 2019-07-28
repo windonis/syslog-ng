@@ -64,6 +64,7 @@ dummy = snippetOutput()
 for k, v in dummy.items():
     print("{} : {}".format(k,v))
 
+#HTTP MODULE
 '''
 KW_URL : string_list
 KW_USER : string
@@ -102,4 +103,54 @@ KW_TIME_ZONE : string
 KW_SEND_TIME_ZONE : string
 KW_LOCAL_TIME_ZONE : string
 KW_ON_ERROR : string
+'''
+
+#AFFILE MODULE
+
+'''
+KW_FILE : source_affile_params
+KW_FOLLOW_FREQ : LL_FLOAT
+KW_PAD_SIZE : nonnegative_integer
+KW_MULTI_LINE_MODE : string
+KW_MULTI_LINE_PREFIX : string
+KW_MULTI_LINE_GARBAGE : string
+KW_OWNER : string_or_number
+KW_GROUP : string_or_number
+KW_PERM : LL_NUMBER
+KW_DIR_OWNER : string_or_number
+KW_DIR_GROUP : string_or_number
+KW_DIR_PERM : LL_NUMBER
+KW_CHECK_HOSTNAME : yesno
+KW_FLAGS : source_reader_option_flags
+KW_LOG_FETCH_LIMIT : positive_integer
+KW_FORMAT : string
+KW_LOG_IW_SIZE : positive_integer
+KW_CHAIN_HOSTNAMES : yesno
+KW_KEEP_HOSTNAME : yesno
+KW_PROGRAM_OVERRIDE : string
+KW_HOST_OVERRIDE : string
+KW_LOG_PREFIX : string
+KW_KEEP_TIMESTAMP : yesno
+KW_READ_OLD_RECORDS : yesno
+KW_TAGS : string_list
+KW_USE_FQDN : yesno
+KW_USE_DNS : dnsmode
+KW_DNS_CACHE : yesno
+KW_NORMALIZE_HOSTNAMES : yesno
+KW_ENCODING : string
+KW_LOG_MSG_SIZE : positive_integer
+KW_TRIM_LARGE_MESSAGES : yesno
+KW_TIME_ZONE : string
+KW_DEFAULT_LEVEL : level_string
+KW_DEFAULT_FACILITY : facility_string
+KW_PERSIST_NAME : string
+KW_PIPE : source_afpipe_params
+KW_OPTIONAL : yesno
+KW_STDIN : source_stdin_params
+KW_WILDCARD_FILE : '('
+KW_BASE_DIR : string
+KW_FILENAME_PATTERN : string
+KW_RECURSIVE : yesno
+KW_MAX_FILES : LL_NUMBER
+KW_MONITOR_METHOD : string
 '''
