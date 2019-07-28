@@ -4,6 +4,7 @@ import os
 G = nx.DiGraph()
 
 tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
+#tree = syslog.parse("/home/kokonis/affile-grammar.xml")
 root = tree.getroot()
 
 def lhsfinder(symbolName):
@@ -48,7 +49,7 @@ class RULE:
             G.add_edge(self.number, i, Nweight=count, rule=self.number)
             count = count + 1
         '''
-        
+
 def xmltoobject():
     collector = []
     for rule in root.iter('rule'):
