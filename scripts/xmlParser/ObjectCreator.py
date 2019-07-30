@@ -42,13 +42,9 @@ class RULE:
                 G.add_node(terminalNumber, terminalName=i)
 
     def add_node(self):
-        G.add_node(self.number, lhs=self.lhs)
-        '''
-        count = 1
-        for i in self.rhs:
-            G.add_edge(self.number, i, Nweight=count, rule=self.number)
-            count = count + 1
-        '''
+        if ( self.usefulness == "useful"):
+            G.add_node(self.number, lhs=self.lhs)
+
 
 def xmltoobject():
     collector = []
