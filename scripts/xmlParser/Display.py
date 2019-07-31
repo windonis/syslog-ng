@@ -3,6 +3,7 @@ import GraphCreator as graph
 import ObjectCreator as parser
 import matplotlib.pyplot as plt
 import re
+import time
 
 alist = [] #using at agressiveRecursive()
 blist = [] #using at passiveRecursive()
@@ -98,7 +99,7 @@ def dictCreator():
             del validrules
     return(stack)
 
-def Output():
+def output():
     stack = dictCreator()
     lastDict = []
 
@@ -108,125 +109,104 @@ def Output():
             dummy = k[0] + " : " + Node
             if dummy not in lastDict:
                 lastDict.append(dummy)
-
     return(lastDict)
 
-for f in Output():
-    filename = "./modules/http/http-parser.c"
-    for line in open(filename, 'r'):
-        dummyvalue = (f.split(":")[0]).strip()
-        if dummyvalue in line:
-            rString = (re.search('{(.*),', line))
-            print(f.replace((f.split(":")[0]).strip(), (rString.group(1).split(",")[0])))
+def firstParser():
 
-#/TODO if x [1] is equal to y [0] below, x [0] is parent.
-'''
- "http" : KW_URL
- "http" : LL_IDENTIFIER
- "http" : LL_STRING
- "http" : KW_USER
- "http" : KW_PASSWORD
- "http" : KW_USER_AGENT
- "http" : KW_HEADERS
- "http" : KW_AUTH_HEADER
- "http" : KW_METHOD
- "http" : KW_BODY_PREFIX
- "http" : KW_BODY_SUFFIX
- "http" : KW_DELIMITER
- "http" : KW_BODY
- "http" : KW_ACCEPT_REDIRECTS
- "http" : KW_YES
- "http" : KW_NO
- "http" : LL_NUMBER
- "http" : KW_TIMEOUT
- "http" : KW_BATCH_BYTES
- "http" : KW_WORKERS
- "http" : KW_RETRIES
- "http" : KW_BATCH_LINES
- "http" : KW_BATCH_TIMEOUT
- "http" : KW_LOG_FIFO_SIZE
- "http" : KW_THROTTLE
- "http" : KW_PERSIST_NAME
- "http" : KW_CA_DIR
- "http" : KW_CA_FILE
- "http" : KW_CERT_FILE
- "http" : KW_KEY_FILE
- "http" : KW_CIPHER_SUITE
- "http" : KW_USE_SYSTEM_CERT_STORE
- "http" : KW_SSL_VERSION
- "http" : KW_PEER_VERIFY
- "http" : KW_TLS
- "http" : KW_TS_FORMAT
- "http" : KW_FRAC_DIGITS
- "http" : KW_TIME_ZONE
- "http" : KW_SEND_TIME_ZONE
- "http" : KW_LOCAL_TIME_ZONE
- "http" : KW_ON_ERROR
- "url" : LL_IDENTIFIER
- "url" : LL_STRING
- "user" : LL_IDENTIFIER
- "user_agent" : LL_IDENTIFIER
- "user" : LL_STRING
- "user_agent" : LL_STRING
- "password" : LL_IDENTIFIER
- "password" : LL_STRING
- "user_agent" : LL_IDENTIFIER
- "user_agent" : LL_STRING
- "headers" : LL_IDENTIFIER
- "headers" : LL_STRING
- "auth_header" : LL_IDENTIFIER
- "method" : LL_IDENTIFIER
- "method" : LL_STRING
- "body_prefix" : LL_IDENTIFIER
- "body_prefix" : LL_STRING
- "body_suffix" : LL_IDENTIFIER
- "body_suffix" : LL_STRING
- "delimiter" : LL_IDENTIFIER
- "delimiter" : LL_STRING
- "body" : LL_IDENTIFIER
- "body_prefix" : LL_IDENTIFIER
- "body_suffix" : LL_IDENTIFIER
- "body" : LL_STRING
- "body_prefix" : LL_STRING
- "body_suffix" : LL_STRING
- "accept_redirects" : KW_YES
- "accept_redirects" : KW_NO
- "accept_redirects" : LL_NUMBER
- "timeout" : LL_NUMBER
- "flush_bytes" : LL_NUMBER
- "batch_bytes" : LL_NUMBER
- "workers" : LL_NUMBER
- "flush_lines" : LL_NUMBER
- "flush_timeout" : LL_NUMBER
- "ca_dir" : LL_IDENTIFIER
- "ca_dir" : LL_STRING
- "ca_file" : LL_IDENTIFIER
- "ca_file" : LL_STRING
- "cert_file" : LL_IDENTIFIER
- "cert_file" : LL_STRING
- "key_file" : LL_IDENTIFIER
- "key_file" : LL_STRING
- "cipher_suite" : LL_IDENTIFIER
- "cipher_suite" : LL_STRING
- "use_system_cert_store" : KW_YES
- "use_system_cert_store" : KW_NO
- "use_system_cert_store" : LL_NUMBER
- "ssl_version" : LL_IDENTIFIER
- "ssl_version" : LL_STRING
- "peer_verify" : KW_YES
- "peer_verify" : KW_NO
- "peer_verify" : LL_NUMBER
- "tls" : KW_CA_DIR
- "tls" : LL_IDENTIFIER
- "tls" : LL_STRING
- "tls" : KW_CA_FILE
- "tls" : KW_CERT_FILE
- "tls" : KW_KEY_FILE
- "tls" : KW_CIPHER_SUITE
- "tls" : KW_USE_SYSTEM_CERT_STORE
- "tls" : KW_YES
- "tls" : KW_NO
- "tls" : LL_NUMBER
- "tls" : KW_SSL_VERSION
- "tls" : KW_PEER_VERIFY
- '''
+    laststack = []
+    datas = output()
+    dummyDatas = datas
+    stack = []
+    for i in datas:
+        for j in dummyDatas:
+            if i.split(":")[1].strip() == j.split(":")[0].strip():
+                if i.split(":")[0].strip() not in stack:
+                    stack.append("{}".format(i.split(":")[0].strip()))
+
+    for key in stack:
+        newObj = {}
+        x = datas
+        for line1 in x:
+            key1 = line1.strip().split(" : ")[0]
+            value1 = line1.strip().split(" : ")[1]
+            if key1 not in newObj:
+                newObj[key1] = {}
+            for line2 in x:
+                key2 = line2.strip().split(" : ")[0]
+                value2 = line2.strip().split(" : ")[1]
+                if key2 == value1:
+                    if value1 not in newObj[key1]:
+                        newObj[key1][value1] = []
+                    newObj[key1][value1].append(value2)
+        laststack.append(key)
+        laststack.append((newObj[key]))
+    return laststack
+
+def cleaner():
+    stacks = firstParser()
+    for stack in stacks:
+        if (stacks.index(stack) % 2 == 0):
+            print(stack)
+        else:
+            datas = stack
+            pile = []
+
+            for i in datas.items():
+                for x in i[1]:
+                    if x in datas:
+                        pile.append(x)
+                        if i[0] not in pile:
+                            pile.append(i[0])
+            for i in pile:
+                del datas[i]
+                
+            for i in datas.items():
+                print("\t{}".format(i))
+
+start = time.time()
+cleaner()
+end = time.time()
+print(end-start)
+
+"""
+KW_HTTP
+        ('KW_URL', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_USER', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_PASSWORD', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_USER_AGENT', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_HEADERS', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_AUTH_HEADER', ['LL_IDENTIFIER'])
+        ('KW_METHOD', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_BODY_PREFIX', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_BODY_SUFFIX', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_DELIMITER', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_BODY', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_ACCEPT_REDIRECTS', ['KW_YES', 'KW_NO', 'LL_NUMBER'])
+        ('KW_TIMEOUT', ['LL_NUMBER'])
+        ('KW_BATCH_BYTES', ['LL_NUMBER'])
+        ('KW_WORKERS', ['LL_NUMBER'])
+        ('KW_RETRIES', ['LL_NUMBER'])
+        ('KW_BATCH_LINES', ['LL_NUMBER'])
+        ('KW_BATCH_TIMEOUT', ['LL_NUMBER'])
+        ('KW_LOG_FIFO_SIZE', ['LL_NUMBER'])
+        ('KW_THROTTLE', ['LL_NUMBER'])
+        ('KW_PERSIST_NAME', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_TS_FORMAT', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_FRAC_DIGITS', ['LL_NUMBER'])
+        ('KW_TIME_ZONE', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_SEND_TIME_ZONE', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_LOCAL_TIME_ZONE', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_ON_ERROR', ['LL_IDENTIFIER', 'LL_STRING'])
+KW_TLS
+        ('KW_CA_DIR', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_CA_FILE', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_CERT_FILE', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_KEY_FILE', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_CIPHER_SUITE', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_USE_SYSTEM_CERT_STORE', ['KW_YES', 'KW_NO', 'LL_NUMBER'])
+        ('KW_SSL_VERSION', ['LL_IDENTIFIER', 'LL_STRING'])
+        ('KW_PEER_VERIFY', ['KW_YES', 'KW_NO', 'LL_NUMBER'])
+"""
+"""
+Running Measure : 133 sec
+"""
