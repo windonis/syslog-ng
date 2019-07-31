@@ -100,23 +100,9 @@ def dictCreator():
 
 def Output():
     stack = dictCreator()
-    dummyStack = stack
-    deletedLines = []
-
-    for x in stack.items():
-        for v in traversalLimited(findNode(x[1])):
-            try:
-                if getPureRule(v[1])[1][0] in dummyStack:
-                    if x[0] not in deletedLines:
-                        deletedLines.append(x[0])
-            except:
-                pass
-
-    for line in deletedLines:
-        dummyStack.pop(line,None)
     lastDict = []
 
-    for k in dummyStack.items():
+    for k in stack.items():
         blist.clear()
         for Node in findNodeDetailed(k[1]):
             dummy = k[0] + " : " + Node
@@ -132,7 +118,50 @@ for f in Output():
         if dummyvalue in line:
             rString = (re.search('{(.*),', line))
             print(f.replace((f.split(":")[0]).strip(), (rString.group(1).split(",")[0])))
+
+#/TODO if x [1] is equal to y [0] below, x [0] is parent.
 '''
+ "http" : KW_URL
+ "http" : LL_IDENTIFIER
+ "http" : LL_STRING
+ "http" : KW_USER
+ "http" : KW_PASSWORD
+ "http" : KW_USER_AGENT
+ "http" : KW_HEADERS
+ "http" : KW_AUTH_HEADER
+ "http" : KW_METHOD
+ "http" : KW_BODY_PREFIX
+ "http" : KW_BODY_SUFFIX
+ "http" : KW_DELIMITER
+ "http" : KW_BODY
+ "http" : KW_ACCEPT_REDIRECTS
+ "http" : KW_YES
+ "http" : KW_NO
+ "http" : LL_NUMBER
+ "http" : KW_TIMEOUT
+ "http" : KW_BATCH_BYTES
+ "http" : KW_WORKERS
+ "http" : KW_RETRIES
+ "http" : KW_BATCH_LINES
+ "http" : KW_BATCH_TIMEOUT
+ "http" : KW_LOG_FIFO_SIZE
+ "http" : KW_THROTTLE
+ "http" : KW_PERSIST_NAME
+ "http" : KW_CA_DIR
+ "http" : KW_CA_FILE
+ "http" : KW_CERT_FILE
+ "http" : KW_KEY_FILE
+ "http" : KW_CIPHER_SUITE
+ "http" : KW_USE_SYSTEM_CERT_STORE
+ "http" : KW_SSL_VERSION
+ "http" : KW_PEER_VERIFY
+ "http" : KW_TLS
+ "http" : KW_TS_FORMAT
+ "http" : KW_FRAC_DIGITS
+ "http" : KW_TIME_ZONE
+ "http" : KW_SEND_TIME_ZONE
+ "http" : KW_LOCAL_TIME_ZONE
+ "http" : KW_ON_ERROR
  "url" : LL_IDENTIFIER
  "url" : LL_STRING
  "user" : LL_IDENTIFIER
@@ -187,4 +216,17 @@ for f in Output():
  "peer_verify" : KW_YES
  "peer_verify" : KW_NO
  "peer_verify" : LL_NUMBER
+ "tls" : KW_CA_DIR
+ "tls" : LL_IDENTIFIER
+ "tls" : LL_STRING
+ "tls" : KW_CA_FILE
+ "tls" : KW_CERT_FILE
+ "tls" : KW_KEY_FILE
+ "tls" : KW_CIPHER_SUITE
+ "tls" : KW_USE_SYSTEM_CERT_STORE
+ "tls" : KW_YES
+ "tls" : KW_NO
+ "tls" : LL_NUMBER
+ "tls" : KW_SSL_VERSION
+ "tls" : KW_PEER_VERIFY
  '''
