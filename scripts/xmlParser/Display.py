@@ -161,7 +161,13 @@ def cleaner():
                 del datas[i]
                 
             for i in datas.items():
-                print("\t{}".format(i))
+                for sub in i[1]:
+                    filename = "./modules/http/http-parser.c" #/TODO could be parameter
+                    for line in open(filename, 'r'):
+                        if i[0] in line:
+                            rString = (re.search('{(.*),', line))
+
+                            print("\t{} : {}".format(rString.group(1).split(",")[0],sub))
 
 start = time.time()
 cleaner()
@@ -170,42 +176,62 @@ print(end-start)
 
 """
 KW_HTTP
-        ('KW_URL', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_USER', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_PASSWORD', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_USER_AGENT', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_HEADERS', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_AUTH_HEADER', ['LL_IDENTIFIER'])
-        ('KW_METHOD', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_BODY_PREFIX', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_BODY_SUFFIX', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_DELIMITER', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_BODY', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_ACCEPT_REDIRECTS', ['KW_YES', 'KW_NO', 'LL_NUMBER'])
-        ('KW_TIMEOUT', ['LL_NUMBER'])
-        ('KW_BATCH_BYTES', ['LL_NUMBER'])
-        ('KW_WORKERS', ['LL_NUMBER'])
-        ('KW_RETRIES', ['LL_NUMBER'])
-        ('KW_BATCH_LINES', ['LL_NUMBER'])
-        ('KW_BATCH_TIMEOUT', ['LL_NUMBER'])
-        ('KW_LOG_FIFO_SIZE', ['LL_NUMBER'])
-        ('KW_THROTTLE', ['LL_NUMBER'])
-        ('KW_PERSIST_NAME', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_TS_FORMAT', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_FRAC_DIGITS', ['LL_NUMBER'])
-        ('KW_TIME_ZONE', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_SEND_TIME_ZONE', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_LOCAL_TIME_ZONE', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_ON_ERROR', ['LL_IDENTIFIER', 'LL_STRING'])
+         "url" : LL_IDENTIFIER
+         "url" : LL_STRING
+         "user" : LL_IDENTIFIER
+         "user_agent" : LL_IDENTIFIER
+         "user" : LL_STRING
+         "user_agent" : LL_STRING
+         "password" : LL_IDENTIFIER
+         "password" : LL_STRING
+         "user_agent" : LL_IDENTIFIER
+         "user_agent" : LL_STRING
+         "headers" : LL_IDENTIFIER
+         "headers" : LL_STRING
+         "auth_header" : LL_IDENTIFIER
+         "method" : LL_IDENTIFIER
+         "method" : LL_STRING
+         "body_prefix" : LL_IDENTIFIER
+         "body_prefix" : LL_STRING
+         "body_suffix" : LL_IDENTIFIER
+         "body_suffix" : LL_STRING
+         "delimiter" : LL_IDENTIFIER
+         "delimiter" : LL_STRING
+         "body" : LL_IDENTIFIER
+         "body_prefix" : LL_IDENTIFIER
+         "body_suffix" : LL_IDENTIFIER
+         "body" : LL_STRING
+         "body_prefix" : LL_STRING
+         "body_suffix" : LL_STRING
+         "accept_redirects" : KW_YES
+         "accept_redirects" : KW_NO
+         "accept_redirects" : LL_NUMBER
+         "timeout" : LL_NUMBER
+         "flush_bytes" : LL_NUMBER
+         "batch_bytes" : LL_NUMBER
+         "workers" : LL_NUMBER
+         "flush_lines" : LL_NUMBER
+         "flush_timeout" : LL_NUMBER
 KW_TLS
-        ('KW_CA_DIR', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_CA_FILE', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_CERT_FILE', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_KEY_FILE', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_CIPHER_SUITE', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_USE_SYSTEM_CERT_STORE', ['KW_YES', 'KW_NO', 'LL_NUMBER'])
-        ('KW_SSL_VERSION', ['LL_IDENTIFIER', 'LL_STRING'])
-        ('KW_PEER_VERIFY', ['KW_YES', 'KW_NO', 'LL_NUMBER'])
+         "ca_dir" : LL_IDENTIFIER
+         "ca_dir" : LL_STRING
+         "ca_file" : LL_IDENTIFIER
+         "ca_file" : LL_STRING
+         "cert_file" : LL_IDENTIFIER
+         "cert_file" : LL_STRING
+         "key_file" : LL_IDENTIFIER
+         "key_file" : LL_STRING
+         "cipher_suite" : LL_IDENTIFIER
+         "cipher_suite" : LL_STRING
+         "use_system_cert_store" : KW_YES
+         "use_system_cert_store" : KW_NO
+         "use_system_cert_store" : LL_NUMBER
+         "ssl_version" : LL_IDENTIFIER
+         "ssl_version" : LL_STRING
+         "peer_verify" : KW_YES
+         "peer_verify" : KW_NO
+         "peer_verify" : LL_NUMBER
+         
 """
 """
 Running Measure : 133 sec
