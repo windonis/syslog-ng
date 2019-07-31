@@ -143,13 +143,19 @@ def firstParser():
     return laststack
 
 def cleaner():
+    filename = "./modules/http/http-parser.c" #/TODO could be parameter 
+    filename2 = "./lib/cfg-parser.c" #/TODO could be static
     stacks = firstParser()
     for stack in stacks:
         if (stacks.index(stack) % 2 == 0):
-            print(stack)
+            for line in open(filename, 'r'):
+                if stack in line:
+                    rString = (re.search('{(.*),', line))
+                    print((rString[1]).split(",")[0])
         else:
             datas = stack
             pile = []
+            fikri = []
 
             for i in datas.items():
                 for x in i[1]:
@@ -159,80 +165,92 @@ def cleaner():
                             pile.append(i[0])
             for i in pile:
                 del datas[i]
-                
+            
             for i in datas.items():
                 for sub in i[1]:
-                    filename = "./modules/http/http-parser.c" #/TODO could be parameter
                     for line in open(filename, 'r'):
                         if i[0] in line:
                             rString = (re.search('{(.*),', line))
+                            teyfik = ((rString[1]).split(",")[0]) + ":" + sub
+                            fikri.append(teyfik.replace('"',''))
+            for i in fikri:
+                a = ""
+                y = i.split(":")[1]
+                if "LL_" in y:
+                    y2 = y.replace("LL_"," ").lower()
+                    print("\t{}".format(i.replace(y,y2)))
 
-                            print("\t{} : {}".format(rString.group(1).split(",")[0],sub))
-
+                for line in open(filename2, 'r'):
+                    if y in line:
+                        if y == (line.split(",")[1].replace(" }","").strip()):
+                            a += (line.split("{")[1].strip().split(",")[0].replace('"',' ')) + " / " #TODO re.match(r'(.*), ', line) i use but not working perfect
+                if len(a) != 0: 
+                    print("\t{}".format(i.replace(y, a)))
+                        
 start = time.time()
 cleaner()
 end = time.time()
 print(end-start)
 
 """
-KW_HTTP
-         "url" : LL_IDENTIFIER
-         "url" : LL_STRING
-         "user" : LL_IDENTIFIER
-         "user_agent" : LL_IDENTIFIER
-         "user" : LL_STRING
-         "user_agent" : LL_STRING
-         "password" : LL_IDENTIFIER
-         "password" : LL_STRING
-         "user_agent" : LL_IDENTIFIER
-         "user_agent" : LL_STRING
-         "headers" : LL_IDENTIFIER
-         "headers" : LL_STRING
-         "auth_header" : LL_IDENTIFIER
-         "method" : LL_IDENTIFIER
-         "method" : LL_STRING
-         "body_prefix" : LL_IDENTIFIER
-         "body_prefix" : LL_STRING
-         "body_suffix" : LL_IDENTIFIER
-         "body_suffix" : LL_STRING
-         "delimiter" : LL_IDENTIFIER
-         "delimiter" : LL_STRING
-         "body" : LL_IDENTIFIER
-         "body_prefix" : LL_IDENTIFIER
-         "body_suffix" : LL_IDENTIFIER
-         "body" : LL_STRING
-         "body_prefix" : LL_STRING
-         "body_suffix" : LL_STRING
-         "accept_redirects" : KW_YES
-         "accept_redirects" : KW_NO
-         "accept_redirects" : LL_NUMBER
-         "timeout" : LL_NUMBER
-         "flush_bytes" : LL_NUMBER
-         "batch_bytes" : LL_NUMBER
-         "workers" : LL_NUMBER
-         "flush_lines" : LL_NUMBER
-         "flush_timeout" : LL_NUMBER
-KW_TLS
-         "ca_dir" : LL_IDENTIFIER
-         "ca_dir" : LL_STRING
-         "ca_file" : LL_IDENTIFIER
-         "ca_file" : LL_STRING
-         "cert_file" : LL_IDENTIFIER
-         "cert_file" : LL_STRING
-         "key_file" : LL_IDENTIFIER
-         "key_file" : LL_STRING
-         "cipher_suite" : LL_IDENTIFIER
-         "cipher_suite" : LL_STRING
-         "use_system_cert_store" : KW_YES
-         "use_system_cert_store" : KW_NO
-         "use_system_cert_store" : LL_NUMBER
-         "ssl_version" : LL_IDENTIFIER
-         "ssl_version" : LL_STRING
-         "peer_verify" : KW_YES
-         "peer_verify" : KW_NO
-         "peer_verify" : LL_NUMBER
-         
+ "http"
+         url: identifier
+         url: string
+         user: identifier
+         user_agent: identifier
+         user: string
+         user_agent: string
+         password: identifier
+         password: string
+         user_agent: identifier
+         user_agent: string
+         headers: identifier
+         headers: string
+         auth_header: identifier
+         method: identifier
+         method: string
+         body_prefix: identifier
+         body_prefix: string
+         body_suffix: identifier
+         body_suffix: string
+         delimiter: identifier
+         delimiter: string
+         body: identifier
+         body_prefix: identifier
+         body_suffix: identifier
+         body: string
+         body_prefix: string
+         body_suffix: string
+         accept_redirects: yes  /  on  / 
+         accept_redirects: no  /  off  / 
+         accept_redirects: number
+         timeout: number
+         flush_bytes: number
+         batch_bytes: number
+         workers: number
+         flush_lines: number
+         flush_timeout: number
+ "tls"
+         ca_dir: identifier
+         ca_dir: string
+         ca_file: identifier
+         ca_file: string
+         cert_file: identifier
+         cert_file: string
+         key_file: identifier
+         key_file: string
+         cipher_suite: identifier
+         cipher_suite: string
+         use_system_cert_store: yes  /  on  / 
+         use_system_cert_store: no  /  off  / 
+         use_system_cert_store: number
+         ssl_version: identifier
+         ssl_version: string
+         peer_verify: yes  /  on  / 
+         peer_verify: no  /  off  / 
+         peer_verify: number
 """
 """
-Running Measure : 133 sec
-"""
+121.8657238483429
+"""       
+
