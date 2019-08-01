@@ -5,6 +5,7 @@ G = nx.DiGraph()
 
 tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
 #tree = syslog.parse("/home/kokonis/affile-grammar.xml")
+#tree = syslog.parse("/home/kokonis/Documents/kafka-grammar.xml")
 root = tree.getroot()
 
 def lhsfinder(symbolName):

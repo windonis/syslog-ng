@@ -8,6 +8,8 @@ import time
 alist = [] #using at agressiveRecursive()
 blist = [] #using at passiveRecursive()
 graph.EdgeAdder()
+agressiveStopper = []
+passiveStopper = []
 
 
 def getPureRule(ruleNumber):
@@ -31,6 +33,7 @@ def findNode(lhs):
 
 def findNodeDetailed(lhs):
     listed = []
+    stored = []
     for x in parser.G.nodes.data('lhs'):
         if x[1] is not None and x[1] == lhs:
             listed.append(x[0])
@@ -69,20 +72,26 @@ def findBeginState():
 
 def agressiveRecursive(ruleNumber):
     for i in traversalLimited(ruleNumber):
-            if isinstance(i[1], int) is True:
+        if isinstance(i[1], int) is True:
+            #It is the measure for the infinite loop.
+            if agressiveStopper.count(i[1]) < 100:
+                agressiveStopper.append(i[1])
                 agressiveRecursive(i[1])
-            else:
-                if i[0] not in alist:
-                    alist.append(i[0])
+        else:
+            if i[0] not in alist:
+                alist.append(i[0])
     return(alist)
 
 def passiveRecursive(ruleNumber):
     for i in (traversalLimited(ruleNumber)):
         if isinstance(i[1], int) is True:
-            passiveRecursive(i[1])
+            #It is the measure for the infinite loop.
+            if passiveStopper.count(i[1]) < 100:
+                passiveStopper.append(i[1])
+                passiveRecursive(i[1])
         else:
             if ( i[1] != "'('" ) and ( i[1] != "')'"):
-                    blist.append(i[1])
+                blist.append(i[1])
     return blist
 
 def dictCreator(beginning):
@@ -95,8 +104,12 @@ def dictCreator(beginning):
             for x in getPureRule(i)[1]:
                 if x != "'('" and x != "')'" and "$@" not in x:
                     validrules.append(x)
-            stack.update({validrules[0]:validrules[1]})
-            del validrules
+            try:
+                stack.update({validrules[0]:validrules[1]})
+                del validrules
+            except:
+                del validrules
+                pass
     return(stack)
 
 def output(beginning):
@@ -210,69 +223,3 @@ for state in BeginnerState:
 
 end = time.time()
 print(end-start)
-
-
-"""
-driver : http
-type : destination
-options: 
-         http
-                 url: identifier
-                 url: string
-                 user: identifier
-                 user_agent: identifier
-                 user: string
-                 user_agent: string
-                 password: identifier
-                 password: string
-                 user_agent: identifier
-                 user_agent: string
-                 headers: identifier
-                 headers: string
-                 auth_header: identifier
-                 method: identifier
-                 method: string
-                 body_prefix: identifier
-                 body_prefix: string
-                 body_suffix: identifier
-                 body_suffix: string
-                 delimiter: identifier
-                 delimiter: string
-                 body: identifier
-                 body_prefix: identifier
-                 body_suffix: identifier
-                 body: string
-                 body_prefix: string
-                 body_suffix: string
-                 accept_redirects: yes  /  on  / 
-                 accept_redirects: no  /  off  / 
-                 accept_redirects: number
-                 timeout: number
-                 flush_bytes: number
-                 batch_bytes: number
-                 workers: number
-                 flush_lines: number
-                 flush_timeout: number
-         tls
-                 ca_dir: identifier
-                 ca_dir: string
-                 ca_file: identifier
-                 ca_file: string
-                 cert_file: identifier
-                 cert_file: string
-                 key_file: identifier
-                 key_file: string
-                 cipher_suite: identifier
-                 cipher_suite: string
-                 use_system_cert_store: yes  /  on  / 
-                 use_system_cert_store: no  /  off  / 
-                 use_system_cert_store: number
-                 ssl_version: identifier
-                 ssl_version: string
-                 peer_verify: yes  /  on  / 
-                 peer_verify: no  /  off  / 
-                 peer_verify: number
-"""
-"""
-123.95780444145203 sec
-"""
