@@ -85,10 +85,10 @@ def passiveRecursive(ruleNumber):
                     blist.append(i[1])
     return blist
 
-def dictCreator():
+def dictCreator(beginning):
     stack = {}
     alist.clear()
-    aggResult = agressiveRecursive(findNode('http_destination'))
+    aggResult = agressiveRecursive(findNode(beginning))
     for i in aggResult:
         if terminalControl( getPureRule(i)[1][0] ) is not True:
             validrules = []
@@ -99,8 +99,8 @@ def dictCreator():
             del validrules
     return(stack)
 
-def output():
-    stack = dictCreator()
+def output(beginning):
+    stack = dictCreator(beginning)
     lastDict = []
 
     for k in stack.items():
@@ -111,10 +111,10 @@ def output():
                 lastDict.append(dummy)
     return(lastDict)
 
-def firstParser():
+def firstParser(beginning):
 
     laststack = []
-    datas = output()
+    datas = output(beginning)
     dummyDatas = datas
     stack = []
     for i in datas:
@@ -142,16 +142,22 @@ def firstParser():
         laststack.append((newObj[key]))
     return laststack
 
-def cleaner():
+def cleaner(beginning):
     filename = "./modules/http/http-parser.c" #/TODO could be parameter 
     filename2 = "./lib/cfg-parser.c" #/TODO could be static
-    stacks = firstParser()
+    returnStack = []
+
+    print("driver : {}".format(beginning.split("_")[0]))
+    print("type : {}".format(beginning.split("_")[1]))
+    print("options: ")
+
+    stacks = firstParser(beginning)
     for stack in stacks:
         if (stacks.index(stack) % 2 == 0):
             for line in open(filename, 'r'):
                 if stack in line:
                     rString = (re.search('{(.*),', line))
-                    print((rString[1]).split(",")[0])
+                    returnStack.append(("+") + ((rString[1]).split(",")[0].replace('"','')))
         else:
             datas = stack
             pile = []
@@ -178,79 +184,27 @@ def cleaner():
                 y = i.split(":")[1]
                 if "LL_" in y:
                     y2 = y.replace("LL_"," ").lower()
-                    print("\t{}".format(i.replace(y,y2)))
+                    returnStack.append(i.replace(y,y2))
 
                 for line in open(filename2, 'r'):
                     if y in line:
                         if y == (line.split(",")[1].replace(" }","").strip()):
                             a += (line.split("{")[1].strip().split(",")[0].replace('"',' ')) + " / " #TODO re.match(r'(.*), ', line) i use but not working perfect
                 if len(a) != 0: 
-                    print("\t{}".format(i.replace(y, a)))
-                        
+                    returnStack.append(i.replace(y, a))
+    return returnStack
+
 start = time.time()
-cleaner()
+
+BeginnerState = findBeginState()
+
+for i in cleaner(BeginnerState[0]):
+    if "+" in i:
+        print("\t{}".format(i.replace("+","")))
+    else:
+        print("\t\t{}".format(i))
+
 end = time.time()
 print(end-start)
 
-"""
- "http"
-         url: identifier
-         url: string
-         user: identifier
-         user_agent: identifier
-         user: string
-         user_agent: string
-         password: identifier
-         password: string
-         user_agent: identifier
-         user_agent: string
-         headers: identifier
-         headers: string
-         auth_header: identifier
-         method: identifier
-         method: string
-         body_prefix: identifier
-         body_prefix: string
-         body_suffix: identifier
-         body_suffix: string
-         delimiter: identifier
-         delimiter: string
-         body: identifier
-         body_prefix: identifier
-         body_suffix: identifier
-         body: string
-         body_prefix: string
-         body_suffix: string
-         accept_redirects: yes  /  on  / 
-         accept_redirects: no  /  off  / 
-         accept_redirects: number
-         timeout: number
-         flush_bytes: number
-         batch_bytes: number
-         workers: number
-         flush_lines: number
-         flush_timeout: number
- "tls"
-         ca_dir: identifier
-         ca_dir: string
-         ca_file: identifier
-         ca_file: string
-         cert_file: identifier
-         cert_file: string
-         key_file: identifier
-         key_file: string
-         cipher_suite: identifier
-         cipher_suite: string
-         use_system_cert_store: yes  /  on  / 
-         use_system_cert_store: no  /  off  / 
-         use_system_cert_store: number
-         ssl_version: identifier
-         ssl_version: string
-         peer_verify: yes  /  on  / 
-         peer_verify: no  /  off  / 
-         peer_verify: number
-"""
-"""
-121.8657238483429
-"""       
 
