@@ -198,11 +198,15 @@ start = time.time()
 
 BeginnerState = findBeginState()
 
-for i in cleaner(BeginnerState[0]):
-    if "+" in i:
-        print("\t{}".format(i.replace("+","")))
-    else:
-        print("\t\t{}".format(i))
+for state in BeginnerState:
+    count = 0
+    for i in cleaner(state):
+        if "+" in i:
+            count = 0
+            print("\t{}".format(i.replace("+","")))
+        else:
+            count = count + 1
+            print("\t\t{}.{}".format(count,i))
 
 end = time.time()
 print(end-start)
