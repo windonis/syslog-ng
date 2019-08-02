@@ -3,8 +3,8 @@ import networkx as nx
 import os
 G = nx.DiGraph()
 
+#tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
 tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
-#tree = syslog.parse("/home/kokonis/affile-grammar.xml")
 #tree = syslog.parse("/home/kokonis/Documents/kafka-grammar.xml")
 root = tree.getroot()
 
@@ -40,7 +40,7 @@ class RULE:
             terminalcontrol = lhsfinder(i)
             if len(terminalcontrol) == 0:
                 terminalNumber = ( -1 * self.number - 1 )
-                G.add_node(terminalNumber, terminalName=i)
+                G.add_node(int(terminalNumber), terminalName=i)
 
     def add_node(self):
         if ( self.usefulness == "useful"):
