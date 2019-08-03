@@ -72,14 +72,14 @@ def findBeginState():
     return(beginNode)
 
 def oppositeFindBeginState(state):
-    nodeNumbers = findNode('start')
-    for i in nodeNumbers:
-        now = getPureRule(i)
-        for y in now[1]:
-            if y == state:
-                for z in now[1]:
-                    if z != state:
-                        return z.replace("LL_CONTEXT_","").lower()
+    allRuleNumber = gettingRules
+    for i in allRuleNumber:
+        gettingDetail = getPureRule(i.number)
+        if state in gettingDetail[1]:
+            for x in gettingDetail[1]:
+                if "LL_CONTEXT_" in x:
+                    return x.replace("LL_CONTEXT_","").lower()
+        
 
 def agressiveRecursive(ruleNumber):
     havuz = []
