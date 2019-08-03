@@ -6,10 +6,11 @@ import re
 import time
 import itertools
 
-alist = [] #using at agressiveRecursive()
+#alist = [] #using at agressiveRecursive()
 blist = [] #using at passiveRecursive()
 graph.EdgeAdder()
 gettingRules = parser.xmltoobject()
+parseFile = "./modules/http/http-parser.c"
 
 
 def getPureRule(ruleNumber):
@@ -80,12 +81,12 @@ def oppositeFindBeginState(state):
                 if "LL_CONTEXT_" in x:
                     return x.replace("LL_CONTEXT_","").lower()
         
-
 def agressiveRecursive(ruleNumber):
     havuz = []
     havuz.append(ruleNumber)
     count = 0
     previousLen = 0
+    alist = []
     while True:
         if count != 100:
             if len(havuz) != 0:
@@ -155,7 +156,6 @@ def dictCreator(beginning):
     newBorn = (findNode(beginning))
     for born in newBorn:
         stack = {}
-        alist.clear()
         aggResult = agressiveRecursive(born)
         for i in aggResult:
             if terminalControl( getPureRule(i)[1][0] ) is not True:
@@ -211,7 +211,7 @@ for state in BeginnerState:
         ProblemsArray = []
         Remover = []
 
-        for line in open("./modules/http/http-parser.c",'r'):
+        for line in open(parseFile,'r'):
             if key in line:
                 newKey = (re.search('{(.*),', line))
                 driverName = (((newKey[1]).split(",")[0]).replace('"',''))
@@ -279,7 +279,7 @@ for state in BeginnerState:
                         arrayCount = arrayCount + 1
             flag = False
             if k.split(" : ")[0] not in check:
-                for line in open('./modules/http/http-parser.c','r'):
+                for line in open(parseFile,'r'):
                     if k.split(" : ")[0] in line:
                         flag = True
                         newString = (re.search('{(.*),', line))
@@ -291,7 +291,9 @@ for state in BeginnerState:
                         if k.split(" : ")[0] in line:
                             newString = (re.search('{(.*),', line))
                             cleanString = ((newString[1]).split(",")[0]).replace('"','')
-                            print("\t{} : {}".format(cleanString, finalValue))
+                            cleanString2 = (newString[1]).split(",")[1].replace(" }","").strip()
+                            if k.split(" : ")[0] == cleanString2:
+                                print("\t{} : {}".format(cleanString, finalValue))
 
                         #ruleCounterPerDriver = ruleCounterPerDriver + 1
                 check.append(k.split(" : ")[0])
@@ -301,7 +303,7 @@ for state in BeginnerState:
         for m in Problems.keys():
             check2 = []
             flag = False
-            for line in open('./modules/http/http-parser.c','r'):
+            for line in open(parseFile,'r'):
                 if m in line:
                     flag = True
                     newString = (re.search('{(.*),', line))
@@ -350,7 +352,7 @@ for state in BeginnerState:
                             arrayCount2 = arrayCount2 + 1
 
                 if b.split(" : ")[0] not in check2:
-                    for line in open('./modules/http/http-parser.c','r'):
+                    for line in open(parseFile,'r'):
                         if b.split(" : ")[0] in line:
                             newString = (re.search('{(.*),', line))
                             cleanString = ((newString[1]).split(",")[0]).replace('"','')
