@@ -72,20 +72,14 @@ def findBeginState():
     return(beginNode)
 
 def oppositeFindBeginState(state):
-    for i in parser.G.nodes.data('lhs'):
-        if(i[1] == 'start'):
-            for x in traversalUnlimeted(i[0]):
-                if x[1] == 'LL_CONTEXT_DESTINATION':
-                    source = getPureRule(x[0])
-                    for i in source[1]:
-                        if i != state:
-                            return "destination"
-
-                elif x[1] == 'LL_CONTEXT_SOURCE':
-                    source = getPureRule(x[0])
-                    for i in source[1]:
-                        if i != state:
-                            return "source"
+    nodeNumbers = findNode('start')
+    for i in nodeNumbers:
+        now = getPureRule(i)
+        for y in now[1]:
+            if y == state:
+                for z in now[1]:
+                    if z != state:
+                        return z.replace("LL_CONTEXT_","").lower()
 
 def agressiveRecursive(ruleNumber):
     havuz = []
@@ -121,7 +115,7 @@ def passiveRecursive(ruleNumber):
     count = 0
     previousLen = 0
     while True:
-        if count != 10:
+        if count != 100:
             if len(havuz) != 0:
                 fikri = havuz[0]
                 for x in traversalLimited(fikri):
@@ -157,19 +151,10 @@ def findTerminalState(lhs):
 
 def dictCreator(beginning):
     #Parser Files
-    """
-    filename = "./modules/affile/affile-parser.c" #/TODO could be parameter 
-    filename2 = "./lib/cfg-parser.c" #/TODO could be static
-    """
     allStack = {}
-
     newBorn = (findNode(beginning))
     for born in newBorn:
         stack = {}
-        """
-        print("driver:{}".format(getPureRule(born)[1][0]))
-        print("type:{}".format(oppositeFindBeginState(beginning)))
-        print("options:")"""
         alist.clear()
         aggResult = agressiveRecursive(born)
         for i in aggResult:
@@ -217,19 +202,23 @@ def parserTerminal(text):
 #/TODO this part will be function. we can divide it into more than one piece.
 start = time.time()
 BeginnerState = findBeginState() # ---> This place takes out the top parents. For Example at http module (http_destination)
-for state in BeginnerState: 
+for state in BeginnerState:
     dataFromOutput = output(state) 
+
     for key in dataFromOutput.keys():
         dataStore = []
         Problems = {}
         ProblemsArray = []
         Remover = []
+
         for line in open("./modules/http/http-parser.c",'r'):
             if key in line:
                 newKey = (re.search('{(.*),', line))
-                print("drive:{}".format( ((newKey[1]).split(",")[0]).replace('"','') ) ) #---> Each driver is marked as the key of the dictionary.
+                driverName = (((newKey[1]).split(",")[0]).replace('"',''))
+                print("drive:{}".format( driverName ) ) #---> Each driver is marked as the key of the dictionary.
+                break
 
-        print("type:{}".format(oppositeFindBeginState(state))) 
+        print("type: {}".format(oppositeFindBeginState(state))) 
         for x in dataFromOutput[key]:
             #ruleCounterPerDriver = 1 # ---> If option number is wanted 
             if x.split(" : ")[0].strip() not in dataFromOutput.keys():
@@ -250,12 +239,13 @@ for state in BeginnerState:
             for items in Remover:
                 dataStore.remove(items)
 
-            for items in Problems[removingKey]:
-                dataStore.remove(items)
+            """for items in Problems[removingKey]:
+                dataStore.remove(items)"""
 
-        connector1 = []
+        
         check = []
         for k in dataStore:
+            connector1 = []
             newValue = ""
             for p in dataStore:
                 if k.split(" : ")[0] == p.split(" : ")[0]:
@@ -279,6 +269,7 @@ for state in BeginnerState:
                         returnValues = parserTerminal(newValueElement.strip())
                         for Values in returnValues:
                             dummyArray.append(Values)
+
                 finalValue = ""
                 arrayCount = 0
                 for Array in dummyArray:
@@ -286,24 +277,46 @@ for state in BeginnerState:
                     if len(dummyArray) -1 != arrayCount:
                         finalValue += " / "
                         arrayCount = arrayCount + 1
-
+            flag = False
             if k.split(" : ")[0] not in check:
                 for line in open('./modules/http/http-parser.c','r'):
                     if k.split(" : ")[0] in line:
+                        flag = True
                         newString = (re.search('{(.*),', line))
                         cleanString = ((newString[1]).split(",")[0]).replace('"','')
                         print("\t{} : {}".format(cleanString, finalValue))
+                            
+                if flag is not True:
+                    for line in open('./lib/cfg-parser.c','r'):
+                        if k.split(" : ")[0] in line:
+                            newString = (re.search('{(.*),', line))
+                            cleanString = ((newString[1]).split(",")[0]).replace('"','')
+                            print("\t{} : {}".format(cleanString, finalValue))
+
                         #ruleCounterPerDriver = ruleCounterPerDriver + 1
                 check.append(k.split(" : ")[0])
 
-        connector2 = []
-        check2 = []
+       
+        
         for m in Problems.keys():
+            check2 = []
+            flag = False
             for line in open('./modules/http/http-parser.c','r'):
                 if m in line:
+                    flag = True
                     newString = (re.search('{(.*),', line))
                     print("\t{}".format(((newString[1]).split(",")[0]).replace('"','')))
+
+            if flag is not True:
+                for line in open('./lib/cfg-parser.c','r'):
+                    if m in line:
+                        flag = True
+                        newString = (re.search('{(.*),', line))
+                        print("\t{}".format(((newString[1]).split(",")[0]).replace('"','')))
+
             for b in Problems[m]:
+
+                connector2 = []
                 newValue2 = ""
                 for y in Problems[m]:
                     if b.split(" : ")[0] == y.split(" : ")[0]:
