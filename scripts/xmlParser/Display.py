@@ -364,35 +364,33 @@ print(end - start)
 
 """
 drive: http
-type:destination
+type: destination
          url : identifier / string
-         user : identifier / string
-         user_agent : identifier / string
-         password : identifier / string
-         user_agent : identifier / string
-         headers : identifier / string
-         auth_header : identifier / string
+         user : identifier / string       
+         user_agent : identifier / string 
+         password : identifier / string   
+         user_agent : identifier / string 
+         headers : identifier / string    
+         auth_header : identifier
          method : identifier / string
          body_prefix : identifier / string
          body_suffix : identifier / string
          delimiter : identifier / string
          body : identifier / string
          body_prefix : identifier / string
-         body_suffix : identifier / string
-         accept_redirects : identifier / string / yes / on / no / off / number
-         timeout : identifier / string / yes / on / no / off / number
-         flush_bytes : identifier / string / yes / on / no / off / number
-         batch_bytes : identifier / string / yes / on / no / off / number
-         workers : identifier / string / yes / on / no / off / number
-         flush_lines : identifier / string / yes / on / no / off / number
-         flush_timeout : identifier / string / yes / on / no / off / number
+         frac_digits : number
+         time_zone : identifier / string
+         send_time_zone : identifier / string
+         local_time_zone : identifier / string
+         on_error : identifier / string
+         log_fifo_size : number         throttle : number         persist_name : identifier / string
          tls
                  ca_dir : identifier / string
                  ca_file : identifier / string
                  cert_file : identifier / string
                  key_file : identifier / string
                  cipher_suite : identifier / string
-                 use_system_cert_store : identifier / string / yes / on / no / off / number
-                 ssl_version : identifier / string / yes / on / no / off / number
-                 peer_verify : identifier / string / yes / on / no / off / number
+                 use_system_cert_store : yes / on / no / off / number
+                 ssl_version : identifier / string
+                 peer_verify : yes / on / no / off / number
 """
