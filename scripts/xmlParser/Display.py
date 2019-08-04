@@ -383,7 +383,9 @@ type: destination
          send_time_zone : identifier / string
          local_time_zone : identifier / string
          on_error : identifier / string
-         log_fifo_size : number         throttle : number         persist_name : identifier / string
+         log_fifo_size : number         
+         throttle : number         
+         persist_name : identifier / string
          tls
                  ca_dir : identifier / string
                  ca_file : identifier / string
