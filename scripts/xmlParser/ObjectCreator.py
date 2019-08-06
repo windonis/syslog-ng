@@ -3,8 +3,8 @@ import networkx as nx
 import os
 G = nx.DiGraph()
 
-tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
-#tree = syslog.parse("./scripts/xmlParser/affile-grammar.xml")
+#tree = syslog.parse("./scripts/xmlParser/http-grammar.xml")
+tree = syslog.parse("./scripts/xmlParser/afsocket-grammar.xml")
 #tree = syslog.parse("/home/kokonis/Documents/kafka-grammar.xml")
 root = tree.getroot()
 

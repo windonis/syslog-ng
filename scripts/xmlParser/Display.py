@@ -10,7 +10,7 @@ import itertools
 blist = [] #using at passiveRecursive()
 graph.EdgeAdder()
 gettingRules = parser.xmltoobject()
-parseFile = "./modules/http/http-parser.c"
+parseFile = "./modules/afsocket/afsocket-parser.c"
 
 
 def getPureRule(ruleNumber):
@@ -59,18 +59,16 @@ def findBeginState():
     beginNode = []
     for i in parser.G.nodes.data('lhs'):
         if(i[1] == 'start'):
-            for x in traversalUnlimeted(i[0]):
-                if x[1] == 'LL_CONTEXT_DESTINATION':
-                    source = getPureRule(x[0])
-                    for i in source[1]:
-                        if i != 'LL_CONTEXT_DESTINATION':
-                            beginNode.append(i)
-                elif x[1] == 'LL_CONTEXT_SOURCE':
-                    source = getPureRule(x[0])
-                    for i in source[1]:
-                        if i != 'LL_CONTEXT_SOURCE':
-                            beginNode.append(i)
-    return(beginNode)
+            for x in traversalLimited(i[0]):
+                rule = getPureRule(x[1])
+                for tester in rule[1]:
+                    if "LL_CONTEXT_" in tester:
+                        flag = True
+                if flag == True:
+                    for symbol in rule[1]:
+                        if "LL_CONTEXT_" not in symbol:
+                            beginNode.append(symbol)
+    return beginNode
 
 def oppositeFindBeginState(state):
     allRuleNumber = gettingRules
@@ -170,8 +168,45 @@ def dictCreator(beginning):
         del stack
     return(allStack)
 
+def buildDetail(beginning):
+    pile = []
+    returnStack = {}
+
+
+    hikmet = []
+    data = dictCreator(beginning)
+    for key in data:
+        for i in data[key].items():
+            if i[0] == key:
+                numberRule = findNode(i[1])
+                for node in numberRule:
+                    PureRule = getPureRule(node)
+                    for symbol in PureRule[1]:
+                        if "$@" not in symbol:
+                            hikmet.append(symbol)
+            else:
+                hikmet.append(i)
+
+        dummy = []
+
+        for x in hikmet:
+            if len(x) != 2:
+                number = findNode(x)
+                for i in number:
+                    element = (passiveRecursive(i))
+                    for el in element:
+                        if  terminalControl(el) is not True:
+                            dummy.append(el) #/TODO stack içinde var mı diye de ekstra bakabiliriz.
+                if len(dummy) == 0:
+                    pile.append(x)
+            else:
+                pile.append(x)
+
+        returnStack[key] = pile
+    return returnStack
+
 def output(beginning):
-    stack = dictCreator(beginning)
+    stack = buildDetail(beginning)
     
     lastDict = []
     keys = []
@@ -179,14 +214,18 @@ def output(beginning):
 
     for i in stack.keys():
         keys.append(i)
-
     for i in keys:
-        for k in stack[i].items():
+        for k in stack[i]:
             blist.clear()
-            for Node in findNodeDetailed(k[1]):
-                dummy = k[0] + " : " + Node
-                if dummy not in lastDict:
-                    lastDict.append(dummy)
+            if len(k) == 2:
+                for Node in findNodeDetailed(k[1]):
+                    dummy = k[0] + " : " + Node
+                    if dummy not in lastDict:
+                        lastDict.append(dummy)
+            else:
+                dummy2 = "None" + " : " + k
+                if dummy2 not in lastDict:
+                    lastDict.append(dummy2)
         returnDict[i] = lastDict
     return(returnDict)
 
@@ -198,10 +237,10 @@ def parserTerminal(text):
                 keyword.append((line.split(",")[0].replace("{ ","").strip().replace('"','')))
     return keyword
 
-
 #/TODO this part will be function. we can divide it into more than one piece.
 start = time.time()
 BeginnerState = findBeginState() # ---> This place takes out the top parents. For Example at http module (http_destination)
+
 for state in BeginnerState:
     dataFromOutput = output(state) 
 
@@ -245,20 +284,21 @@ for state in BeginnerState:
         
         check = []
         for k in dataStore:
-            connector1 = []
-            newValue = ""
-            for p in dataStore:
-                if k.split(" : ")[0] == p.split(" : ")[0]:
-                    if k.split(" : ")[1] not in connector1:
-                        connector1.append(k.split(" : ")[1])
-                    if p.split(" : ")[1] not in connector1:
-                        connector1.append(p.split(" : ")[1])
-            count = 0
-            for co in connector1:
-                newValue += co
-                if len(connector1) - 1 != count:
-                    newValue += " / "
-                    count = count + 1
+            if k.split(" : ")[0] != "None": 
+                connector1 = []
+                newValue = ""
+                for p in dataStore:
+                    if k.split(" : ")[0] == p.split(" : ")[0]:
+                        if k.split(" : ")[1] not in connector1:
+                            connector1.append(k.split(" : ")[1])
+                        if p.split(" : ")[1] not in connector1:
+                            connector1.append(p.split(" : ")[1])
+                count = 0
+                for co in connector1:
+                    newValue += co
+                    if len(connector1) - 1 != count:
+                        newValue += " / "
+                        count = count + 1
 
                 dummyArray = []
                 newValueList = (newValue.split(" / "))
@@ -274,17 +314,22 @@ for state in BeginnerState:
                 arrayCount = 0
                 for Array in dummyArray:
                     finalValue += Array
-                    if len(dummyArray) -1 != arrayCount:
+                    if len(dummyArray) - 1 != arrayCount:
                         finalValue += " / "
                         arrayCount = arrayCount + 1
             flag = False
             if k.split(" : ")[0] not in check:
-                for line in open(parseFile,'r'):
-                    if k.split(" : ")[0] in line:
-                        flag = True
-                        newString = (re.search('{(.*),', line))
-                        cleanString = ((newString[1]).split(",")[0]).replace('"','')
-                        print("\t{} : {}".format(cleanString, finalValue))
+                if k.split(" : ")[0] != "None":
+                    for line in open(parseFile,'r'):
+                        if k.split(" : ")[0] in line:
+                            flag = True
+                            newString = (re.search('{(.*),', line))
+                            cleanString = ((newString[1]).split(",")[0]).replace('"','')
+                            print("\t{} : {}".format(cleanString, finalValue))
+                else:
+                    print("\t {}".format( k.split(" : ")[1] ))
+                    flag = True
+
                             
                 if flag is not True:
                     for line in open('./lib/cfg-parser.c','r'):
@@ -361,38 +406,3 @@ for state in BeginnerState:
                     check2.append(b.split(" : ")[0])
 end = time.time()
 print(end - start)
-
-"""
-drive: http
-type: destination
-         url : identifier / string
-         user : identifier / string       
-         user_agent : identifier / string 
-         password : identifier / string   
-         user_agent : identifier / string 
-         headers : identifier / string    
-         auth_header : identifier
-         method : identifier / string
-         body_prefix : identifier / string
-         body_suffix : identifier / string
-         delimiter : identifier / string
-         body : identifier / string
-         body_prefix : identifier / string
-         frac_digits : number
-         time_zone : identifier / string
-         send_time_zone : identifier / string
-         local_time_zone : identifier / string
-         on_error : identifier / string
-         log_fifo_size : number         
-         throttle : number         
-         persist_name : identifier / string
-         tls
-                 ca_dir : identifier / string
-                 ca_file : identifier / string
-                 cert_file : identifier / string
-                 key_file : identifier / string
-                 cipher_suite : identifier / string
-                 use_system_cert_store : yes / on / no / off / number
-                 ssl_version : identifier / string
-                 peer_verify : yes / on / no / off / number
-"""
